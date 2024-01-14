@@ -1,6 +1,6 @@
 export function HomePage() {
   return (
-    <div>HomePage</div>
+    <div className="font-poppins maxSm:bg-black">HomePage</div>
   )
 }
 
