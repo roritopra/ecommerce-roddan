@@ -11,8 +11,8 @@ export const menuLinks = [
   },
   {
     id: 3,
-    text: "about-us",
-    path: "/About Us",
+    text: "About Us",
+    path: "/about-us",
   },
 
   {
