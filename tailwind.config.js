@@ -10,6 +10,7 @@ module.exports = withMT({
     extend: {
       colors: {
         'items-rgba': 'rgba(255, 255, 255, 0.40)',
+        'items-rgba-2': 'rgba(25, 25, 27, 0.40)',
       },
     },
     fontFamily: {

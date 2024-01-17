@@ -1,13 +1,13 @@
-import "./HomePage.css";
+import "./HomeHeader.css";
 import { Button } from "@material-tailwind/react";
 import { NavLink } from "react-router-dom";
 import { Carousel } from "@material-tailwind/react";
 
-export function HomePage() {
+export function HomeHeader() {
   return (
     <>
       <section className="container-grid max-w-[1440px] mx-auto px-5">
-        <div className="div1 rounded-[35px] p-12">
+        <div className="div1 rounded-[35px] p-12 bg-linear-black">
           <div className="flex items-center gap-5">
             <img src="/icons/logo-icon.svg" alt="Logo icon" />
             <p className="text-white text-sm font-poppins">
@@ -69,7 +69,9 @@ export function HomePage() {
             Assistant
           </span>
           <NavLink to={"/shop"}>
-            <Button color="white" className="rounded-full text-blue-500 mt-4">Browse</Button>
+            <Button color="white" className="rounded-full text-blue-500 mt-4">
+              Browse
+            </Button>
           </NavLink>
           <img
             className="absolute z-20 right-0 bottom-[0px]"
@@ -77,9 +79,9 @@ export function HomePage() {
             alt="Assistant image"
           />
         </div>
-        
+
         <div className="div4 relative flex flex-col justify-end rounded-[35px] p-7">
-        <p className="relative z-10 text-white font-poppins text-base mb-1 tracking-[-0.64px]">
+          <p className="relative z-10 text-white font-poppins text-base mb-1 tracking-[-0.64px]">
             Virtual
           </p>
           <p className="relative z-10 text-white font-poppins text-3xl mb-1 tracking-[-1.2px]">
@@ -89,7 +91,9 @@ export function HomePage() {
             Reality
           </span>
           <NavLink to={"/shop"}>
-            <Button color="white" className="rounded-full text-green-500 mt-4">Browse</Button>
+            <Button color="white" className="rounded-full text-green-500 mt-4">
+              Browse
+            </Button>
           </NavLink>
           <img
             className="absolute z-20 right-[-30px] bottom-[70px]"
@@ -98,7 +102,7 @@ export function HomePage() {
           />
         </div>
         <div className="div5 relative flex flex-col justify-end rounded-[35px] p-7">
-        <p className="relative z-10 text-white font-poppins text-base mb-1 tracking-[-0.64px]">
+          <p className="relative z-10 text-white font-poppins text-base mb-1 tracking-[-0.64px]">
             Wear
           </p>
           <p className="relative z-10 text-white font-poppins text-3xl mb-1 tracking-[-1.2px]">
@@ -108,7 +112,9 @@ export function HomePage() {
             Smartwatches
           </span>
           <NavLink to={"/shop"}>
-            <Button color="white" className="rounded-full text-green-500 mt-4">Browse</Button>
+            <Button color="white" className="rounded-full text-green-500 mt-4">
+              Browse
+            </Button>
           </NavLink>
           <img
             className="absolute z-20 right-0 bottom-[120px]"
@@ -117,7 +123,7 @@ export function HomePage() {
           />
         </div>
         <div className="div6 relative flex flex-col justify-end rounded-[35px] p-7">
-        <p className="relative z-10 text-white font-poppins text-base mb-1 tracking-[-0.64px]">
+          <p className="relative z-10 text-white font-poppins text-base mb-1 tracking-[-0.64px]">
             New
           </p>
           <p className="relative z-10 text-white font-poppins text-3xl mb-1 tracking-[-1.2px]">
@@ -127,7 +133,9 @@ export function HomePage() {
             Laptops
           </span>
           <NavLink to={"/shop"}>
-            <Button color="white" className="rounded-full text-green-500 mt-4">Browse</Button>
+            <Button color="white" className="rounded-full text-green-500 mt-4">
+              Browse
+            </Button>
           </NavLink>
           <img
             className="absolute z-20 right-0 bottom-0"
@@ -136,17 +144,19 @@ export function HomePage() {
           />
         </div>
         <div className="div7 relative flex flex-col justify-end rounded-[35px] p-7">
-        <p className="relative z-10 text-white font-poppins text-base mb-1 tracking-[-0.64px]">
+          <p className="relative z-10 text-[#19191B] font-poppins text-base mb-1 tracking-[-0.64px]">
             Listen
           </p>
-          <p className="relative z-10 text-white font-poppins text-3xl mb-1 tracking-[-1.2px]">
+          <p className="relative z-10 text-[#19191B] font-poppins text-3xl mb-1 tracking-[-1.2px]">
             High
           </p>
-          <span className="relative z-10 font-poppins text-items-rgba text-5xl  tracking-[-1.8px] font-semibold">
+          <span className="relative z-10 font-poppins text-items-rgba-2 text-5xl  tracking-[-1.8px] font-semibold">
             Definition
           </span>
           <NavLink to={"/shop"}>
-            <Button color="white" className="rounded-full text-green-500 mt-4">Browse</Button>
+            <Button color="white" className="rounded-full text-green-500 mt-4">
+              Browse
+            </Button>
           </NavLink>
           <img
             className="absolute z-20 right-0 bottom-[50px]"
