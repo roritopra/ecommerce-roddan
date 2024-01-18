@@ -1,0 +1,22 @@
+.slider-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 90px;
+  animation: scrolling 20s linear infinite;
+}
+
+@keyframes scrolling {
+  0% {
+    transform: translateX(50%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.slider-items img {
+  width: 12%;
+  margin: 50px 80px 55px 0;
+}
