@@ -2,17 +2,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 30px;
+  gap: 90px;
   animation: scrolling 20s linear infinite;
 }
 
 @keyframes scrolling {
   0% {
-    transform: translateX(80%);
+    transform: translateX(50%);
   }
 
   100% {
-    transform: translateX(-20%);
+    transform: translateX(-50%);
   }
 }
 
