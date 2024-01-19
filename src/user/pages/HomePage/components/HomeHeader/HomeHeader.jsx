@@ -126,7 +126,7 @@ export function HomeHeader() {
             Assistant
           </span>
           <NavLink to={"/shop"}>
-            <Button color="white" className="rounded-full text-blue-500 mt-4">
+            <Button color="white" className="rounded-full text-blue-500 mt-4 font-poppins">
               Browse
             </Button>
           </NavLink>
@@ -148,7 +148,7 @@ export function HomeHeader() {
             Reality
           </span>
           <NavLink to={"/shop"}>
-            <Button color="white" className="rounded-full text-green-500 mt-4">
+            <Button color="white" className="rounded-full text-green-500 mt-4 font-poppins">
               Browse
             </Button>
           </NavLink>
@@ -169,7 +169,7 @@ export function HomeHeader() {
             Smartwatches
           </span>
           <NavLink to={"/shop"}>
-            <Button color="white" className="rounded-full text-yellow-300 mt-4">
+            <Button color="white" className="rounded-full text-yellow-300 mt-4 font-poppins">
               Browse
             </Button>
           </NavLink>
@@ -190,7 +190,7 @@ export function HomeHeader() {
             Laptops
           </span>
           <NavLink to={"/shop"}>
-            <Button color="blue" className="rounded-full mt-4">
+            <Button color="blue" className="rounded-full mt-4 font-poppins">
               Browse
             </Button>
           </NavLink>
@@ -211,7 +211,7 @@ export function HomeHeader() {
             Definition
           </span>
           <NavLink to={"/shop"}>
-            <Button color="blue" className="rounded-full mt-4">
+            <Button color="blue" className="rounded-full mt-4 font-poppins">
               Browse
             </Button>
           </NavLink>
