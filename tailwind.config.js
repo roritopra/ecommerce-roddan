@@ -15,6 +15,7 @@ module.exports = withMT({
     },
     fontFamily: {
       poppins: ["Poppins", "sans-serif"],
+      coolvetica: ["Coolvetica", "sans-serif"],
     },
     screens: {
       sm: '640px',

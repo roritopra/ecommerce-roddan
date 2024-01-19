@@ -14,11 +14,11 @@ export function HomeHeader() {
               Time for offers-24
             </p>
           </div>
-          <h1 className="mt-7 text-white text-9xl font-poppins font-semibold">
+          <h1 className="mt-7 text-white text-9xl font-coolvetica">
             JANUARY OFFERS, WE START THE YEAR
           </h1>
           <NavLink to={"/shop"}>
-            <Button color="blue" size="lg" className="rounded-full px-16 mt-10">
+            <Button color="blue" size="lg" className="rounded-full px-16 mt-10 font-poppins">
               WATCH THE OFFERS!
             </Button>
           </NavLink>
