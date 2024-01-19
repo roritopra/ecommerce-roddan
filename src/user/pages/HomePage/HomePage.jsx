@@ -7,6 +7,8 @@ export function HomePage() {
     <>
       <HomeHeader />
       <LogoCarousel />
+
+      
     </>
   );
 }

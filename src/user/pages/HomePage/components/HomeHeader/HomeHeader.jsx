@@ -41,21 +41,78 @@ export function HomeHeader() {
               </div>
             )}
           >
-            <img
-              src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
-              alt="image 1"
-              className="h-full w-full object-cover"
-            />
-            <img
-              src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
-              alt="image 2"
-              className="h-full w-full object-cover"
-            />
-            <img
-              src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
-              alt="image 3"
-              className="h-full w-full object-cover"
-            />
+            <div className="relative h-full w-full">
+              <img
+                className="absolute top-5 left-5"
+                src="icons/logo-rounded.png"
+                alt="Logo rounded"
+              />
+              <img
+                src="imgs/carousel-1.png"
+                alt="image 1"
+                className="h-full w-full"
+              />
+            </div>
+            <div className="relative h-full w-full">
+              <img
+                className="absolute top-5 left-5"
+                src="icons/logo-rounded.png"
+                alt="Logo rounded"
+              />
+              <img
+                src="imgs/carousel-2.png"
+                alt="image 1"
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <div className="relative h-full w-full">
+              <img
+                className="absolute top-5 left-5"
+                src="icons/logo-rounded.png"
+                alt="Logo rounded"
+              />
+              <img
+                src="imgs/carousel-3.png"
+                alt="image 1"
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <div className="relative h-full w-full">
+              <img
+                className="absolute top-5 left-5"
+                src="icons/logo-rounded.png"
+                alt="Logo rounded"
+              />
+              <img
+                src="imgs/carousel-4.png"
+                alt="image 1"
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <div className="relative h-full w-full">
+              <img
+                className="absolute top-5 left-5"
+                src="icons/logo-rounded.png"
+                alt="Logo rounded"
+              />
+              <img
+                src="imgs/carousel-5.png"
+                alt="image 1"
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <div className="relative h-full w-full">
+              <img
+                className="absolute top-5 left-5"
+                src="icons/logo-rounded.png"
+                alt="Logo rounded"
+              />
+              <img
+                src="imgs/carousel-6.png"
+                alt="image 1"
+                className="h-full w-full object-cover"
+              />
+            </div>
           </Carousel>
         </div>
         <div className="div3 relative flex flex-col justify-end rounded-[35px] p-7">
@@ -112,7 +169,7 @@ export function HomeHeader() {
             Smartwatches
           </span>
           <NavLink to={"/shop"}>
-            <Button color="white" className="rounded-full text-green-500 mt-4">
+            <Button color="white" className="rounded-full text-yellow-300 mt-4">
               Browse
             </Button>
           </NavLink>
@@ -133,7 +190,7 @@ export function HomeHeader() {
             Laptops
           </span>
           <NavLink to={"/shop"}>
-            <Button color="white" className="rounded-full text-green-500 mt-4">
+            <Button color="blue" className="rounded-full mt-4">
               Browse
             </Button>
           </NavLink>
@@ -154,7 +211,7 @@ export function HomeHeader() {
             Definition
           </span>
           <NavLink to={"/shop"}>
-            <Button color="white" className="rounded-full text-green-500 mt-4">
+            <Button color="blue" className="rounded-full mt-4">
               Browse
             </Button>
           </NavLink>
