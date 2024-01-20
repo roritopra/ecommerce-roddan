@@ -4,7 +4,6 @@ export function Footer() {
   return (
     <>
       <footer className="bg-white mt-32">
-
         <div className="mx-auto max-w-md">
           <strong className="block text-center text-xl font-poppins font-bold text-gray-900 sm:text-3xl">
             Want us to email you with the latest blockbuster news?
@@ -28,7 +27,7 @@ export function Footer() {
           </form>
         </div>
 
-        <div className="relative mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 lg:pt-24">
+        <div className="relative mx-auto max-w-[1440px] px-4 py-16 lg:px-5 lg:pt-24">
           <div className="absolute end-4 top-4 sm:end-6 sm:top-6 lg:end-8 lg:top-8">
             <a
               className="inline-block rounded-full bg-[#0081FE] p-2 text-white shadow transition hover:bg-blue-500 sm:p-3 lg:p-4"
