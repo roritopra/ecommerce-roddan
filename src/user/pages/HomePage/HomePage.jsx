@@ -3,6 +3,7 @@ import { HomeHeader } from "./components/HomeHeader/HomeHeader";
 import { LogoCarousel } from "./components/LogoCarousel/LogoCarousel";
 import { Button } from "@material-tailwind/react";
 import { ProductItem } from "./components/ProductItem/ProductItem";
+import { Footer } from "../../components/Footer/Footer";
 
 export function HomePage() {
   return (
@@ -230,6 +231,8 @@ export function HomePage() {
           </div>
         </div>
       </section>
+
+      <Footer />
     </>
   );
 }

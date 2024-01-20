@@ -6,7 +6,7 @@ import { Carousel } from "@material-tailwind/react";
 export function HomeHeader() {
   return (
     <>
-      <section className="container-grid max-w-[1440px] mx-auto px-5">
+      <section id="header" className="container-grid max-w-[1440px] mx-auto px-5">
         <div className="div1 rounded-[35px] p-12 bg-linear-black">
           <div className="flex items-center gap-5">
             <img src="/icons/logo-icon.svg" alt="Logo icon" />
