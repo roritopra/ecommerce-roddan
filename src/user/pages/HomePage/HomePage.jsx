@@ -122,14 +122,113 @@ export function HomePage() {
       </section>
 
       <section className="grid sm:grid-cols-2 lg:grid-cols-4 px-5 max-w-[1440px] mx-auto gap-[16px]">
-        <ProductItem image="imgs/home-item-1.png" name="Sony WH-1000XM4" price="$299" />
-        <ProductItem image="imgs/home-item-2.png" name="JBL Charge 5" price="$99" />
-        <ProductItem image="imgs/home-item-3.png" name="Oculus Quest" price="$599" />
-        <ProductItem image="imgs/home-item-4.png" name="Huawei MatePad 2022" price="$499" />
-        <ProductItem image="imgs/home-item-5.png" name="OPPO Watch" price="$199" />
-        <ProductItem image="imgs/home-item-6.png" name="Samsung Galaxy Tab s8" price="$1199" />
-        <ProductItem image="imgs/home-item-7.png" name="Lenovo Thinkpad X1" price="$1499" />
-        <ProductItem image="imgs/home-item-8.png" name="POCO X5 Pro 5G" price="$499" />
+        <ProductItem
+          image="imgs/home-item-1.png"
+          name="Sony WH-1000XM4"
+          price="$299"
+        />
+        <ProductItem
+          image="imgs/home-item-2.png"
+          name="JBL Charge 5"
+          price="$99"
+        />
+        <ProductItem
+          image="imgs/home-item-3.png"
+          name="Oculus Quest"
+          price="$599"
+        />
+        <ProductItem
+          image="imgs/home-item-4.png"
+          name="Huawei MatePad 2022"
+          price="$499"
+        />
+        <ProductItem
+          image="imgs/home-item-5.png"
+          name="OPPO Watch"
+          price="$199"
+        />
+        <ProductItem
+          image="imgs/home-item-6.png"
+          name="Samsung Galaxy Tab s8"
+          price="$1199"
+        />
+        <ProductItem
+          image="imgs/home-item-7.png"
+          name="Lenovo Thinkpad X1"
+          price="$1499"
+        />
+        <ProductItem
+          image="imgs/home-item-8.png"
+          name="POCO X5 Pro 5G"
+          price="$499"
+        />
+      </section>
+
+      <section>
+        <div className="flex justify-center items-center flex-col mb-16 mt-28">
+          <h2 className="text-[#19191B] font-poppins text-[35px] font-bold">
+            Recent News
+          </h2>
+          <p className="text-[#6B6B6B] font-poppins text-base">
+            Know about our variations and manages
+          </p>
+        </div>
+      </section>
+
+      <section className="grid sm:grid-cols-2 lg:grid-cols-3 px-5 max-w-[1440px] mx-auto gap-[16px]">
+        <div className="mt-5 mb-28 cursor-pointer">
+          <figure className="flex justify-center items-center">
+            <img className="" src="imgs/new-1.png" alt="News home" />
+          </figure>
+          <div className="mt-5">
+            <p className="text-[#19191B] font-poppins text-[18px] mb-4">
+              October 5
+            </p>
+            <span className="text-[#19191B] font-poppins text-[20px] font-semibold">
+              20 Best gadgets for 2023
+            </span>
+            <p className="text-[#19191B] font-poppins text-[18px] mt-4">
+              Sed ut perspiciatis unde omnis iste laudantium, totam rem aperiam,
+              eaque ipsa quae ab pariatur?
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-5 mb-28 cursor-pointer">
+          <figure className="flex justify-center items-center">
+            <img className="" src="imgs/new-2.png" alt="News home" />
+          </figure>
+          <div className="mt-5">
+            <p className="text-[#19191B] font-poppins text-[18px] mb-4">
+              October 5
+            </p>
+            <span className="text-[#19191B] font-poppins text-[20px] font-semibold">
+              20 Best gadgets for 2023
+            </span>
+            <p className="text-[#19191B] font-poppins text-[18px] mt-4">
+              Sed ut perspiciatis unde omnis iste laudantium, totam rem aperiam,
+              eaque ipsa quae ab pariatur?
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-5 mb-28 cursor-pointer">
+          <figure className="flex justify-center items-center">
+            <img className="" src="imgs/new-3.png" alt="News home" />
+          </figure>
+          <div className="mt-5">
+            <p className="text-[#19191B] font-poppins text-[18px] mb-4">
+              October 5
+            </p>
+            <span className="text-[#19191B] font-poppins text-[20px] font-semibold">
+              20 Best gadgets for 2023
+            </span>
+            <p className="text-[#19191B] font-poppins text-[18px] mt-4">
+              Sed ut perspiciatis unde omnis iste laudantium, totam rem aperiam,
+              eaque ipsa quae ab pariatur?
+            </p>
+          </div>
+        </div>
       </section>
     </>
   );
