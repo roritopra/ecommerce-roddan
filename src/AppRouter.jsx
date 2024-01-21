@@ -7,7 +7,7 @@ export function AppRouter() {
     <Routes>
       <Route path="/" element={<NavBar />}>
         <Route index element={<HomePage />} />
-        <Route path="shop" element={<ShopPage />} />
+        <Route path="/shop" element={<ShopPage />} />
       </Route>
     </Routes>
   );

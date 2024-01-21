@@ -13,7 +13,7 @@ export function NavBar() {
           </NavLink>
           {menuLinks.map((menu, index) => (
             <NavLink key={index} to={menu.path} className={({ isActive }) => {
-              return `text-[#9090A3] font-poppins text-base ${isActive ? "text-[#0081FE]" : ""}`
+              return `font-poppins text-base ${isActive ? "text-[#0081FE]" : "text-[#9090A3]"}`
             }}>
               {menu.text}
             </NavLink>
