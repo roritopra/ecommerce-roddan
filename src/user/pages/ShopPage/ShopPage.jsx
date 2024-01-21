@@ -2,6 +2,7 @@ import { Button } from "@material-tailwind/react";
 import "./ShopPage.css";
 import { NavLink } from "react-router-dom";
 import { Checkbox, Label, Accordion, RangeSlider } from "flowbite-react";
+import { ShopItem } from "./components/ShopItem/ShopItem";
 
 export function ShopPage() {
   return (
@@ -110,7 +111,79 @@ export function ShopPage() {
       </section>
 
       <section className="items">
-        <h1>hi</h1>
+        <div className="flex justify-between">
+          <h1 className="font-poppins text-[#167DFF] text-[35px] font-light">
+            The best of{" "}
+            <span className="border rounded-xl border-[#D9D9D9] px-1">
+              techno
+            </span>
+          </h1>
+          <div>
+
+          </div>
+        </div>
+        <section className="grid sm:grid-cols-2 lg:grid-cols-4 max-w-[1440px] mx-auto gap-[16px] mt-6">
+        <ShopItem
+          image="imgs/home-item-1.png"
+          name="Sony WH-1000XM4"
+          price="$299"
+        />
+        <ShopItem
+          image="imgs/home-item-2.png"
+          name="JBL Charge 5"
+          price="$99"
+        />
+        <ShopItem
+          image="imgs/home-item-3.png"
+          name="Oculus Quest"
+          price="$599"
+        />
+        <ShopItem
+          image="imgs/home-item-4.png"
+          name="Huawei MatePad 2022"
+          price="$499"
+        />
+        <ShopItem
+          image="imgs/home-item-5.png"
+          name="OPPO Watch"
+          price="$199"
+        />
+        <ShopItem
+          image="imgs/home-item-6.png"
+          name="Samsung Galaxy Tab s8"
+          price="$1199"
+        />
+        <ShopItem
+          image="imgs/home-item-7.png"
+          name="Lenovo Thinkpad X1"
+          price="$1499"
+        />
+        <ShopItem
+          image="imgs/home-item-8.png"
+          name="POCO X5 Pro 5G"
+          price="$499"
+        />
+        <ShopItem
+          image="imgs/home-item-1.png"
+          name="Sony WH-1000XM4"
+          price="$299"
+        />
+        <ShopItem
+          image="imgs/home-item-2.png"
+          name="JBL Charge 5"
+          price="$99"
+        />
+        <ShopItem
+          image="imgs/home-item-3.png"
+          name="Oculus Quest"
+          price="$599"
+        />
+        <ShopItem
+          image="imgs/home-item-4.png"
+          name="Huawei MatePad 2022"
+          price="$499"
+        />
+        </section>
       </section>
     </main>
   );
