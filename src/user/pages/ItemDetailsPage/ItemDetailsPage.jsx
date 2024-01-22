@@ -5,6 +5,8 @@ import { Button } from "@material-tailwind/react";
 import { Select } from "flowbite-react";
 
 export function ItemDetailsPage() {
+  
+
   const data = [
     {
       imgelink:
@@ -151,6 +153,30 @@ export function ItemDetailsPage() {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="flex justify-between mt-20 px-36">
+        <div className="flex flex-col justify-center">
+          <p className="font-poppins font-light text-[30px] text-center text-[#696969]">
+            Stop by new <br />
+            arrivals
+          </p>
+          <hr className="border-[#696969]" />
+        </div>
+        <div className="flex flex-col justify-center">
+          <p className="font-poppins font-medium text-[30px] text-center text-[#19191B]">
+          Shop by top <br />
+            collections
+          </p>
+          <hr className="border-[#696969]" />
+        </div>
+        <div className="flex flex-col justify-center">
+          <p className="font-poppins font-light text-[30px] text-center text-[#696969]">
+          Shop by pro starp <br />
+            extra
+          </p>
+          <hr className="border-[#696969]" />
         </div>
       </section>
     </main>
