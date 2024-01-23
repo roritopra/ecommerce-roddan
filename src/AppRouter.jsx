@@ -1,5 +1,9 @@
 import { Routes, Route } from "react-router-dom";
 import { NavBar } from "./user/components/NavBar/NavBar";
+
+
+import { LoginPage } from "./user/pages/LoginPage";
+
 import { HomePage } from "./user/pages/HomePage/HomePage";
 
 export function AppRouter() {
@@ -7,6 +11,7 @@ export function AppRouter() {
     <Routes>
       <Route path="/" element={<NavBar />}>
         <Route index element={<HomePage />} />
+        <Route path="/login" element={<LoginPage />} />
       </Route>
     </Routes>
   );
