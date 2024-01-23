@@ -1,0 +1,55 @@
+.container-grid {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 19px 19px;
+    grid-auto-flow: row;
+  }
+  
+  .div1 {
+    grid-area: 1 / 1 / 3 / 3;
+    background: var(
+      --Linear-black,
+      linear-gradient(99deg, #222 1.21%, #515151 99.17%, #222 99.17%)
+    );
+  }
+  
+  .div2 {
+    grid-area: 1 / 3 / 3 / 4;
+    background-color: blanchedalmond;
+  }
+  
+  .div3 {
+    grid-area: 3 / 1 / 4 / 2;
+    background: var(
+      --Linear-blue,
+      linear-gradient(90deg, #167dff 0%, #4f9dff 100%)
+    );
+  }
+  
+  .div4 {
+    grid-area: 3 / 2 / 4 / 3;
+    background: linear-gradient(89deg, #45bf55 0.53%, #5dda6d 99.58%);
+  }
+  
+  .div5 {
+    grid-area: 3 / 3 / 4 / 4;
+    background: linear-gradient(114deg, #fdc62e 60.36%, #fece49 96.83%);
+  }
+  
+  .div6 {
+    grid-area: 4 / 1 / 5 / 3;
+    background: var(
+      --Linear-black,
+      linear-gradient(99deg, #222 1.21%, #515151 99.17%, #222 99.17%)
+    );
+  }
+  
+  .div7 {
+    grid-area: 4 / 3 / 5 / 4;
+    background: var(
+      --Linear-white,
+      linear-gradient(65deg, #eff0f4 2.11%, #ececec 98.43%)
+    );
+  }
