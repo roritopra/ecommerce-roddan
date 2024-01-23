@@ -8,6 +8,9 @@ module.exports = withMT({
   "path-to-your-node_modules/@material-tailwind/react/theme/components/**/*.{js,ts,jsx,tsx}",],
   theme: {
     extend: {
+      colors: {
+        customColor: '#007AFF', // Puedes asignar un nombre personalizado a tu color
+      },
     },
     fontFamily: {
       poppins: ["Poppins", "sans-serif"],
