@@ -1,11 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
   font-family: "Coolvetica";
-  src: url("/fonts/coolvetica rg.otf") format("otf");
+  src: url("/fonts/CoolveticaCompressedRg-Regular400.ttf") format("ttf");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
