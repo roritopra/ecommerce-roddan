@@ -9,8 +9,12 @@ module.exports = withMT({
   theme: {
     extend: {
       colors: {
+
+        customColor: '#007AFF', // Puedes asignar un nombre personalizado a tu color
+
         'items-rgba': 'rgba(255, 255, 255, 0.40)',
         'items-rgba-2': 'rgba(25, 25, 27, 0.40)',
+
       },
     },
     fontFamily: {
