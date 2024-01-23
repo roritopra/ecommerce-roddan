@@ -12,7 +12,15 @@ export function NavBar() {
             <img src="/icons/logo-nav.svg" alt="Roddan Logo" />
           </NavLink>
           {menuLinks.map((menu, index) => (
-            <NavLink key={index} to={menu.path}>
+            <NavLink
+              key={index}
+              to={menu.path}
+              className={({ isActive }) => {
+                return `font-poppins text-base ${
+                  isActive ? "text-[#0081FE]" : "text-[#9090A3]"
+                }`;
+              }}
+            >
               {menu.text}
             </NavLink>
           ))}
@@ -21,9 +29,9 @@ export function NavBar() {
           <NavLink to={"/login"} className="text-[#9090A3]">
             Login
           </NavLink>
-          <Button color="blue">
-            <NavLink to={"/register"}>Register</NavLink>
-          </Button>
+          <NavLink to={"/register"}>
+            <Button color="blue">Register</Button>
+          </NavLink>
         </nav>
       </header>
       <Outlet />
