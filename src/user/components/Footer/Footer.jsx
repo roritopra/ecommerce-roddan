@@ -1,10 +1,21 @@
 import { NavLink } from "react-router-dom";
+import { useEffect } from "react";
+import ScrollReveal from "scrollreveal";
 
 export function Footer() {
+
+  useEffect(() => {
+    ScrollReveal().reveal('.news', { delay: 500, duration: '1300', distance: '30px', origin: 'bottom' })
+    ScrollReveal().reveal('.news', { delay: 500, duration: '1300', distance: '30px', origin: 'bottom' })
+    ScrollReveal().reveal('.left', { delay: 500, duration: '1300', distance: '30px', origin: 'left' })
+    ScrollReveal().reveal('.right', { delay: 700, duration: '1300', distance: '30px', origin: 'left' })
+  }
+  , [])
+
   return (
     <>
       <footer className="bg-white mt-32">
-        <div className="mx-auto max-w-md">
+        <div className="news mx-auto max-w-md">
           <strong className="block text-center text-xl font-poppins font-bold text-gray-900 sm:text-3xl">
             Want us to email you with the latest blockbuster news?
           </strong>
@@ -27,7 +38,7 @@ export function Footer() {
           </form>
         </div>
 
-        <div className="relative mx-auto max-w-[1440px] px-4 py-16 lg:px-5 lg:pt-24">
+        <div className="left relative mx-auto max-w-[1440px] px-4 py-16 lg:px-5 lg:pt-24">
           <div className="absolute end-4 top-4 sm:end-6 sm:top-6 lg:end-8 lg:top-8">
             <a
               className="inline-block rounded-full bg-[#0081FE] p-2 text-white shadow transition hover:bg-blue-500 sm:p-3 lg:p-4"
@@ -50,7 +61,7 @@ export function Footer() {
             </a>
           </div>
 
-          <div className="lg:flex lg:items-end lg:justify-between">
+          <div className="right lg:flex lg:items-end lg:justify-between">
             <div>
               <div className="flex justify-center text-teal-600 lg:justify-start">
                 <img src="icons/logo-nav.png" alt="" />
