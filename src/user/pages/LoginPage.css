@@ -5,12 +5,24 @@
     grid-auto-flow: row;
 }
 
-.Login-area { grid-area: 1 / 1 / 4 / 2; }
+.Login-area { grid-area: 1 / 1 / 4 / 2; 
+    background: var(--Linear-white, linear-gradient(65deg, #EFF0F4 2.11%, #ECECEC 98.43%));}
 
-.Welcome { grid-area: 1 / 2 / 2 / 4; }
+.Welcome { grid-area: 1 / 2 / 2 / 4; 
+background: var(--Linear-blue, linear-gradient(90deg, #167DFF 0%, #4F9DFF 100%));
+}
 
-.Icon { grid-area: 2 / 2 / 3 / 3; }
+.Icon { grid-area: 2 / 2 / 3 / 3; 
+    background: var(--Linear-Yellow, linear-gradient(114deg, #FDC62E 60.36%, #FECE49 96.83%));}
 
-.Girl { grid-area: 3 / 2 / 4 / 3; }
+.Girl { grid-area: 3 / 2 / 4 / 3; 
+    background: linear-gradient(89deg, #45BF55 0.53%, #5DDA6D 99.58%);
 
-.Evolution { grid-area: 2 / 3 / 4 / 4; }
+}
+
+.Evolution { grid-area: 2 / 3 / 4 / 4; 
+    background: var(--Linear-black, linear-gradient(99deg, #222 1.21%, #515151 99.17%, #222 99.17%));}
+
+.Evolution img {
+    mix-blend-mode: soft-light;
+}

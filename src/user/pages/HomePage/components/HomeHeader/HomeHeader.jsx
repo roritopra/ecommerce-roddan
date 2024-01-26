@@ -1,23 +1,38 @@
 import "./HomeHeader.css";
 import { Button } from "@material-tailwind/react";
 import { NavLink } from "react-router-dom";
+import { useEffect } from "react";
 import { Carousel } from "@material-tailwind/react";
+import ScrollReveal from "scrollreveal";
 
 export function HomeHeader() {
+  useEffect(() => {
+    ScrollReveal().reveal('.div1', { delay: 500, duration: '1300', distance: '80px', origin: 'right' })
+    ScrollReveal().reveal('.div2', { delay: 600, duration: '1300', distance: '80px', origin: 'right' })
+    ScrollReveal().reveal('.div3', { delay: 800, duration: '1300', distance: '80px', origin: 'left' })
+    ScrollReveal().reveal('.div4', { delay: 900, duration: '1300', distance: '80px', origin: 'left' })
+    ScrollReveal().reveal('.div5', { delay: 1000, duration: '1300', distance: '80px', origin: 'left' })
+    ScrollReveal().reveal('.div6', { delay: 300, duration: '1300', distance: '80px', origin: 'right' })
+    ScrollReveal().reveal('.div7', { delay: 400, duration: '1300', distance: '80px', origin: 'right' })
+    ScrollReveal().reveal('.time', { delay: 1000, duration: '1300', distance: '30px', origin: 'top' })
+    ScrollReveal().reveal('.title', { delay: 1200, duration: '1300', distance: '30px', origin: 'top' })
+    ScrollReveal().reveal('.button', { delay: 1500, duration: '1300', distance: '30px', origin: 'top' })
+  }, [])
+  
   return (
     <>
       <section id="header" className="container-grid max-w-[1440px] mx-auto px-5">
         <div className="div1 rounded-[35px] p-12 bg-linear-black">
-          <div className="flex items-center gap-5">
+          <div className="time flex items-center gap-5">
             <img src="/icons/logo-icon.svg" alt="Logo icon" />
             <p className="text-white text-sm font-poppins">
               Time for offers-24
             </p>
           </div>
-          <h1 className="mt-7 text-white text-9xl font-coolvetica">
+          <h1 className="title mt-7 text-white text-9xl font-coolvetica">
             JANUARY OFFERS, WE START THE YEAR
           </h1>
-          <NavLink to={"/shop"}>
+          <NavLink to={"/shop"} className="button">
             <Button color="blue" size="lg" className="rounded-full px-16 mt-10 font-poppins">
               WATCH THE OFFERS!
             </Button>

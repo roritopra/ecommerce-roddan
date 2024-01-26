@@ -1,9 +1,17 @@
 import './LogoCarousel.css';
+import { useEffect } from 'react';
+import ScrollReveal from 'scrollreveal';
 
 export function LogoCarousel() {
+
+  useEffect(() => {
+    ScrollReveal().reveal('.carousel', { delay: 500, duration: '1300', distance: '80px', origin: 'left' })
+  }
+  , [])
+
   return (
     <>
-      <section className="grid place-content-center max-w-[1440px] mx-auto px-5 my-28">
+      <section className="carousel grid place-content-center max-w-[1440px] mx-auto px-5 my-28">
         <div className="flex justify-center items-center h-full w-full overflow-hidden rounded-[35px] border border-[#d9d9d9]">
           <div className="slider-items">
             <img src="icons/sony-logo.png" alt="Sony logo" />

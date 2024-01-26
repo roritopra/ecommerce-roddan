@@ -3,9 +3,29 @@ import { HomeHeader } from "./components/HomeHeader/HomeHeader";
 import { LogoCarousel } from "./components/LogoCarousel/LogoCarousel";
 import { Button } from "@material-tailwind/react";
 import { ProductItem } from "./components/ProductItem/ProductItem";
+import { useEffect } from "react";
 import { Footer } from "../../components/Footer/Footer";
+import ScrollReveal from "scrollreveal";
 
 export function HomePage() {
+
+  useEffect(() => {
+    ScrollReveal().reveal('.january', { delay: 500, duration: '1300', distance: '50px', origin: 'bottom' })
+    ScrollReveal().reveal('.play', { delay: 700, duration: '1300', distance: '30px', origin: 'top' })
+    ScrollReveal().reveal('.january-title', { delay: 700, duration: '1300', distance: '30px', origin: 'bottom' })
+    ScrollReveal().reveal('.january-text', { delay: 900, duration: '1300', distance: '30px', origin: 'bottom' })
+    ScrollReveal().reveal('.january-button', { delay: 1500, duration: '1300', distance: '30px', origin: 'bottom' })
+    ScrollReveal().reveal('.box1', { delay: 500, duration: '1300', distance: '30px', origin: 'right' })
+    ScrollReveal().reveal('.box2', { delay: 700, duration: '1300', distance: '30px', origin: 'right' })
+    ScrollReveal().reveal('.box3', { delay: 900, duration: '1300', distance: '30px', origin: 'right' })
+    ScrollReveal().reveal('.box4', { delay: 1100, duration: '1300', distance: '30px', origin: 'right' })
+    ScrollReveal().reveal('.product-title', { delay: 500, duration: '1300', distance: '0px', origin: 'bottom' })
+    ScrollReveal().reveal('.products', { delay: 500, duration: '1600', distance: '30px', origin: 'bottom' })
+    ScrollReveal().reveal('.blog-title', { delay: 500, duration: '1600', distance: '30px', origin: 'bottom' })
+    ScrollReveal().reveal('.blog', { delay: 700, duration: '1600', distance: '30px', origin: 'bottom' })
+  }
+  , [])
+
   return (
     <>
       <HomeHeader />
@@ -15,28 +35,28 @@ export function HomePage() {
         <div className="january relative flex justify-between pl-11 pr-20 rounded-[35px] py-20">
           <div className="relative h-full">
             <img
-              className="max-w-full bottom-[-80px] absolute left-52"
+              className="play z-20 max-w-full bottom-[-80px] absolute left-52"
               src="/imgs/playstation.png"
               alt="playstation image"
             />
-            <h6 className="text-white text-sm font-poppins">20% OFF</h6>
-            <h2 className="text-white font-coolvetica text-[110px] leading-[118px]">
+            <h6 className="january-title z-10 text-white text-sm font-poppins">20% OFF</h6>
+            <h2 className="january-title z-10 text-white font-coolvetica text-[110px] leading-[118px]">
               JANUARY<br></br>SALE
             </h2>
-            <p className="text-white text-sm font-poppins">
+            <p className="january-title z-10 text-white text-sm font-poppins">
               05 January to 29 January
             </p>
           </div>
           <div className="w-[35%] flex flex-col justify-center">
-            <h6 className="text-white text-sm font-poppins mb-3">20% OFF</h6>
-            <h4 className="text-white text-4xl font-poppins font-bold mb-5">
+            <h6 className="january-text text-white text-sm font-poppins mb-3">20% OFF</h6>
+            <h4 className="january-text text-white text-4xl font-poppins font-bold mb-5">
               January Sale
             </h4>
-            <p className="text-[#EBEBEB] text-[15px] font-poppins font-light mb-6">
+            <p className="january-text text-[#EBEBEB] text-[15px] font-poppins font-light mb-6">
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
               accusantium doloremque
             </p>
-            <div>
+            <div className="january-button">
               <Button
                 className="rounded-full text-blue-400 font-poppins"
                 color="white"
@@ -49,7 +69,7 @@ export function HomePage() {
       </section>
 
       <section className="grid sm:grid-cols-2 lg:grid-cols-4 mb-28 px-5 max-w-[1440px] mx-auto">
-        <div className="flex items-center gap-5">
+        <div className="box1 flex items-center gap-5">
           <img
             className="w-[80px]"
             src="icons/secure-icon.png"
@@ -64,7 +84,7 @@ export function HomePage() {
             </p>
           </div>
         </div>
-        <div className="flex items-center gap-5">
+        <div className="box2 flex items-center gap-5">
           <img
             className="w-[80px]"
             src="icons/free-icon.png"
@@ -79,7 +99,7 @@ export function HomePage() {
             </p>
           </div>
         </div>
-        <div className="flex items-center gap-5">
+        <div className="box3 flex items-center gap-5">
           <img
             className="w-[80px]"
             src="icons/innsure-icon.png"
@@ -94,7 +114,7 @@ export function HomePage() {
             </p>
           </div>
         </div>
-        <div className="flex items-center gap-5">
+        <div className="box4 flex items-center gap-5">
           <img
             className="w-[80px]"
             src="icons/support-icon.png"
@@ -111,7 +131,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <section>
+      <section className="product-title">
         <div className="flex justify-center items-center flex-col mb-16">
           <h2 className="text-[#19191B] font-poppins text-[35px] font-bold">
             Trending week
@@ -122,7 +142,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="grid sm:grid-cols-2 lg:grid-cols-4 px-5 max-w-[1440px] mx-auto gap-[16px]">
+      <section className="products grid sm:grid-cols-2 lg:grid-cols-4 px-5 max-w-[1440px] mx-auto gap-[16px]">
         <ProductItem
           image="imgs/home-item-1.png"
           name="Sony WH-1000XM4"
@@ -165,7 +185,7 @@ export function HomePage() {
         />
       </section>
 
-      <section>
+      <section className="blog-title">
         <div className="flex justify-center items-center flex-col mb-16 mt-28">
           <h2 className="text-[#19191B] font-poppins text-[35px] font-bold">
             Recent News
@@ -176,7 +196,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="grid sm:grid-cols-2 lg:grid-cols-3 px-5 max-w-[1440px] mx-auto gap-[16px]">
+      <section className="blog grid sm:grid-cols-2 lg:grid-cols-3 px-5 max-w-[1440px] mx-auto gap-[16px]">
         <div className="mt-5 mb-28 cursor-pointer">
           <figure className="flex justify-center items-center">
             <img className="" src="imgs/new-1.png" alt="News home" />
