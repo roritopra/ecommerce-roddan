@@ -19,10 +19,10 @@ export function LoginPage() {
               </h3>
               <label className="flex flex-col font-normal text-[11px]">
                 {" "}
-                Login
+                Email
                 <input
-                  type="text"
-                  placeholder="Email or phone number"
+                  type="email"
+                  placeholder="example@email.com"
                   className="border-none rounded-[6px] text-sm mt-1"
                 />
               </label>
@@ -30,8 +30,8 @@ export function LoginPage() {
                 {" "}
                 Password
                 <input
-                  type="text"
-                  placeholder="Enter passoword"
+                  type="password"
+                  placeholder="Enter password"
                   className="border-none rounded-[6px] text-sm mt-1"
                 />
               </label>
@@ -59,8 +59,8 @@ export function LoginPage() {
           </div>
           <div className="Welcome bg-brown-500 rounded-[30px] relative">
             <h1 className="font-coolvetica text-[100px] pl-8 text-white">WELCOME</h1>
-            <h2 className="font-coolvetica text-[30px] pl-8 text-white">
-              ENJOY YOUR LIFFE<br></br>WITH TECHNOLOGY
+            <h2 className="font-coolvetica text-[30px] pl-8 text-white font-light">
+              ENJOY YOUR LIFE<br></br>WITH TECHNOLOGY
             </h2>
             <img
               className="absolute right-0 bottom-0"
