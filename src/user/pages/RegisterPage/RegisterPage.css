@@ -1,0 +1,25 @@
+.gridcont2 {  display: grid;
+    grid-template-columns: repeat(2, 0.9fr) 1.2fr;
+    grid-template-rows: 1fr 0.9fr 1.1fr;
+    gap: 19px 19px;
+    grid-auto-flow: row;
+  }
+  
+  .Register { grid-area: 1 / 3 / 4 / 4; 
+    background: var(--Linear-white, linear-gradient(65deg, #EFF0F4 2.11%, #ECECEC 98.43%));}
+  
+  .Welcome2 { grid-area: 1 / 1 / 2 / 3; 
+    background: var(--Linear-black, linear-gradient(99deg, #222 1.21%, #515151 99.17%, #222 99.17%));}
+  
+  .yellow-man { grid-area: 2 / 2 / 4 / 3; 
+    background: var(--Linear-Yellow, linear-gradient(114deg, #FDC62E 60.36%, #FECE49 96.83%));}
+  
+  .roddan-text { grid-area: 2 / 1 / 3 / 2; 
+    background: var(--Linear-blue, linear-gradient(90deg, #167DFF 0%, #4F9DFF 100%));}
+.roddan-text img {
+    mix-blend-mode: soft-light;
+}
+  
+  .green-logo { grid-area: 3 / 1 / 4 / 2; 
+    background: linear-gradient(89deg, #45BF55 0.53%, #5DDA6D 99.58%);}
+  
