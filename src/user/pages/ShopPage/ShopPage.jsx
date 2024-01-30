@@ -3,8 +3,21 @@ import "./ShopPage.css";
 import { NavLink } from "react-router-dom";
 import { Checkbox, Label, Accordion, RangeSlider } from "flowbite-react";
 import { ShopItem } from "./components/ShopItem/ShopItem";
+import ScrollReveal from "scrollreveal";
+import { useEffect, useState } from "react";
 
 export function ShopPage() {
+  const [color1, setColor1] = useState('#323232');
+  const [color2, setColor2] = useState('#0081FE');
+
+  useEffect(() => {
+    ScrollReveal().reveal(".div1", {
+      delay: 500,
+      duration: "1300",
+      distance: "80px",
+      origin: "right",
+    });
+  }, []);
   return (
     <main className="content-shop px-5 max-w-[1440px] mx-auto mb-28 text-sm mt-5">
       <section className="filter">
@@ -119,70 +132,106 @@ export function ShopPage() {
             </span>
           </h1>
           <div>
-
+            <div className="flex items-center gap-9">
+              <button onClick={() => {setColor1('#0081FE'); setColor2('#323232');}}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="26"
+                  height="19"
+                  viewBox="0 0 26 19"
+                  fill="none"
+                >
+                  <g clipPath="url(#clip0_191_136)">
+                    <path
+                      d="M-8.375 3.875H17.875V0.125H-8.375V3.875ZM-8.375 11.375H17.875V7.625H-8.375V11.375ZM-8.375 18.875H17.875V15.125H-8.375V18.875ZM21.625 18.875H25.375V15.125H21.625V18.875ZM21.625 0.125V3.875H25.375V0.125H21.625ZM21.625 11.375H25.375V7.625H21.625V11.375Z"
+                      fill={color1}
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_191_136">
+                      <rect width="26" height="19" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </button>
+              <button onClick={() => {setColor2('#0081FE'); setColor1('#323232');}}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="25"
+                  height="19"
+                  viewBox="0 0 25 19"
+                  fill="none"
+                >
+                  <path
+                    d="M0 8.76923H7.35294V0H0V8.76923ZM0 19H7.35294V10.2308H0V19ZM8.82353 19H16.1765V10.2308H8.82353V19ZM17.6471 19H25V10.2308H17.6471V19ZM8.82353 8.76923H16.1765V0H8.82353V8.76923ZM17.6471 0V8.76923H25V0H17.6471Z"
+                    fill={color2}
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
         <section className="grid sm:grid-cols-2 lg:grid-cols-4 max-w-[1440px] mx-auto gap-[16px] mt-6">
-        <ShopItem
-          image="imgs/home-item-1.png"
-          name="Sony WH-1000XM4"
-          price="$299"
-        />
-        <ShopItem
-          image="imgs/home-item-2.png"
-          name="JBL Charge 5"
-          price="$99"
-        />
-        <ShopItem
-          image="imgs/home-item-3.png"
-          name="Oculus Quest"
-          price="$599"
-        />
-        <ShopItem
-          image="imgs/home-item-4.png"
-          name="Huawei MatePad 2022"
-          price="$499"
-        />
-        <ShopItem
-          image="imgs/home-item-5.png"
-          name="OPPO Watch"
-          price="$199"
-        />
-        <ShopItem
-          image="imgs/home-item-6.png"
-          name="Samsung Galaxy Tab s8"
-          price="$1199"
-        />
-        <ShopItem
-          image="imgs/home-item-7.png"
-          name="Lenovo Thinkpad X1"
-          price="$1499"
-        />
-        <ShopItem
-          image="imgs/home-item-8.png"
-          name="POCO X5 Pro 5G"
-          price="$499"
-        />
-        <ShopItem
-          image="imgs/home-item-1.png"
-          name="Sony WH-1000XM4"
-          price="$299"
-        />
-        <ShopItem
-          image="imgs/home-item-2.png"
-          name="JBL Charge 5"
-          price="$99"
-        />
-        <ShopItem
-          image="imgs/home-item-3.png"
-          name="Oculus Quest"
-          price="$599"
-        />
-        <ShopItem
-          image="imgs/home-item-4.png"
-          name="Huawei MatePad 2022"
-          price="$499"
-        />
+          <ShopItem
+            image="imgs/home-item-1.png"
+            name="Sony WH-1000XM4"
+            price="$299"
+          />
+          <ShopItem
+            image="imgs/home-item-2.png"
+            name="JBL Charge 5"
+            price="$99"
+          />
+          <ShopItem
+            image="imgs/home-item-3.png"
+            name="Oculus Quest"
+            price="$599"
+          />
+          <ShopItem
+            image="imgs/home-item-4.png"
+            name="Huawei MatePad 2022"
+            price="$499"
+          />
+          <ShopItem
+            image="imgs/home-item-5.png"
+            name="OPPO Watch"
+            price="$199"
+          />
+          <ShopItem
+            image="imgs/home-item-6.png"
+            name="Samsung Galaxy Tab s8"
+            price="$1199"
+          />
+          <ShopItem
+            image="imgs/home-item-7.png"
+            name="Lenovo Thinkpad X1"
+            price="$1499"
+          />
+          <ShopItem
+            image="imgs/home-item-8.png"
+            name="POCO X5 Pro 5G"
+            price="$499"
+          />
+          <ShopItem
+            image="imgs/home-item-1.png"
+            name="Sony WH-1000XM4"
+            price="$299"
+          />
+          <ShopItem
+            image="imgs/home-item-2.png"
+            name="JBL Charge 5"
+            price="$99"
+          />
+          <ShopItem
+            image="imgs/home-item-3.png"
+            name="Oculus Quest"
+            price="$599"
+          />
+          <ShopItem
+            image="imgs/home-item-4.png"
+            name="Huawei MatePad 2022"
+            price="$499"
+          />
         </section>
       </section>
     </main>
