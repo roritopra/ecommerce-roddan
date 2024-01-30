@@ -1,6 +1,6 @@
-import './ShopItem.css'
+import './ShopItemGrid.css'
 
-export function ShopItem({ image, name, price }) {
+export function ShopItemGrid({ image, name, price }) {
   return (
     <>
      <div className="mt-5 mb-28 cursor-pointer">

@@ -2,7 +2,8 @@ import { Button } from "@material-tailwind/react";
 import "./ShopPage.css";
 import { NavLink } from "react-router-dom";
 import { Checkbox, Label, Accordion, RangeSlider } from "flowbite-react";
-import { ShopItem } from "./components/ShopItem/ShopItem";
+import { ShopItemGrid } from "./components/ShopItemGrid/ShopItemGrid";
+import ShopItemList from "./components/ShopItemList/ShopItemList";
 import ScrollReveal from "scrollreveal";
 import { useEffect, useState } from "react";
 
@@ -11,12 +12,7 @@ export function ShopPage() {
   const [color2, setColor2] = useState('#0081FE');
 
   useEffect(() => {
-    ScrollReveal().reveal(".div1", {
-      delay: 500,
-      duration: "1300",
-      distance: "80px",
-      origin: "right",
-    });
+    ScrollReveal().reveal('.january', { delay: 500, duration: '1300', distance: '50px', origin: 'bottom' })
   }, []);
   return (
     <main className="content-shop px-5 max-w-[1440px] mx-auto mb-28 text-sm mt-5">
@@ -171,63 +167,68 @@ export function ShopPage() {
             </div>
           </div>
         </div>
-        <section className="grid sm:grid-cols-2 lg:grid-cols-4 max-w-[1440px] mx-auto gap-[16px] mt-6">
-          <ShopItem
+
+        <section>
+          <ShopItemList />
+        </section>
+
+        <section className="hidden sm:grid-cols-2 lg:grid-cols-4 max-w-[1440px] mx-auto gap-[16px] mt-6">
+          <ShopItemGrid
             image="imgs/home-item-1.png"
             name="Sony WH-1000XM4"
             price="$299"
           />
-          <ShopItem
+          <ShopItemGrid
             image="imgs/home-item-2.png"
             name="JBL Charge 5"
             price="$99"
           />
-          <ShopItem
+          <ShopItemGrid
             image="imgs/home-item-3.png"
             name="Oculus Quest"
             price="$599"
           />
-          <ShopItem
+          <ShopItemGrid
             image="imgs/home-item-4.png"
             name="Huawei MatePad 2022"
             price="$499"
           />
-          <ShopItem
+          <ShopItemGrid
             image="imgs/home-item-5.png"
             name="OPPO Watch"
             price="$199"
           />
-          <ShopItem
+          <ShopItemGrid
             image="imgs/home-item-6.png"
             name="Samsung Galaxy Tab s8"
             price="$1199"
           />
-          <ShopItem
+          <ShopItemGrid
             image="imgs/home-item-7.png"
             name="Lenovo Thinkpad X1"
             price="$1499"
           />
-          <ShopItem
+          <ShopItemGrid
             image="imgs/home-item-8.png"
             name="POCO X5 Pro 5G"
             price="$499"
           />
-          <ShopItem
+          <ShopItemGrid
             image="imgs/home-item-1.png"
             name="Sony WH-1000XM4"
             price="$299"
           />
-          <ShopItem
+          <ShopItemGrid
             image="imgs/home-item-2.png"
             name="JBL Charge 5"
             price="$99"
           />
-          <ShopItem
+          <ShopItemGrid
             image="imgs/home-item-3.png"
             name="Oculus Quest"
             price="$599"
           />
-          <ShopItem
+          <ShopItemGrid
             image="imgs/home-item-4.png"
             name="Huawei MatePad 2022"
             price="$499"
