@@ -1,35 +1,35 @@
 import "./ShopItemList.css";
-import { Button } from "@material-tailwind/react";
+import { Button } from "@nextui-org/react";
 
-export function ShopItemList() {
+export function ShopItemList({ name, price, img, category}) {
   return (
     <>
-      <div className="flex justify-between items-center mt-5 mb-28 cursor-pointer">
+      <div className="flex justify-between items-center mt-10 mb-9 cursor-pointer">
         <div className="flex items-center gap-6">
-          <figure className="card flex justify-center h-full items-center rounded-[35px] max-w-[350px]">
+          <figure className="card flex justify-center items-center rounded-[35px] w-[175px] max-w-[180px] h-[155px] max-h-[160px] px-2">
             <img
-              className="w-[100px]"
-              src="imgs/home-item-1.png"
+              className=""
+              src={img}
               alt="Items home"
             />
           </figure>
 
           <div>
-            <h2 className="text-[#19191B] font-poppins text-[25px] mb-3">
-              Sony WH-1000XM4
+            <h2 className="text-[#19191B] font-poppins text-[20px] mb-3">
+              {name}
             </h2>
-            <p className="text-[#8D8D8D] font-poppins text-[22px]">
-              Headphones
+            <p className="text-[#8D8D8D] font-poppins text-[18px]">
+              {category}
             </p>
           </div>
         </div>
 
-        <h6 className="text-[#19191B] font-poppins font-semibold text-[28px] mb-3">
-          $999
+        <h6 className="text-[#19191B] font-poppins font-semibold text-[25px] mb-3">
+            {price}
         </h6>
 
-        <div className="flex items-center gap-7">
-          <Button color="amber" size="sm" className="rounded-full py-3">
+        <div className="flex items-center gap-5">
+          <Button isIconOnly  className="rounded-full bg-[#FDC62E]">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -55,11 +55,14 @@ export function ShopItemList() {
               />
             </svg>
           </Button>
-          <Button className="rounded-full font-poppins text-[14px] font-medium px-8 py-3" size="sm">
-            D<span className="lowercase">etails</span>
+          <Button className="rounded-full font-poppins bg-[#222222] text-white text-[14px] font-medium px-8 py-3">
+            Details
           </Button>
         </div>
       </div>
+      <hr />
     </>
   );
 }
+
+

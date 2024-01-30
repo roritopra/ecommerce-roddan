@@ -1,18 +1,29 @@
 import { Button } from "@material-tailwind/react";
 import "./ShopPage.css";
 import { NavLink } from "react-router-dom";
-import { Checkbox, Label, Accordion, RangeSlider } from "flowbite-react";
+import {
+  Slider,
+  CheckboxGroup,
+  Checkbox,
+  Accordion,
+  AccordionItem,
+} from "@nextui-org/react";
 import { ShopItemGrid } from "./components/ShopItemGrid/ShopItemGrid";
-import ShopItemList from "./components/ShopItemList/ShopItemList";
+import { ShopItemList } from "./components/ShopItemList/ShopItemList";
 import ScrollReveal from "scrollreveal";
 import { useEffect, useState } from "react";
 
 export function ShopPage() {
-  const [color1, setColor1] = useState('#323232');
-  const [color2, setColor2] = useState('#0081FE');
+  const [color1, setColor1] = useState("#323232");
+  const [color2, setColor2] = useState("#0081FE");
 
   useEffect(() => {
-    ScrollReveal().reveal('.january', { delay: 500, duration: '1300', distance: '50px', origin: 'bottom' })
+    ScrollReveal().reveal(".january", {
+      delay: 500,
+      duration: "1300",
+      distance: "50px",
+      origin: "bottom",
+    });
   }, []);
   return (
     <main className="content-shop px-5 max-w-[1440px] mx-auto mb-28 text-sm mt-5">
@@ -58,63 +69,45 @@ export function ShopPage() {
           </div>
 
           <div className="border border-[#D9D9D9] rounded-2xl px-5 py-5 mb-6">
-            <div className="flex items-center gap-3 mb-5">
-              <Checkbox id="promotion" color={"blue"} />
-              <Label htmlFor="promotion" className="font-poppins">
+            <CheckboxGroup className="font-poppins" label="Filter devices">
+              <Checkbox className="mb-1 font-poppins" value="laptops">
                 Laptops
-              </Label>
-            </div>
-            <div className="flex items-center gap-3 mb-5">
-              <Checkbox id="promotion" color={"blue"} />
-              <Label htmlFor="promotion" className="font-poppins">
+              </Checkbox>
+              <Checkbox className="mb-1 font-poppins" value="speakers">
                 Speakers
-              </Label>
-            </div>
-            <div className="flex items-center gap-3 mb-5">
-              <Checkbox id="promotion" color={"blue"} />
-              <Label htmlFor="promotion" className="font-poppins">
+              </Checkbox>
+              <Checkbox className="mb-1 font-poppins" value="consoles">
                 Consoles
-              </Label>
-            </div>
-            <div className="flex items-center gap-3 mb-5">
-              <Checkbox id="promotion" color={"blue"} />
-              <Label htmlFor="promotion" className="font-poppins">
+              </Checkbox>
+              <Checkbox className="mb-1 font-poppins" value="smartwatches">
                 Smartwatches
-              </Label>
-            </div>
-            <div className="flex items-center gap-3 mb-5">
-              <Checkbox id="promotion" color={"blue"} />
-              <Label htmlFor="promotion" className="font-poppins">
+              </Checkbox>
+              <Checkbox className="mb-1 font-poppins" value="tablets">
                 Tablets
-              </Label>
-            </div>
-            <div className="flex items-center gap-3">
-              <Checkbox id="promotion" color={"blue"} />
-              <Label htmlFor="promotion" className="font-poppins">
+              </Checkbox>
+              <Checkbox className="font-poppins" value="smartphones">
                 Smartphones
-              </Label>
-            </div>
+              </Checkbox>
+            </CheckboxGroup>
           </div>
 
-          <Accordion>
-            <Accordion.Panel>
-              <Accordion.Title className="font-poppins">
-                Choose Price
-              </Accordion.Title>
-              <Accordion.Content>
-                <div>
-                  <RangeSlider id="default-range" />
-                </div>
-                <div className="flex justify-between">
-                  <div className="mt-1 block">
-                    <Label htmlFor="default-range" value="$50" />
-                  </div>
-                  <div className="mt-1 block">
-                    <Label htmlFor="default-range" value="$2000" />
-                  </div>
-                </div>
-              </Accordion.Content>
-            </Accordion.Panel>
+          <Accordion variant="bordered">
+            <AccordionItem
+              key="1"
+              aria-label="Accordion 1"
+              title="Choose price"
+              className="font-poppins text-[5px]"
+            >
+              <Slider
+                label="Price Range"
+                step={50}
+                minValue={0}
+                maxValue={1000}
+                defaultValue={[100, 500]}
+                formatOptions={{ style: "currency", currency: "USD" }}
+                className="max-w-md font-poppins"
+              />
+            </AccordionItem>
           </Accordion>
         </aside>
       </section>
@@ -123,13 +116,18 @@ export function ShopPage() {
         <div className="flex justify-between">
           <h1 className="font-poppins text-[#167DFF] text-[35px] font-light">
             The best of{" "}
-            <span className="border rounded-xl border-[#D9D9D9] px-1">
+            <span className="linear-title border rounded-xl border-[#D9D9D9] font-semibold px-1">
               techno
             </span>
           </h1>
           <div>
             <div className="flex items-center gap-9">
-              <button onClick={() => {setColor1('#0081FE'); setColor2('#323232');}}>
+              <button
+                onClick={() => {
+                  setColor1("#0081FE");
+                  setColor2("#323232");
+                }}
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="26"
@@ -150,7 +148,12 @@ export function ShopPage() {
                   </defs>
                 </svg>
               </button>
-              <button onClick={() => {setColor2('#0081FE'); setColor1('#323232');}}>
+              <button
+                onClick={() => {
+                  setColor2("#0081FE");
+                  setColor1("#323232");
+                }}
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="25"
@@ -168,8 +171,19 @@ export function ShopPage() {
           </div>
         </div>
 
-        <section>
-          <ShopItemList />
+        <section className="mt-[45px] mx-auto max-w-[1440px]">
+          <ShopItemList
+            name={"Sony WH-1000XM4"}
+            price={"$145.00"}
+            img={"imgs/home-item-1.png"}
+            category={"Headphones"}
+          />
+          <ShopItemList
+            name={"JBL Charge 5"}
+            price={"$200.00"}
+            img={"imgs/home-item-2.png"}
+            category={"Speakers"}
+          />
         </section>
 
         <section className="hidden sm:grid-cols-2 lg:grid-cols-4 max-w-[1440px] mx-auto gap-[16px] mt-6">

@@ -10,3 +10,10 @@
 .filter {
   grid-area: 1 / 1 / 3 / 2;
 }
+
+.linear-title {
+  background: linear-gradient(90deg, #167dff 0%, #4f9dff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

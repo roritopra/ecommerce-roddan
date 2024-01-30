@@ -1,30 +1,93 @@
 import "./HomePage.css";
 import { HomeHeader } from "./components/HomeHeader/HomeHeader";
 import { LogoCarousel } from "./components/LogoCarousel/LogoCarousel";
-import { Button } from "@material-tailwind/react";
+import { Button } from "@nextui-org/react";
 import { ProductItem } from "./components/ProductItem/ProductItem";
 import { useEffect } from "react";
 import { Footer } from "../../components/Footer/Footer";
 import ScrollReveal from "scrollreveal";
 
 export function HomePage() {
-
   useEffect(() => {
-    ScrollReveal().reveal('.january', { delay: 500, duration: '1300', distance: '50px', origin: 'bottom' })
-    ScrollReveal().reveal('.play', { delay: 700, duration: '1300', distance: '30px', origin: 'top' })
-    ScrollReveal().reveal('.january-title', { delay: 700, duration: '1300', distance: '30px', origin: 'bottom' })
-    ScrollReveal().reveal('.january-text', { delay: 900, duration: '1300', distance: '30px', origin: 'bottom' })
-    ScrollReveal().reveal('.january-button', { delay: 1500, duration: '1300', distance: '30px', origin: 'bottom' })
-    ScrollReveal().reveal('.box1', { delay: 500, duration: '1300', distance: '30px', origin: 'right' })
-    ScrollReveal().reveal('.box2', { delay: 700, duration: '1300', distance: '30px', origin: 'right' })
-    ScrollReveal().reveal('.box3', { delay: 900, duration: '1300', distance: '30px', origin: 'right' })
-    ScrollReveal().reveal('.box4', { delay: 1100, duration: '1300', distance: '30px', origin: 'right' })
-    ScrollReveal().reveal('.product-title', { delay: 500, duration: '1300', distance: '0px', origin: 'bottom' })
-    ScrollReveal().reveal('.products', { delay: 500, duration: '1600', distance: '30px', origin: 'bottom' })
-    ScrollReveal().reveal('.blog-title', { delay: 500, duration: '1600', distance: '30px', origin: 'bottom' })
-    ScrollReveal().reveal('.blog', { delay: 700, duration: '1600', distance: '30px', origin: 'bottom' })
-  }
-  , [])
+    ScrollReveal().reveal(".january", {
+      delay: 500,
+      duration: "1300",
+      distance: "50px",
+      origin: "bottom",
+    });
+    ScrollReveal().reveal(".play", {
+      delay: 700,
+      duration: "1300",
+      distance: "30px",
+      origin: "top",
+    });
+    ScrollReveal().reveal(".january-title", {
+      delay: 700,
+      duration: "1300",
+      distance: "30px",
+      origin: "bottom",
+    });
+    ScrollReveal().reveal(".january-text", {
+      delay: 900,
+      duration: "1300",
+      distance: "30px",
+      origin: "bottom",
+    });
+    ScrollReveal().reveal(".january-button", {
+      delay: 1500,
+      duration: "1300",
+      distance: "30px",
+      origin: "bottom",
+    });
+    ScrollReveal().reveal(".box1", {
+      delay: 500,
+      duration: "1300",
+      distance: "30px",
+      origin: "right",
+    });
+    ScrollReveal().reveal(".box2", {
+      delay: 700,
+      duration: "1300",
+      distance: "30px",
+      origin: "right",
+    });
+    ScrollReveal().reveal(".box3", {
+      delay: 900,
+      duration: "1300",
+      distance: "30px",
+      origin: "right",
+    });
+    ScrollReveal().reveal(".box4", {
+      delay: 1100,
+      duration: "1300",
+      distance: "30px",
+      origin: "right",
+    });
+    ScrollReveal().reveal(".product-title", {
+      delay: 500,
+      duration: "1300",
+      distance: "0px",
+      origin: "bottom",
+    });
+    ScrollReveal().reveal(".products", {
+      delay: 500,
+      duration: "1600",
+      distance: "30px",
+      origin: "bottom",
+    });
+    ScrollReveal().reveal(".blog-title", {
+      delay: 500,
+      duration: "1600",
+      distance: "30px",
+      origin: "bottom",
+    });
+    ScrollReveal().reveal(".blog", {
+      delay: 700,
+      duration: "1600",
+      distance: "30px",
+      origin: "bottom",
+    });
+  }, []);
 
   return (
     <>
@@ -39,7 +102,9 @@ export function HomePage() {
               src="/imgs/playstation.png"
               alt="playstation image"
             />
-            <h6 className="january-title z-10 text-white text-sm font-poppins">20% OFF</h6>
+            <h6 className="january-title z-10 text-white text-sm font-poppins">
+              20% OFF
+            </h6>
             <h2 className="january-title z-10 text-white font-coolvetica text-[110px] leading-[118px]">
               JANUARY<br></br>SALE
             </h2>
@@ -48,7 +113,9 @@ export function HomePage() {
             </p>
           </div>
           <div className="w-[35%] flex flex-col justify-center">
-            <h6 className="january-text text-white text-sm font-poppins mb-3">20% OFF</h6>
+            <h6 className="january-text text-white text-sm font-poppins mb-3">
+              20% OFF
+            </h6>
             <h4 className="january-text text-white text-4xl font-poppins font-bold mb-5">
               January Sale
             </h4>
@@ -57,11 +124,8 @@ export function HomePage() {
               accusantium doloremque
             </p>
             <div className="january-button">
-              <Button
-                className="rounded-full text-blue-400 font-poppins"
-                color="white"
-              >
-                Shop Now
+              <Button className="rounded-full bg-white text-[#0081FE] px-7 font-poppins">
+                Browse
               </Button>
             </div>
           </div>
@@ -208,7 +272,7 @@ export function HomePage() {
             <span className="text-[#19191B] font-poppins text-[20px] font-semibold">
               20 Best gadgets for 2023
             </span>
-            <p className="text-[#19191B] font-poppins text-[18px] mt-4">
+            <p className="text-[#19191B] font-poppins text-[18px] w-[85%] mt-4">
               Sed ut perspiciatis unde omnis iste laudantium, totam rem aperiam,
               eaque ipsa quae ab pariatur?
             </p>
@@ -226,7 +290,7 @@ export function HomePage() {
             <span className="text-[#19191B] font-poppins text-[20px] font-semibold">
               20 Best gadgets for 2023
             </span>
-            <p className="text-[#19191B] font-poppins text-[18px] mt-4">
+            <p className="text-[#19191B] font-poppins text-[18px] w-[85%] mt-4">
               Sed ut perspiciatis unde omnis iste laudantium, totam rem aperiam,
               eaque ipsa quae ab pariatur?
             </p>
@@ -244,7 +308,7 @@ export function HomePage() {
             <span className="text-[#19191B] font-poppins text-[20px] font-semibold">
               20 Best gadgets for 2023
             </span>
-            <p className="text-[#19191B] font-poppins text-[18px] mt-4">
+            <p className="text-[#19191B] font-poppins text-[18px] w-[85%] mt-4">
               Sed ut perspiciatis unde omnis iste laudantium, totam rem aperiam,
               eaque ipsa quae ab pariatur?
             </p>
