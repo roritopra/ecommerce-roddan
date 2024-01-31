@@ -32,10 +32,10 @@ export function ShopPage() {
       <section className="filter">
         <NavLink to={"/"}>
           <Button
-            variant="outlined"
+          variant="bordered"
             className="font-poppins font-normal rounded-full border-[#D9D9D9] mb-6"
           >
-            B<span className="lowercase">ack to home</span>
+            Back to home
           </Button>
         </NavLink>
 
