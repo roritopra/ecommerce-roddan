@@ -1,12 +1,10 @@
 import "./ItemDetailsPage.css";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { Button } from "@material-tailwind/react";
-import { Select } from "flowbite-react";
+import { Button } from "@nextui-org/react";
+import { Select, SelectItem } from "@nextui-org/react";
 
 export function ItemDetailsPage() {
-  
-
   const data = [
     {
       imgelink:
@@ -37,10 +35,10 @@ export function ItemDetailsPage() {
           <div className="flex justify-between">
             <NavLink to={"/"}>
               <Button
-                variant="outlined"
+                variant="bordered"
                 className="font-poppins font-normal rounded-full border-[#D9D9D9] mb-6"
               >
-                B<span className="lowercase">ack to home</span>
+                Back to home
               </Button>
             </NavLink>
             <div>
@@ -79,55 +77,57 @@ export function ItemDetailsPage() {
               $299
             </p>
             <Button
-              color="blue"
-              className="flex items-center gap-5 rounded-full font-poppins font-medium"
+              endContent={
+                <svg
+                  width="35"
+                  height="35"
+                  viewBox="0 0 35 35"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect width="35" height="35" rx="17.5" fill="white" />
+                  <path
+                    d="M13.4999 19.642L11.3413 24.5H15.75H21H24.5V22.75H14.0341L15.0062 20.5625H23.8179L26.4819 12.5716L24.8216 12.0181L22.5571 18.8125H15.0679L12.0054 9.625H8.75V11.375H10.7446L13.4999 19.642Z"
+                    fill="#3A3A3A"
+                  />
+                  <path
+                    d="M15.75 26.25C16.2332 26.25 16.625 25.8582 16.625 25.375C16.625 24.8918 16.2332 24.5 15.75 24.5C15.2668 24.5 14.875 24.8918 14.875 25.375C14.875 25.8582 15.2668 26.25 15.75 26.25Z"
+                    fill="#3A3A3A"
+                  />
+                  <path
+                    d="M21 26.25C21.4832 26.25 21.875 25.8582 21.875 25.375C21.875 24.8918 21.4832 24.5 21 24.5C20.5168 24.5 20.125 24.8918 20.125 25.375C20.125 25.8582 20.5168 26.25 21 26.25Z"
+                    fill="#3A3A3A"
+                  />
+                  <path
+                    d="M19.6875 15.75V13.125H22.3125V11.375H19.6875V8.75H17.9375V11.375H15.3125V13.125H17.9375V15.75H19.6875Z"
+                    fill="#3A3A3A"
+                  />
+                </svg>
+              }
+              className="flex items-center gap-5 rounded-full font-poppins font-medium py-7 bg-[#0081FE] text-white"
             >
               Add to Cart
-              <svg
-                width="35"
-                height="35"
-                viewBox="0 0 35 35"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect width="35" height="35" rx="17.5" fill="white" />
-                <path
-                  d="M13.4999 19.642L11.3413 24.5H15.75H21H24.5V22.75H14.0341L15.0062 20.5625H23.8179L26.4819 12.5716L24.8216 12.0181L22.5571 18.8125H15.0679L12.0054 9.625H8.75V11.375H10.7446L13.4999 19.642Z"
-                  fill="#3A3A3A"
-                />
-                <path
-                  d="M15.75 26.25C16.2332 26.25 16.625 25.8582 16.625 25.375C16.625 24.8918 16.2332 24.5 15.75 24.5C15.2668 24.5 14.875 24.8918 14.875 25.375C14.875 25.8582 15.2668 26.25 15.75 26.25Z"
-                  fill="#3A3A3A"
-                />
-                <path
-                  d="M21 26.25C21.4832 26.25 21.875 25.8582 21.875 25.375C21.875 24.8918 21.4832 24.5 21 24.5C20.5168 24.5 20.125 24.8918 20.125 25.375C20.125 25.8582 20.5168 26.25 21 26.25Z"
-                  fill="#3A3A3A"
-                />
-                <path
-                  d="M19.6875 15.75V13.125H22.3125V11.375H19.6875V8.75H17.9375V11.375H15.3125V13.125H17.9375V15.75H19.6875Z"
-                  fill="#3A3A3A"
-                />
-              </svg>
             </Button>
           </div>
 
-          <div className="flex justify-between gap-10 mt-20">
-            <div className="w-full">
-              <Select id="countries" className="font-poppins" required>
-                <option>Details...</option>
-                <option>Canada</option>
-                <option>France</option>
-                <option>Germany</option>
-              </Select>
-            </div>
-            <div className="w-full">
-              <Select id="countries" required>
-                <option>Delivery...</option>
-                <option>Canada</option>
-                <option>France</option>
-                <option>Germany</option>
-              </Select>
-            </div>
+          <div className="flex w-full flex-wrap md:flex-nowrap gap-4 mt-20">
+            <Select
+              label="Select an animal"
+              className="max-w-xs font-poppins font-light text-[18px] text-[#19191B] border border-[#D9D9D9] rounded-xl"
+            >
+              <SelectItem
+                value="hotel"
+                className="font-poppins text-[18px] text-[#19191B]"
+              >
+                Hotel
+              </SelectItem>
+            </Select>
+            <Select
+              label="Favorite Animal"
+              className="max-w-xs font-poppins font-light text-[18px] text-[#19191B] border border-[#D9D9D9] rounded-xl"
+            >
+              <SelectItem value="Hotel">Hotel</SelectItem>
+            </Select>
           </div>
         </div>
 
@@ -166,14 +166,14 @@ export function ItemDetailsPage() {
         </div>
         <div className="flex flex-col justify-center">
           <p className="font-poppins font-medium text-[30px] text-center text-[#19191B]">
-          Shop by top <br />
+            Shop by top <br />
             collections
           </p>
           <hr className="border-[#696969]" />
         </div>
         <div className="flex flex-col justify-center">
           <p className="font-poppins font-light text-[30px] text-center text-[#696969]">
-          Shop by pro starp <br />
+            Shop by pro starp <br />
             extra
           </p>
           <hr className="border-[#696969]" />

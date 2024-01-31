@@ -1,4 +1,3 @@
-import { Button } from "@material-tailwind/react";
 import "./ShopPage.css";
 import { NavLink } from "react-router-dom";
 import {
@@ -7,6 +6,7 @@ import {
   Checkbox,
   Accordion,
   AccordionItem,
+  Button,
 } from "@nextui-org/react";
 import { ShopItemGrid } from "./components/ShopItemGrid/ShopItemGrid";
 import { ShopItemList } from "./components/ShopItemList/ShopItemList";
@@ -16,6 +16,8 @@ import { useEffect, useState } from "react";
 export function ShopPage() {
   const [color1, setColor1] = useState("#323232");
   const [color2, setColor2] = useState("#0081FE");
+  const [isListVisible, setIsListVisible] = useState(true);
+  const [isGridVisible, setIsGridVisible] = useState(false);
 
   useEffect(() => {
     ScrollReveal().reveal(".january", {
@@ -109,6 +111,9 @@ export function ShopPage() {
               />
             </AccordionItem>
           </Accordion>
+            <Button className="w-full bg-[#0081FE] text-white font-poppins mt-7 text-[17px]">
+              Filter
+            </Button>
         </aside>
       </section>
 
@@ -126,6 +131,8 @@ export function ShopPage() {
                 onClick={() => {
                   setColor1("#0081FE");
                   setColor2("#323232");
+                  setIsListVisible(true);
+          setIsGridVisible(false);
                 }}
               >
                 <svg
@@ -152,6 +159,8 @@ export function ShopPage() {
                 onClick={() => {
                   setColor2("#0081FE");
                   setColor1("#323232");
+                  setIsListVisible(false);
+          setIsGridVisible(true);
                 }}
               >
                 <svg
@@ -171,7 +180,7 @@ export function ShopPage() {
           </div>
         </div>
 
-        <section className="mt-[45px] mx-auto max-w-[1440px]">
+        <section className={isListVisible ? "mt-[45px] mx-auto max-w-[1440px]" : "hidden"}>
           <ShopItemList
             name={"Sony WH-1000XM4"}
             price={"$145.00"}
@@ -186,7 +195,7 @@ export function ShopPage() {
           />
         </section>
 
-        <section className="hidden sm:grid-cols-2 lg:grid-cols-4 max-w-[1440px] mx-auto gap-[16px] mt-6">
+        <section className={isGridVisible ? "grid sm:grid-cols-2 lg:grid-cols-4 max-w-[1440px] mx-auto gap-[16px] mt-6" : "hidden"}>
           <ShopItemGrid
             image="imgs/home-item-1.png"
             name="Sony WH-1000XM4"
