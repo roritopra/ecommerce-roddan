@@ -16,8 +16,8 @@ import { useEffect, useState } from "react";
 export function ShopPage() {
   const [color1, setColor1] = useState("#323232");
   const [color2, setColor2] = useState("#0081FE");
-  const [isListVisible, setIsListVisible] = useState(true);
-  const [isGridVisible, setIsGridVisible] = useState(false);
+  const [isListVisible, setIsListVisible] = useState(false);
+  const [isGridVisible, setIsGridVisible] = useState(true);
 
   useEffect(() => {
     ScrollReveal().reveal(".january", {
