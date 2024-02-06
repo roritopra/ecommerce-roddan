@@ -11,7 +11,7 @@
     grid-area: 1 / 1 / 3 / 3;
     background: var(
       --Linear-black,
-      linear-gradient(99deg, #222 1.21%, #515151 99.17%, #222 99.17%)
+      linear-gradient(99deg, #222 1.21%, #515151 100%, #222 100%)
     );
   }
   
@@ -42,7 +42,7 @@
     grid-area: 4 / 1 / 5 / 3;
     background: var(
       --Linear-black,
-      linear-gradient(99deg, #222 1.21%, #515151 99.17%, #222 99.17%)
+      linear-gradient(99deg, #222 1.21%, #515151 100%, #222 100%)
     );
   }
   
