@@ -261,7 +261,7 @@ export function HomePage() {
       </section>
 
       <section className="blog grid sm:grid-cols-2 lg:grid-cols-3 px-5 max-w-[1440px] mx-auto gap-[16px]">
-        <div className="mt-5 mb-28 cursor-pointer">
+        <div className="mt-5 mb-28 cursor-pointer hover:filter hover:drop-shadow-2xl transition-all">
           <figure className="flex justify-center items-center">
             <img className="" src="imgs/new-1.png" alt="News home" />
           </figure>
@@ -279,7 +279,7 @@ export function HomePage() {
           </div>
         </div>
 
-        <div className="mt-5 mb-28 cursor-pointer">
+        <div className="mt-5 mb-28 cursor-pointer hover:filter hover:drop-shadow-2xl transition-all">
           <figure className="flex justify-center items-center">
             <img className="" src="imgs/new-2.png" alt="News home" />
           </figure>
@@ -297,7 +297,7 @@ export function HomePage() {
           </div>
         </div>
 
-        <div className="mt-5 mb-28 cursor-pointer">
+        <div className="mt-5 mb-28 cursor-pointer hover:filter hover:drop-shadow-2xl transition-all">
           <figure className="flex justify-center items-center">
             <img className="" src="imgs/new-3.png" alt="News home" />
           </figure>
