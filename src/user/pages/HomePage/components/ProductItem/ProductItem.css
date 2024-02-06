@@ -1,4 +1,32 @@
 .card {
-    background: var(--Items-shop, linear-gradient(180deg, #E3E3E3 0%, #F1F1F1 100%));
+  background: var(
+    --Items-shop,
+    linear-gradient(180deg, #e3e3e3 0%, #f1f1f1 100%)
+  );
 }
 
+.card {
+  transition: transform 0.3s ease;
+}
+
+.button-container {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0s 0.3s;
+}
+
+.item-container:hover .button-container {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease, visibility 0s 0s;
+}
+
+.item-container.hovered .button-container {
+  opacity: 1;
+  visibility: visible;
+}
+
+.button-container.visible {
+  opacity: 1;
+  visibility: visible;
+}
