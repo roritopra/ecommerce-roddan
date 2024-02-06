@@ -20,19 +20,25 @@ export function ShopPage() {
   const [isGridVisible, setIsGridVisible] = useState(true);
 
   useEffect(() => {
-    ScrollReveal().reveal(".january", {
+    ScrollReveal().reveal(".filter-section", {
       delay: 500,
       duration: "1300",
       distance: "50px",
-      origin: "bottom",
+      origin: "left",
+    });
+    ScrollReveal().reveal(".items", {
+      delay: 500,
+      duration: "1300",
+      distance: "50px",
+      origin: "right",
     });
   }, []);
   return (
     <main className="content-shop px-5 max-w-[1440px] mx-auto mb-28 text-sm mt-5">
-      <section className="filter">
+      <section className="filter-section">
         <NavLink to={"/"}>
           <Button
-          variant="bordered"
+            variant="bordered"
             className="font-poppins font-normal rounded-full border-[#D9D9D9] mb-6"
           >
             Back to home
@@ -109,11 +115,11 @@ export function ShopPage() {
                 formatOptions={{ style: "currency", currency: "USD" }}
                 className="max-w-md font-poppins"
               />
+              <Button className="w-full bg-[#0081FE] text-white font-poppins mt-7 mb-3 text-[17px]">
+                Filter
+              </Button>
             </AccordionItem>
           </Accordion>
-            <Button className="w-full bg-[#0081FE] text-white font-poppins mt-7 text-[17px]">
-              Filter
-            </Button>
         </aside>
       </section>
 
@@ -132,7 +138,7 @@ export function ShopPage() {
                   setColor1("#0081FE");
                   setColor2("#323232");
                   setIsListVisible(true);
-          setIsGridVisible(false);
+                  setIsGridVisible(false);
                 }}
               >
                 <svg
@@ -160,7 +166,7 @@ export function ShopPage() {
                   setColor2("#0081FE");
                   setColor1("#323232");
                   setIsListVisible(false);
-          setIsGridVisible(true);
+                  setIsGridVisible(true);
                 }}
               >
                 <svg
@@ -180,7 +186,11 @@ export function ShopPage() {
           </div>
         </div>
 
-        <section className={isListVisible ? "mt-[45px] mx-auto max-w-[1440px]" : "hidden"}>
+        <section
+          className={
+            isListVisible ? "mt-[45px] mx-auto max-w-[1440px]" : "hidden"
+          }
+        >
           <ShopItemList
             name={"Sony WH-1000XM4"}
             price={"$145.00"}
@@ -195,7 +205,13 @@ export function ShopPage() {
           />
         </section>
 
-        <section className={isGridVisible ? "grid sm:grid-cols-2 lg:grid-cols-4 max-w-[1440px] mx-auto gap-[16px] mt-6" : "hidden"}>
+        <section
+          className={
+            isGridVisible
+              ? "grid sm:grid-cols-2 lg:grid-cols-4 max-w-[1440px] mx-auto gap-[16px] mt-6"
+              : "hidden"
+          }
+        >
           <ShopItemGrid
             image="imgs/home-item-1.png"
             name="Sony WH-1000XM4"
