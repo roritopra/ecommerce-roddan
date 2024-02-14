@@ -3,6 +3,7 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Button } from "@nextui-org/react";
 import { Select, SelectItem } from "@nextui-org/react";
+import { CarouselProducts } from "./components/CarouselProducts";
 
 export function ItemDetailsPage() {
   const data = [
@@ -179,6 +180,9 @@ export function ItemDetailsPage() {
           <hr className="border-[#696969]" />
         </div>
       </section>
+      <div className="mt-28">
+        <CarouselProducts />
+      </div>
     </main>
   );
 }
