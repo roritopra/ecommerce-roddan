@@ -180,7 +180,30 @@ export function ItemDetailsPage() {
           <hr className="border-[#696969]" />
         </div>
       </section>
-      <div className="mt-28">
+
+      <div className="flex justify-between mt-28 mb-8">
+        <p className="bg-[#EBEBEB] font-poppins text-[#636367] rounded-full px-4 py-2 text-[14px]">
+          104 products
+        </p>
+        <div className="flex items-center gap-3 bg-[#0081FE] rounded-full px-4 py-2">
+          <p className="font-poppins text-white text-[14px]">Show less</p>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="17"
+            height="17"
+            viewBox="0 0 17 17"
+            fill="none"
+          >
+            <path
+              d="M15 17L16.5 15L3.5 2H14V0H0V14L2 14V4L15 17Z"
+              fill="white"
+            />
+          </svg>
+        </div>
+      </div>
+      <hr className="border-[#D1D1D1]"/>
+
+      <div className="mt-12">
         <CarouselProducts />
       </div>
     </main>
