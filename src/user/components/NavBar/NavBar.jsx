@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { Button } from "@material-tailwind/react";
+import { Button } from "@nextui-org/react";
 import { Outlet } from "react-router-dom";
 import { menuLinks } from "./menuLinks";
 
@@ -30,7 +30,7 @@ export function NavBar() {
             Login
           </NavLink>
           <NavLink to={"/register"}>
-            <Button color="blue">Register</Button>
+            <Button size="md" radius="sm" className="bg-[#0081FE] px-7 text-white font-poppins text-base">Register</Button>
           </NavLink>
         </nav>
       </header>

@@ -1,5 +1,5 @@
 import "./HomeHeader.css";
-import { Button } from "@material-tailwind/react";
+import  {Button } from "@nextui-org/react";
 import { NavLink } from "react-router-dom";
 import { useEffect } from "react";
 import { Carousel } from "@material-tailwind/react";
@@ -33,7 +33,7 @@ export function HomeHeader() {
             JANUARY OFFERS, WE START THE YEAR
           </h1>
           <NavLink to={"/shop"} className="button">
-            <Button color="blue" size="lg" className="rounded-full px-16 mt-10 font-poppins">
+            <Button className="rounded-full px-[50px] py-6 mt-10 font-poppins text-white text-xl bg-[#0081FE]">
               WATCH THE OFFERS!
             </Button>
           </NavLink>
@@ -141,7 +141,7 @@ export function HomeHeader() {
             Assistant
           </span>
           <NavLink to={"/shop"}>
-            <Button color="white" className="rounded-full text-blue-500 mt-4 font-poppins">
+            <Button className="rounded-full text-[#0081FE] bg-white px-7 mt-4 font-poppins">
               Browse
             </Button>
           </NavLink>
@@ -163,7 +163,7 @@ export function HomeHeader() {
             Reality
           </span>
           <NavLink to={"/shop"}>
-            <Button color="white" className="rounded-full text-green-500 mt-4 font-poppins">
+            <Button color="white" className="rounded-full bg-white px-7 text-green-500 mt-4 font-poppins">
               Browse
             </Button>
           </NavLink>
@@ -184,7 +184,7 @@ export function HomeHeader() {
             Smartwatches
           </span>
           <NavLink to={"/shop"}>
-            <Button color="white" className="rounded-full text-yellow-300 mt-4 font-poppins">
+            <Button color="white" className="rounded-full bg-white px-7 text-yellow-300 mt-4 font-poppins">
               Browse
             </Button>
           </NavLink>
@@ -205,7 +205,7 @@ export function HomeHeader() {
             Laptops
           </span>
           <NavLink to={"/shop"}>
-            <Button color="blue" className="rounded-full mt-4 font-poppins">
+            <Button color="blue" className="rounded-full text-white bg-[#0081FE] px-7 mt-4 font-poppins">
               Browse
             </Button>
           </NavLink>
@@ -226,7 +226,7 @@ export function HomeHeader() {
             Definition
           </span>
           <NavLink to={"/shop"}>
-            <Button color="blue" className="rounded-full mt-4 font-poppins">
+            <Button color="blue" className="rounded-full text-white bg-[#0081FE] px-7 mt-4 font-poppins">
               Browse
             </Button>
           </NavLink>
