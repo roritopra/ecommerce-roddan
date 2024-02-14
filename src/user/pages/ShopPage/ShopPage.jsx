@@ -132,7 +132,7 @@ export function ShopPage() {
             </span>
           </h1>
           <div>
-            <div className="flex items-center gap-9">
+            <div className="flex items-center flex-row-reverse gap-9">
               <button
                 onClick={() => {
                   setColor1("#0081FE");
@@ -208,7 +208,7 @@ export function ShopPage() {
         <section
           className={
             isGridVisible
-              ? "grid sm:grid-cols-2 lg:grid-cols-4 max-w-[1440px] mx-auto gap-[16px] mt-6"
+              ? "grid sm:grid-cols-2 lg:grid-cols-3 max-w-[1440px] mx-auto gap-[30px] mt-6"
               : "hidden"
           }
         >

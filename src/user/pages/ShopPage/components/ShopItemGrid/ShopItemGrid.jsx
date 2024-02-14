@@ -9,7 +9,7 @@ export function ShopItemGrid({ image, name, price }) {
   return (
     <>
       <div
-        className={`item-container mt-5 mb-28 cursor-pointer hover:filter hover:drop-shadow-2xl transition-all ${
+        className={`item-container mt-5 mb-16 cursor-pointer hover:filter hover:drop-shadow-2xl transition-all ${
           hovered ? "hovered" : ""
         }`}
         onMouseEnter={() => setHovered(true)}
@@ -17,7 +17,7 @@ export function ShopItemGrid({ image, name, price }) {
       >
         <NavLink to={"/shop"}>
           <figure className="card flex justify-center h-full items-center rounded-[35px] max-w-[350px] relative">
-            <img className="px-8" src={image} alt="Items home" />
+            <img className="" src={image} alt="Items home" />
           </figure>
           <div className="pt-5">
             <p className="text-[#19191B] font-poppins text-[16px] mb-3">{name}</p>
