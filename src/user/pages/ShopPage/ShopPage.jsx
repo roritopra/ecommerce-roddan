@@ -8,8 +8,8 @@ import {
   AccordionItem,
   Button,
 } from "@nextui-org/react";
-import { ShopItemGrid } from "./components/ShopItemGrid/ShopItemGrid";
-import { ShopItemList } from "./components/ShopItemList/ShopItemList";
+import { ShopItemGrid } from "../../components/ShopItemGrid/ShopItemGrid";
+import { ShopItemList } from "../../components/ShopItemList/ShopItemList";
 import ScrollReveal from "scrollreveal";
 import { useEffect, useState } from "react";
 import { Footer } from "../../components/Footer/Footer";

@@ -2,8 +2,8 @@ import "./ItemDetailsPage.css";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Button } from "@nextui-org/react";
-import { Select, SelectItem } from "@nextui-org/react";
-import { CarouselProducts } from "./components/CarouselProducts";
+import { Select, SelectItem, Image } from "@nextui-org/react";
+import { CarouselProducts } from "../../components/CarouselProduct/CarouselProducts";
 import { Footer } from "../../components/Footer/Footer";
 
 export function ItemDetailsPage() {
@@ -139,7 +139,8 @@ export function ItemDetailsPage() {
           <div className="w-1/2">
             <div className="grid gap-4">
               <div>
-                <img
+                <Image
+                  isZoomed
                   className="h-auto w-full max-w-full rounded-[20px] object-cover object-center md:h-[480px]"
                   src={active}
                   alt=""

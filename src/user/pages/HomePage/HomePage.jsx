@@ -1,10 +1,10 @@
 import "./HomePage.css";
-import { HomeHeader } from "./components/HomeHeader/HomeHeader";
-import { LogoCarousel } from "./components/LogoCarousel/LogoCarousel";
-import { Button } from "@nextui-org/react";
-import { ProductItem } from "./components/ProductItem/ProductItem";
-import { useEffect } from "react";
+import { HomeHeader } from "../../components/HomeHeader/HomeHeader";
+import { LogoCarousel } from "../../components/LogoCarousel/LogoCarousel";
+import { ProductItem } from "../../components/ProductItem/ProductItem";
 import { Footer } from "../../components/Footer/Footer";
+import { Button } from "@nextui-org/react";
+import { useEffect } from "react";
 import ScrollReveal from "scrollreveal";
 
 export function HomePage() {
