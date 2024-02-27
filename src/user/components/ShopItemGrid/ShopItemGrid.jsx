@@ -23,7 +23,7 @@ export function ShopItemGrid({ image, name, price }) {
             <p className="text-[#19191B] font-poppins text-[16px] mb-3">{name}</p>
             <div className="relative flex justify-between items-center">
               <span className="text-[#19191B] font-poppins text-[18px] font-semibold">
-                {price}
+                ${price}
               </span>
               <div
                 className={`button-container absolute bottom-0 right-0 text-center ${

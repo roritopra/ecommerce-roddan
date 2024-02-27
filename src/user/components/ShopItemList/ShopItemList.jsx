@@ -25,7 +25,7 @@ export function ShopItemList({ name, price, img, category}) {
         </div>
 
         <h6 className="text-[#19191B] font-poppins font-semibold text-[25px] mb-3">
-            {price}
+            ${price}
         </h6>
 
         <div className="flex items-center gap-5">
