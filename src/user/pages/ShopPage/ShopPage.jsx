@@ -218,6 +218,7 @@ export function ShopPage() {
                   price={product.price}
                   img={product.cover}
                   category={product.category}
+                  link={`/shop/${product.key}`}
                 />
               ))
             }
@@ -237,6 +238,7 @@ export function ShopPage() {
                   name={product.title}
                   price={product.price}
                   image={product.cover}
+                  link={`/shop/${product.key}`}
                 />
               ))
             }

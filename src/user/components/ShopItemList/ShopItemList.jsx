@@ -1,17 +1,14 @@
 import "./ShopItemList.css";
 import { Button } from "@nextui-org/react";
+import { Link } from "react-router-dom";
 
-export function ShopItemList({ name, price, img, category}) {
+export function ShopItemList({ name, price, img, category, link }) {
   return (
     <>
-      <div className="flex justify-between items-center mt-10 mb-9 cursor-pointer">
+      <div className="flex justify-between items-center mt-10 mb-9">
         <div className="flex items-center gap-6">
           <figure className="card flex justify-center items-center rounded-[35px] w-[175px] max-w-[180px] h-[155px] max-h-[160px] px-2">
-            <img
-              className=""
-              src={img}
-              alt="Items home"
-            />
+            <img className="" src={img} alt="Items home" />
           </figure>
 
           <div>
@@ -25,11 +22,11 @@ export function ShopItemList({ name, price, img, category}) {
         </div>
 
         <h6 className="text-[#19191B] font-poppins font-semibold text-[25px] mb-3">
-            ${price}
+          ${price}
         </h6>
 
         <div className="flex items-center gap-5">
-          <Button isIconOnly  className="rounded-full bg-[#FDC62E]">
+          <Button isIconOnly className="rounded-full bg-[#FDC62E]">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -55,14 +52,14 @@ export function ShopItemList({ name, price, img, category}) {
               />
             </svg>
           </Button>
-          <Button className="rounded-full font-poppins bg-[#222222] text-white text-[14px] font-medium px-8 py-3">
-            Details
-          </Button>
+          <Link to={link}>
+            <Button className="rounded-full font-poppins bg-[#222222] text-white text-[14px] font-medium px-8 py-3">
+              Details
+            </Button>
+          </Link>
         </div>
       </div>
       <hr />
     </>
   );
 }
-
-
