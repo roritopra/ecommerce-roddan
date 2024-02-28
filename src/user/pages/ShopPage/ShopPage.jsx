@@ -8,17 +8,34 @@ import {
   AccordionItem,
   Button,
 } from "@nextui-org/react";
-import { ShopItemGrid } from "./components/ShopItemGrid/ShopItemGrid";
-import { ShopItemList } from "./components/ShopItemList/ShopItemList";
+import { ShopItemGrid } from "../../components/ShopItemGrid/ShopItemGrid";
+import { ShopItemList } from "../../components/ShopItemList/ShopItemList";
 import ScrollReveal from "scrollreveal";
 import { useEffect, useState } from "react";
 import { Footer } from "../../components/Footer/Footer";
+import { collection, getDocs } from "firebase/firestore";
+import { database } from "../../../firebase/firebase";
 
 export function ShopPage() {
+  const [products, setProducts] = useState([]);
   const [color1, setColor1] = useState("#323232");
   const [color2, setColor2] = useState("#0081FE");
   const [isListVisible, setIsListVisible] = useState(false);
   const [isGridVisible, setIsGridVisible] = useState(true);
+
+  useEffect(() => {
+    (async () => {
+      const productsCollection = collection(database, "products");
+      const productsSnapshot = await getDocs(productsCollection);
+      const productsList = [];
+      productsSnapshot.forEach((project) => {
+        productsList.push({ key: project.id, ...project.data() });
+      });
+      setProducts(productsList);
+    })();
+  }, []);
+
+  console.log(products);
 
   useEffect(() => {
     ScrollReveal().reveal(".filter-section", {
@@ -193,18 +210,18 @@ export function ShopPage() {
               isListVisible ? "mt-[45px] mx-auto max-w-[1440px]" : "hidden"
             }
           >
-            <ShopItemList
-              name={"Sony WH-1000XM4"}
-              price={"$145.00"}
-              img={"imgs/home-item-1.png"}
-              category={"Headphones"}
-            />
-            <ShopItemList
-              name={"JBL Charge 5"}
-              price={"$200.00"}
-              img={"imgs/home-item-2.png"}
-              category={"Speakers"}
-            />
+            {
+              products.map((product) => (
+                <ShopItemList
+                  key={product.key}
+                  name={product.title}
+                  price={product.price}
+                  img={product.cover}
+                  category={product.category}
+                  link={`/shop/${product.key}`}
+                />
+              ))
+            }
           </section>
 
           <section
@@ -214,66 +231,17 @@ export function ShopPage() {
                 : "hidden"
             }
           >
-            <ShopItemGrid
-              image="imgs/home-item-1.png"
-              name="Sony WH-1000XM4"
-              price="$299"
-            />
-            <ShopItemGrid
-              image="imgs/home-item-2.png"
-              name="JBL Charge 5"
-              price="$99"
-            />
-            <ShopItemGrid
-              image="imgs/home-item-3.png"
-              name="Oculus Quest"
-              price="$599"
-            />
-            <ShopItemGrid
-              image="imgs/home-item-4.png"
-              name="Huawei MatePad 2022"
-              price="$499"
-            />
-            <ShopItemGrid
-              image="imgs/home-item-5.png"
-              name="OPPO Watch"
-              price="$199"
-            />
-            <ShopItemGrid
-              image="imgs/home-item-6.png"
-              name="Samsung Galaxy Tab s8"
-              price="$1199"
-            />
-            <ShopItemGrid
-              image="imgs/home-item-7.png"
-              name="Lenovo Thinkpad X1"
-              price="$1499"
-            />
-            <ShopItemGrid
-              image="imgs/home-item-8.png"
-              name="POCO X5 Pro 5G"
-              price="$499"
-            />
-            <ShopItemGrid
-              image="imgs/home-item-1.png"
-              name="Sony WH-1000XM4"
-              price="$299"
-            />
-            <ShopItemGrid
-              image="imgs/home-item-2.png"
-              name="JBL Charge 5"
-              price="$99"
-            />
-            <ShopItemGrid
-              image="imgs/home-item-3.png"
-              name="Oculus Quest"
-              price="$599"
-            />
-            <ShopItemGrid
-              image="imgs/home-item-4.png"
-              name="Huawei MatePad 2022"
-              price="$499"
-            />
+            {
+              products.map((product) => (
+                <ShopItemGrid
+                  key={product.key}
+                  name={product.title}
+                  price={product.price}
+                  image={product.cover}
+                  link={`/shop/${product.key}`}
+                />
+              ))
+            }
           </section>
         </section>
       </main>
