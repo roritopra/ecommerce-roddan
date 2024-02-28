@@ -5,12 +5,13 @@ import { Button, Spinner } from "@nextui-org/react";
 import { Select, SelectItem, Image } from "@nextui-org/react";
 import { CarouselProducts } from "../../components/CarouselProduct/CarouselProducts";
 import { Footer } from "../../components/Footer/Footer";
-import { useParams } from 'react-router-dom';
-import { doc, getDoc } from "firebase/firestore"; 
+import { useParams } from "react-router-dom";
+import { doc, getDoc } from "firebase/firestore";
 import { database } from "../../../firebase/firebase";
 
 export function ItemDetailsPage() {
   const { productId } = useParams();
+  const [count, setCount] = useState(1);
   const [product, setProduct] = useState(null);
   const data = [
     {
@@ -35,14 +36,24 @@ export function ItemDetailsPage() {
     "https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
   );
 
+  const decreaseCount = () => {
+    if (count > 1) {
+      setCount(count - 1);
+    }
+  };
+
+  const increaseCount = () => {
+    setCount(count + 1);
+  };
+
   useEffect(() => {
     const fetchProduct = async () => {
-      const productDoc = doc(database, 'products', productId);
+      const productDoc = doc(database, "products", productId);
       const productSnapshot = await getDoc(productDoc);
       if (productSnapshot.exists()) {
         setProduct(productSnapshot.data());
       } else {
-        console.log('No such product!');
+        console.log("No such product!");
       }
     };
 
@@ -50,7 +61,11 @@ export function ItemDetailsPage() {
   }, [productId]);
 
   if (!product) {
-    return <div className="grid h-screen place-items-center"><Spinner size="lg" /></div>;
+    return (
+      <div className="grid h-screen place-items-center">
+        <Spinner size="lg" />
+      </div>
+    );
   }
 
   return (
@@ -75,25 +90,40 @@ export function ItemDetailsPage() {
             <h2 className="font-poppins text-[#19191B] font-semibold text-[45px] mt-3 mb-5 w-[80%]">
               {product.title}
             </h2>
-            <h6 className="font-poppins text-[#19191B] font-medium text-[18px] mb-5">
+            <h6 className="font-poppins text-[#19191B] font-semibold text-[18px] mb-5">
               Category:{" "}
               <span className="font-poppins text-[#0081FE] text-[18px]">
                 {product.category}
               </span>
             </h6>
-            <p className="font-poppins text-[#3F3F40] text-[16px] w-[80%] mb-8">
+            <p className="font-poppins text-[#3F3F40] text-[16px] w-[80%] mb-5">
               {product.description}
             </p>
+
+            <div className="mb-10">
+              <p className="font-poppins font-semibold text-[18px] text-[#19191B] mt-5 mb-2">
+                Characteristics
+              </p>
+                  <p className="font-poppins text-[#3F3F40] font-normal">
+                    <span className="text-[#19191B] font-semibold">Size:</span> {product.length} x {product.width} x {product.breadth} cm
+                  </p>
+            </div>
 
             <div className="flex gap-4 items-center">
               <p className="font-poppins text-[#19191B] text-[18px]">
                 Quantity
               </p>
-              <button className="rounded-full bg-white border border-[#D9D9D9] px-3 font-poppins text-[25px] text-[#19191B] focus:border focus:border-[#0081FE] focus:bg-[#0081FE] focus:text-white">
+              <button
+                onClick={decreaseCount}
+                className="rounded-full bg-white border border-[#D9D9D9] px-3 font-poppins text-[25px] text-[#19191B] focus:border focus:border-[#0081FE] focus:bg-[#0081FE] focus:text-white"
+              >
                 -
               </button>
-              <p>1</p>
-              <button className="rounded-full bg-white border border-[#D9D9D9] px-3 font-poppins text-[25px] text-[#19191B] focus:border focus:border-[#0081FE] focus:bg-[#0081FE] focus:text-white">
+              <p>{count}</p>
+              <button
+                onClick={increaseCount}
+                className="rounded-full bg-white border border-[#D9D9D9] px-3 font-poppins text-[25px] text-[#19191B] focus:border focus:border-[#0081FE] focus:bg-[#0081FE] focus:text-white"
+              >
                 +
               </button>
             </div>
@@ -136,22 +166,16 @@ export function ItemDetailsPage() {
               </Button>
             </div>
 
-            <div className="flex w-full flex-wrap md:flex-nowrap gap-4 mt-20">
+            <div className="flex w-full flex-wrap md:flex-nowrap gap-4 mt-10">
               <Select
                 label="Select an color"
                 className="max-w-xs font-poppins font-light text-[18px] text-[#19191B] border border-[#D9D9D9] rounded-xl"
               >
-                {
-                  product.colors.map((color, index) => (
-                    <SelectItem key={index} value={color}>{color}</SelectItem>
-                  ))
-                }
-              </Select>
-              <Select
-                label="Favorite Animal"
-                className="max-w-xs font-poppins font-light text-[18px] text-[#19191B] border border-[#D9D9D9] rounded-xl"
-              >
-                <SelectItem value="Hotel">Hotel</SelectItem>
+                {product.colors.map((color, index) => (
+                  <SelectItem key={index} value={color}>
+                    {color}
+                  </SelectItem>
+                ))}
               </Select>
             </div>
           </div>
