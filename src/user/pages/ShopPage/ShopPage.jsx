@@ -23,6 +23,7 @@ export function ShopPage() {
   const [isGridVisible, setIsGridVisible] = useState(true);
   const [filteredProducts, setfilteredProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [priceRange, setPriceRange] = useState([0, 1000]); // Adjust the range as needed
   const [filters, setFilters] = useState({
     smartwatches: false,
     tablets: false,
@@ -47,10 +48,12 @@ export function ShopPage() {
 
   useEffect(() => {
     applyFilters();
-  }, [filters, searchTerm]);
+  }, [filters, searchTerm, priceRange]);
 
   const applyFilters = () => {
     let filtered = products;
+
+    filtered = filtered.filter(product => product.price >= priceRange[0] && product.price <= priceRange[1]);
 
     if (filters.laptops) {
       filtered = filtered.filter((product) => product.category.includes("laptops"));
@@ -244,7 +247,9 @@ export function ShopPage() {
                   label="Price Range"
                   step={50}
                   minValue={0}
-                  maxValue={1000}
+                  maxValue={3000}
+                  value={priceRange}
+                  onChange={(value) => setPriceRange(value)}
                   defaultValue={[100, 500]}
                   formatOptions={{ style: "currency", currency: "USD" }}
                   className="max-w-md font-poppins"
