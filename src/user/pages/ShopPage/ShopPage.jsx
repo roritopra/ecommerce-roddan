@@ -127,7 +127,7 @@ export function ShopPage() {
           <NavLink to={"/"}>
             <Button
               variant="bordered"
-              className="font-poppins font-normal rounded-full border-[#D9D9D9] mb-6"
+              className="font-satoshi font-normal rounded-full border-[#D9D9D9] mb-6"
             >
               Back to home
             </Button>
@@ -140,7 +140,7 @@ export function ShopPage() {
                 <input
                   type="search"
                   id="default-search"
-                  className="block w-full p-4 ps-5 text-sm text-gray-900 border border-[#E0E0E0] rounded-full placeholder:font-poppins placeholder:text-[#757575] bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
+                  className="block w-full p-4 ps-5 text-sm text-gray-900 border border-[#E0E0E0] rounded-full placeholder:font-satoshi placeholder:text-[#757575] bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
                   placeholder="Search..."
                   value={searchTerm}
                   onChange={handleSearch}
@@ -170,11 +170,11 @@ export function ShopPage() {
             </div>
 
             <div className="border flex flex-col gap-2 border-[#D9D9D9] rounded-2xl px-5 py-5 mb-6">
-              <h2 className="font-poppins text-[#757575] text-[17px] font-semibold mb-3">
+              <h2 className="font-satoshi text-[#757575] text-[17px] font-semibold mb-3">
                 Filter devices
               </h2>
               <Checkbox
-                className="mb-1 font-poppins"
+                className="mb-1 font-satoshi"
                 isSelected={filters.laptops}
                 onChange={() =>
                   setFilters((prevFilters) => ({
@@ -187,7 +187,7 @@ export function ShopPage() {
                 Laptops
               </Checkbox>
               <Checkbox
-                className="mb-1 font-poppins"
+                className="mb-1 font-satoshi"
                 isSelected={filters.speakers}
                 onChange={() =>
                   setFilters((prevFilters) => ({
@@ -200,7 +200,7 @@ export function ShopPage() {
                 Speakers
               </Checkbox>
               <Checkbox
-                className="mb-1 font-poppins"
+                className="mb-1 font-satoshi"
                 isSelected={filters.consoles}
                 onChange={() =>
                   setFilters((prevFilters) => ({
@@ -213,7 +213,7 @@ export function ShopPage() {
                 Consoles
               </Checkbox>
               <Checkbox
-                className="mb-1 font-poppins"
+                className="mb-1 font-satoshi"
                 isSelected={filters.smartwatches}
                 onChange={() =>
                   setFilters((prevFilters) => ({
@@ -226,7 +226,7 @@ export function ShopPage() {
                 Smartwatches
               </Checkbox>
               <Checkbox
-                className="mb-1 font-poppins"
+                className="mb-1 font-satoshi"
                 isSelected={filters.tablets}
                 onChange={() =>
                   setFilters((prevFilters) => ({
@@ -239,7 +239,7 @@ export function ShopPage() {
                 Tablets
               </Checkbox>
               <Checkbox
-                className="font-poppins"
+                className="font-satoshi"
                 isSelected={filters.smartphones}
                 onChange={() =>
                   setFilters((prevFilters) => ({
@@ -258,7 +258,7 @@ export function ShopPage() {
                 key="1"
                 aria-label="Accordion 1"
                 title="Choose price"
-                className="font-poppins text-[5px]"
+                className="font-satoshi text-[5px]"
               >
                 <Slider
                   label="Price Range"
@@ -269,10 +269,10 @@ export function ShopPage() {
                   onChange={(value) => setPriceRange(value)}
                   defaultValue={[100, 500]}
                   formatOptions={{ style: "currency", currency: "USD" }}
-                  className="max-w-md font-poppins"
+                  className="max-w-md font-satoshi"
                 />
                 <Button
-                  className="w-full bg-[#0081FE] text-white font-poppins mt-7 mb-3 text-[17px]"
+                  className="w-full bg-[#0081FE] text-white font-satoshi mt-7 mb-3 text-[17px]"
                   onClick={handleFilterButtonClick}
                 >
                   Filter
@@ -284,7 +284,7 @@ export function ShopPage() {
 
         <section className="items">
           <div className="flex justify-between">
-            <h1 className="font-poppins text-[#167DFF] text-[35px] font-light">
+            <h1 className="font-satoshi text-[#167DFF] text-[35px] font-light">
               The best of{" "}
               <span className="linear-title border rounded-xl border-[#D9D9D9] font-semibold px-1">
                 techno
@@ -355,7 +355,7 @@ export function ShopPage() {
                 key={product.key}
                 name={product.title}
                 price={product.price}
-                img={product.cover}
+                img={product.images[0]}
                 category={product.category}
                 link={`/shop/${product.key}`}
               />
@@ -374,7 +374,7 @@ export function ShopPage() {
                 key={product.key}
                 name={product.title}
                 price={product.price}
-                image={product.cover}
+                image={product.images[0]}
                 link={`/shop/${product.key}`}
               />
             ))}

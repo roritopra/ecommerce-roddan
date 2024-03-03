@@ -12,16 +12,16 @@ export function ShopItemList({ name, price, img, category, link }) {
           </figure>
 
           <div>
-            <h2 className="text-[#19191B] font-poppins text-[20px] mb-3">
+            <h2 className="text-[#19191B] font-satoshi text-[20px] mb-3">
               {name}
             </h2>
-            <p className="text-[#8D8D8D] font-poppins text-[18px]">
+            <p className="text-[#8D8D8D] font-satoshi text-[18px]">
               {category}
             </p>
           </div>
         </div>
 
-        <h6 className="text-[#19191B] font-poppins font-semibold text-[25px] mb-3">
+        <h6 className="text-[#19191B] font-satoshi font-semibold text-[25px] mb-3">
           ${price}
         </h6>
 
@@ -53,7 +53,7 @@ export function ShopItemList({ name, price, img, category, link }) {
             </svg>
           </Button>
           <Link to={link}>
-            <Button className="rounded-full font-poppins bg-[#222222] text-white text-[14px] font-medium px-8 py-3">
+            <Button className="rounded-full font-satoshi bg-[#222222] text-white text-[14px] font-medium px-8 py-3">
               Details
             </Button>
           </Link>

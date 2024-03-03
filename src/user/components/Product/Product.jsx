@@ -8,10 +8,10 @@ export function Product(props) {
           <img src={props.url} alt="Product" />
         </figure>
         <div className="flex justify-between mt-5 mr-8">
-          <h1 className="text-[#19191B] font-poppins text-[16px]">
+          <h1 className="text-[#19191B] font-satoshi text-[16px]">
             {props.name}
           </h1>
-          <p className="text-[#19191B] font-poppins text-[18px] font-semibold">
+          <p className="text-[#19191B] font-satoshi text-[18px] font-semibold">
             {props.price}
           </p>
         </div>

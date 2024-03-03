@@ -19,9 +19,9 @@ export function ShopItemGrid({ image, name, price, link }) {
             <img className="" src={image} alt="Product" />
           </figure>
           <div className="pt-5">
-            <p className="text-[#19191B] font-poppins text-[16px] mb-3">{name}</p>
+            <p className="text-[#19191B] font-satoshi text-[16px] mb-3">{name}</p>
             <div className="relative flex justify-between items-center">
-              <span className="text-[#19191B] font-poppins text-[18px] font-semibold">
+              <span className="text-[#19191B] font-satoshi text-[18px] font-semibold">
                 ${price}
               </span>
               <div
@@ -32,7 +32,7 @@ export function ShopItemGrid({ image, name, price, link }) {
                 <Link to={link}>
                   <Button
                     size="sm"
-                    className="bg-[#0081FE] text-[11px] font-poppins text-white rounded-full px-2 transition-all"
+                    className="bg-[#0081FE] text-[11px] font-satoshi text-white rounded-full px-2 transition-all"
                   >
                     View more
                   </Button>
