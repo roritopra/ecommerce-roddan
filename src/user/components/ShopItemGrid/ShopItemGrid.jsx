@@ -2,13 +2,15 @@ import './ShopItemGrid.css'
 import { Link } from 'react-router-dom'
 import { Button } from '@nextui-org/react'
 import { useState } from 'react'
+import PropTypes from "prop-types";
 
-export function ShopItemGrid({ image, name, price, link }) {
+export function ShopItemGrid({ image, name, price, link, ...props }) {
   const [hovered, setHovered] = useState(false);
 
   return (
     <>
       <div
+      {...props}
         className={`item-container mt-5 mb-16 hover:filter hover:drop-shadow-2xl transition-all ${
           hovered ? "hovered" : ""
         }`}
@@ -16,7 +18,7 @@ export function ShopItemGrid({ image, name, price, link }) {
         onMouseLeave={() => setHovered(false)}
       >
           <figure className="card flex justify-center h-full items-center rounded-[35px] max-w-[350px] relative">
-            <img className="" src={image} alt="Product" />
+            <img className="w-[100px]" src={image} alt="Product" />
           </figure>
           <div className="pt-5">
             <p className="text-[#19191B] font-satoshi text-[16px] mb-3">{name}</p>
@@ -44,4 +46,11 @@ export function ShopItemGrid({ image, name, price, link }) {
     </>
   )
 }
+
+ShopItemGrid.propTypes = {
+  image: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  link: PropTypes.string.isRequired,
+};
 
