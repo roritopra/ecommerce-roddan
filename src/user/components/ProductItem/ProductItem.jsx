@@ -20,9 +20,9 @@ export function ProductItem({ image, name, price }) {
             <img className="" src={image} alt="Items home" />
           </figure>
           <div className="pt-5">
-            <p className="text-[#19191B] font-poppins text-[18px]">{name}</p>
+            <p className="text-[#19191B] font-satoshi text-[18px]">{name}</p>
             <div className="relative flex justify-between items-center">
-              <span className="text-[#19191B] font-poppins text-[20px] font-semibold">
+              <span className="text-[#19191B] font-satoshi text-[20px] font-semibold">
                 {price}
               </span>
               <div
@@ -33,7 +33,7 @@ export function ProductItem({ image, name, price }) {
                 <NavLink to={"/shop"}>
                   <Button
                     size="sm"
-                    className="bg-[#0081FE] text-[14px] font-poppins text-white rounded-full px-4 transition-all"
+                    className="bg-[#0081FE] text-[14px] font-satoshi text-white rounded-full px-4 transition-all"
                   >
                     View more
                   </Button>

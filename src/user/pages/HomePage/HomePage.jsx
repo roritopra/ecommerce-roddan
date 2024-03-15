@@ -102,29 +102,29 @@ export function HomePage() {
               src="/imgs/playstation.png"
               alt="playstation image"
             />
-            <h6 className="january-title z-10 text-white text-sm font-poppins">
+            <h6 className="january-title z-10 text-white text-sm font-satoshi">
               20% OFF
             </h6>
             <h2 className="january-title z-10 text-white font-coolvetica text-[110px] leading-[118px]">
               JANUARY<br></br>SALE
             </h2>
-            <p className="january-title z-10 text-white text-sm font-poppins">
+            <p className="january-title z-10 text-white text-sm font-satoshi">
               05 January to 29 January
             </p>
           </div>
           <div className="w-[35%] flex flex-col justify-center">
-            <h6 className="january-text text-white text-sm font-poppins mb-3">
+            <h6 className="january-text text-white text-sm font-satoshi mb-3">
               20% OFF
             </h6>
-            <h4 className="january-text text-white text-4xl font-poppins font-bold mb-5">
+            <h4 className="january-text text-white text-4xl font-satoshi font-bold mb-5">
               January Sale
             </h4>
-            <p className="january-text text-[#EBEBEB] text-[15px] font-poppins font-light mb-6">
+            <p className="january-text text-[#EBEBEB] text-[15px] font-satoshi font-light mb-6">
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
               accusantium doloremque
             </p>
             <div className="january-button">
-              <Button className="rounded-full bg-white text-[#0081FE] px-7 font-poppins">
+              <Button className="rounded-full bg-white text-[#0081FE] px-7 font-satoshi">
                 Browse
               </Button>
             </div>
@@ -140,10 +140,10 @@ export function HomePage() {
             alt="Secure Icon"
           />
           <div>
-            <h6 className="text-[#19191B] font-poppins font-semibold text-lg">
+            <h6 className="text-[#19191B] font-satoshi font-semibold text-lg">
               Secure Payment
             </h6>
-            <p className="text-[#19191B] font-poppins text-sm">
+            <p className="text-[#19191B] font-satoshi text-sm">
               All cards accepted
             </p>
           </div>
@@ -155,10 +155,10 @@ export function HomePage() {
             alt="Free shipping Icon"
           />
           <div>
-            <h6 className="text-[#19191B] font-poppins font-semibold text-lg">
+            <h6 className="text-[#19191B] font-satoshi font-semibold text-lg">
               Free Shipping
             </h6>
-            <p className="text-[#19191B] font-poppins text-sm">
+            <p className="text-[#19191B] font-satoshi text-sm">
               Free shipping in all order
             </p>
           </div>
@@ -170,10 +170,10 @@ export function HomePage() {
             alt="Insured Icon"
           />
           <div>
-            <h6 className="text-[#19191B] font-poppins font-semibold text-lg">
+            <h6 className="text-[#19191B] font-satoshi font-semibold text-lg">
               Insured Equipment
             </h6>
-            <p className="text-[#19191B] font-poppins text-sm">
+            <p className="text-[#19191B] font-satoshi text-sm">
               30 day money back
             </p>
           </div>
@@ -185,10 +185,10 @@ export function HomePage() {
             alt="Technical support Icon"
           />
           <div>
-            <h6 className="text-[#19191B] font-poppins font-semibold text-lg">
+            <h6 className="text-[#19191B] font-satoshi font-semibold text-lg">
               Online support 24/7
             </h6>
-            <p className="text-[#19191B] font-poppins text-sm">
+            <p className="text-[#19191B] font-satoshi text-sm">
               Technical support 24/7
             </p>
           </div>
@@ -197,10 +197,10 @@ export function HomePage() {
 
       <section className="product-title">
         <div className="flex justify-center items-center flex-col mb-16">
-          <h2 className="text-[#19191B] font-poppins text-[35px] font-bold">
+          <h2 className="text-[#19191B] font-satoshi text-[35px] font-bold">
             Trending week
           </h2>
-          <p className="text-[#6B6B6B] font-poppins text-base">
+          <p className="text-[#6B6B6B] font-satoshi text-base">
             Most trending products for this week
           </p>
         </div>
@@ -251,10 +251,10 @@ export function HomePage() {
 
       <section className="blog-title">
         <div className="flex justify-center items-center flex-col mb-16 mt-28">
-          <h2 className="text-[#19191B] font-poppins text-[35px] font-bold">
+          <h2 className="text-[#19191B] font-satoshi text-[35px] font-bold">
             Recent News
           </h2>
-          <p className="text-[#6B6B6B] font-poppins text-base">
+          <p className="text-[#6B6B6B] font-satoshi text-base">
             Know about our variations and manages
           </p>
         </div>
@@ -266,13 +266,13 @@ export function HomePage() {
             <img className="" src="imgs/new-1.png" alt="News home" />
           </figure>
           <div className="mt-5">
-            <p className="text-[#19191B] font-poppins text-[18px] mb-4">
+            <p className="text-[#19191B] font-satoshi text-[18px] mb-4">
               October 5
             </p>
-            <span className="text-[#19191B] font-poppins text-[20px] font-semibold">
+            <span className="text-[#19191B] font-satoshi text-[20px] font-semibold">
               20 Best gadgets for 2023
             </span>
-            <p className="text-[#19191B] font-poppins text-[18px] w-[85%] mt-4">
+            <p className="text-[#19191B] font-satoshi text-[18px] w-[85%] mt-4">
               Sed ut perspiciatis unde omnis iste laudantium, totam rem aperiam,
               eaque ipsa quae ab pariatur?
             </p>
@@ -284,13 +284,13 @@ export function HomePage() {
             <img className="" src="imgs/new-2.png" alt="News home" />
           </figure>
           <div className="mt-5">
-            <p className="text-[#19191B] font-poppins text-[18px] mb-4">
+            <p className="text-[#19191B] font-satoshi text-[18px] mb-4">
               October 5
             </p>
-            <span className="text-[#19191B] font-poppins text-[20px] font-semibold">
+            <span className="text-[#19191B] font-satoshi text-[20px] font-semibold">
               20 Best gadgets for 2023
             </span>
-            <p className="text-[#19191B] font-poppins text-[18px] w-[85%] mt-4">
+            <p className="text-[#19191B] font-satoshi text-[18px] w-[85%] mt-4">
               Sed ut perspiciatis unde omnis iste laudantium, totam rem aperiam,
               eaque ipsa quae ab pariatur?
             </p>
@@ -302,13 +302,13 @@ export function HomePage() {
             <img className="" src="imgs/new-3.png" alt="News home" />
           </figure>
           <div className="mt-5">
-            <p className="text-[#19191B] font-poppins text-[18px] mb-4">
+            <p className="text-[#19191B] font-satoshi text-[18px] mb-4">
               October 5
             </p>
-            <span className="text-[#19191B] font-poppins text-[20px] font-semibold">
+            <span className="text-[#19191B] font-satoshi text-[20px] font-semibold">
               20 Best gadgets for 2023
             </span>
-            <p className="text-[#19191B] font-poppins text-[18px] w-[85%] mt-4">
+            <p className="text-[#19191B] font-satoshi text-[18px] w-[85%] mt-4">
               Sed ut perspiciatis unde omnis iste laudantium, totam rem aperiam,
               eaque ipsa quae ab pariatur?
             </p>

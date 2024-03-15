@@ -8,8 +8,8 @@ export function ShopItem({ image, name, price }) {
           <img className="w-[100px]" src={image} alt="Items home" />
         </figure>
         <div className="mt-5">
-          <p className="text-[#19191B] font-poppins text-[16px] mb-3">{name}</p>
-          <span className="text-[#19191B] font-poppins text-[18px] font-semibold">
+          <p className="text-[#19191B] font-satoshi text-[16px] mb-3">{name}</p>
+          <span className="text-[#19191B] font-satoshi text-[18px] font-semibold">
             {price}
           </span>
         </div>

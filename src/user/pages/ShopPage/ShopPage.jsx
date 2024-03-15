@@ -2,7 +2,6 @@ import "./ShopPage.css";
 import { NavLink } from "react-router-dom";
 import {
   Slider,
-  CheckboxGroup,
   Checkbox,
   Accordion,
   AccordionItem,
@@ -22,18 +21,88 @@ export function ShopPage() {
   const [color2, setColor2] = useState("#0081FE");
   const [isListVisible, setIsListVisible] = useState(false);
   const [isGridVisible, setIsGridVisible] = useState(true);
+  const [filteredProducts, setfilteredProducts] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [priceRange, setPriceRange] = useState([0, 1750]); 
+  const [filters, setFilters] = useState({
+    smartwatches: false,
+    tablets: false,
+    speakers: false,
+    laptops: false,
+    smartphones: false,
+    consoles: false,
+  });
 
   useEffect(() => {
     (async () => {
       const productsCollection = collection(database, "products");
       const productsSnapshot = await getDocs(productsCollection);
       const productsList = [];
-      productsSnapshot.forEach((project) => {
-        productsList.push({ key: project.id, ...project.data() });
+      productsSnapshot.forEach((product) => {
+        productsList.push({ key: product.id, ...product.data() });
       });
       setProducts(productsList);
+      setfilteredProducts(productsList);
     })();
   }, []);
+
+  useEffect(() => {}, [filters, searchTerm]);
+
+  const handleFilterButtonClick = () => {
+    applyFilters();
+  };
+
+  const applyFilters = () => {
+    let filtered = products;
+
+    filtered = filtered.filter(
+      (product) =>
+        product.price >= priceRange[0] && product.price <= priceRange[1]
+    );
+
+    if (filters.laptops) {
+      filtered = filtered.filter((product) =>
+        product.category.includes("laptops")
+      );
+    }
+    if (filters.speakers) {
+      filtered = filtered.filter((product) =>
+        product.category.includes("speakers")
+      );
+    }
+    if (filters.consoles) {
+      filtered = filtered.filter((product) =>
+        product.category.includes("consoles")
+      );
+    }
+    if (filters.smartwatches) {
+      filtered = filtered.filter((product) =>
+        product.category.includes("smartwatches")
+      );
+    }
+    if (filters.tablets) {
+      filtered = filtered.filter((product) =>
+        product.category.includes("tablets")
+      );
+    }
+    if (filters.smartphones) {
+      filtered = filtered.filter((product) =>
+        product.category.includes("smartphones")
+      );
+    }
+
+    if (searchTerm.trim() !== "") {
+      filtered = filtered.filter((product) =>
+        product.title.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
+
+    setfilteredProducts(filtered);
+  };
+
+  const handleSearch = (e) => {
+    setSearchTerm(e.target.value);
+  };
 
   console.log(products);
 
@@ -58,7 +127,7 @@ export function ShopPage() {
           <NavLink to={"/"}>
             <Button
               variant="bordered"
-              className="font-poppins font-normal rounded-full border-[#D9D9D9] mb-6"
+              className="font-satoshi font-normal rounded-full border-[#D9D9D9] mb-6"
             >
               Back to home
             </Button>
@@ -71,11 +140,16 @@ export function ShopPage() {
                 <input
                   type="search"
                   id="default-search"
-                  className="block w-full p-4 ps-5 text-sm text-gray-900 border border-[#E0E0E0] rounded-full placeholder:font-poppins placeholder:text-[#757575] bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
+                  className="block w-full p-4 ps-5 text-sm text-gray-900 border border-[#E0E0E0] rounded-full placeholder:font-satoshi placeholder:text-[#757575] bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
                   placeholder="Search..."
+                  value={searchTerm}
+                  onChange={handleSearch}
                   required
                 />
-                <button className="text-white absolute end-2.5 bottom-2.5 bg-[#0081FE] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-2 py-2">
+                <button
+                  className="text-white absolute end-2.5 bottom-2.5 bg-[#0081FE] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-2 py-2"
+                  onClick={() => applyFilters()}
+                >
                   <svg
                     className="w-4 h-4 text-white"
                     aria-hidden="true"
@@ -95,27 +169,88 @@ export function ShopPage() {
               </div>
             </div>
 
-            <div className="border border-[#D9D9D9] rounded-2xl px-5 py-5 mb-6">
-              <CheckboxGroup className="font-poppins" label="Filter devices">
-                <Checkbox className="mb-1 font-poppins" value="laptops">
-                  Laptops
-                </Checkbox>
-                <Checkbox className="mb-1 font-poppins" value="speakers">
-                  Speakers
-                </Checkbox>
-                <Checkbox className="mb-1 font-poppins" value="consoles">
-                  Consoles
-                </Checkbox>
-                <Checkbox className="mb-1 font-poppins" value="smartwatches">
-                  Smartwatches
-                </Checkbox>
-                <Checkbox className="mb-1 font-poppins" value="tablets">
-                  Tablets
-                </Checkbox>
-                <Checkbox className="font-poppins" value="smartphones">
-                  Smartphones
-                </Checkbox>
-              </CheckboxGroup>
+            <div className="border flex flex-col gap-2 border-[#D9D9D9] rounded-2xl px-5 py-5 mb-6">
+              <h2 className="font-satoshi text-[#757575] text-[17px] font-semibold mb-3">
+                Filter devices
+              </h2>
+              <Checkbox
+                className="mb-1 font-satoshi"
+                isSelected={filters.laptops}
+                onChange={() =>
+                  setFilters((prevFilters) => ({
+                    ...prevFilters,
+                    laptops: !prevFilters.laptops,
+                  }))
+                }
+                value="laptops"
+              >
+                Laptops
+              </Checkbox>
+              <Checkbox
+                className="mb-1 font-satoshi"
+                isSelected={filters.speakers}
+                onChange={() =>
+                  setFilters((prevFilters) => ({
+                    ...prevFilters,
+                    speakers: !prevFilters.speakers,
+                  }))
+                }
+                value="speakers"
+              >
+                Speakers
+              </Checkbox>
+              <Checkbox
+                className="mb-1 font-satoshi"
+                isSelected={filters.consoles}
+                onChange={() =>
+                  setFilters((prevFilters) => ({
+                    ...prevFilters,
+                    consoles: !prevFilters.consoles,
+                  }))
+                }
+                value="consoles"
+              >
+                Consoles
+              </Checkbox>
+              <Checkbox
+                className="mb-1 font-satoshi"
+                isSelected={filters.smartwatches}
+                onChange={() =>
+                  setFilters((prevFilters) => ({
+                    ...prevFilters,
+                    smartwatches: !prevFilters.smartwatches,
+                  }))
+                }
+                value="smartwatches"
+              >
+                Smartwatches
+              </Checkbox>
+              <Checkbox
+                className="mb-1 font-satoshi"
+                isSelected={filters.tablets}
+                onChange={() =>
+                  setFilters((prevFilters) => ({
+                    ...prevFilters,
+                    tablets: !prevFilters.tablets,
+                  }))
+                }
+                value="tablets"
+              >
+                Tablets
+              </Checkbox>
+              <Checkbox
+                className="font-satoshi"
+                isSelected={filters.smartphones}
+                onChange={() =>
+                  setFilters((prevFilters) => ({
+                    ...prevFilters,
+                    smartphones: !prevFilters.smartphones,
+                  }))
+                }
+                value="smartphones"
+              >
+                Smartphones
+              </Checkbox>
             </div>
 
             <Accordion variant="bordered">
@@ -123,18 +258,23 @@ export function ShopPage() {
                 key="1"
                 aria-label="Accordion 1"
                 title="Choose price"
-                className="font-poppins text-[5px]"
+                className="font-satoshi text-[5px]"
               >
                 <Slider
                   label="Price Range"
                   step={50}
                   minValue={0}
-                  maxValue={1000}
+                  maxValue={3000}
+                  value={priceRange}
+                  onChange={(value) => setPriceRange(value)}
                   defaultValue={[100, 500]}
                   formatOptions={{ style: "currency", currency: "USD" }}
-                  className="max-w-md font-poppins"
+                  className="max-w-md font-satoshi"
                 />
-                <Button className="w-full bg-[#0081FE] text-white font-poppins mt-7 mb-3 text-[17px]">
+                <Button
+                  className="w-full bg-[#0081FE] text-white font-satoshi mt-7 mb-3 text-[17px]"
+                  onClick={handleFilterButtonClick}
+                >
                   Filter
                 </Button>
               </AccordionItem>
@@ -144,7 +284,7 @@ export function ShopPage() {
 
         <section className="items">
           <div className="flex justify-between">
-            <h1 className="font-poppins text-[#167DFF] text-[35px] font-light">
+            <h1 className="font-satoshi text-[#167DFF] text-[35px] font-light">
               The best of{" "}
               <span className="linear-title border rounded-xl border-[#D9D9D9] font-semibold px-1">
                 techno
@@ -210,18 +350,16 @@ export function ShopPage() {
               isListVisible ? "mt-[45px] mx-auto max-w-[1440px]" : "hidden"
             }
           >
-            {
-              products.map((product) => (
-                <ShopItemList
-                  key={product.key}
-                  name={product.title}
-                  price={product.price}
-                  img={product.cover}
-                  category={product.category}
-                  link={`/shop/${product.key}`}
-                />
-              ))
-            }
+            {filteredProducts.map((product) => (
+              <ShopItemList
+                key={product.key}
+                name={product.title}
+                price={product.price}
+                img={product.images[0]}
+                category={product.category}
+                link={`/shop/${product.key}`}
+              />
+            ))}
           </section>
 
           <section
@@ -231,17 +369,15 @@ export function ShopPage() {
                 : "hidden"
             }
           >
-            {
-              products.map((product) => (
-                <ShopItemGrid
-                  key={product.key}
-                  name={product.title}
-                  price={product.price}
-                  image={product.cover}
-                  link={`/shop/${product.key}`}
-                />
-              ))
-            }
+            {filteredProducts.map((product) => (
+              <ShopItemGrid
+                key={product.key}
+                name={product.title}
+                price={product.price}
+                image={product.images[0]}
+                link={`/shop/${product.key}`}
+              />
+            ))}
           </section>
         </section>
       </main>

@@ -7,7 +7,7 @@ export function NavBar() {
   return (
     <>
       <header className="p-5 flex justify-between items-center max-w-[1440px] mx-auto">
-        <nav className="flex items-center gap-16 text-[#9090A3] font-poppins text-base">
+        <nav className="flex items-center gap-16 text-[#9090A3] font-satoshi text-base">
           <NavLink to={"/"}>
             <img src="/icons/logo-nav.svg" alt="Roddan Logo" />
           </NavLink>
@@ -16,7 +16,7 @@ export function NavBar() {
               key={index}
               to={menu.path}
               className={({ isActive }) => {
-                return `font-poppins text-base ${
+                return `font-satoshi text-base ${
                   isActive ? "text-[#0081FE]" : "text-[#9090A3]"
                 }`;
               }}
@@ -25,12 +25,12 @@ export function NavBar() {
             </NavLink>
           ))}
         </nav>
-        <nav className="flex items-center gap-16 text-base font-poppins">
+        <nav className="flex items-center gap-16 text-base font-satoshi">
           <NavLink to={"/login"} className="text-[#9090A3]">
             Login
           </NavLink>
           <NavLink to={"/register"}>
-            <Button size="md" radius="sm" className="bg-[#0081FE] px-7 text-white font-poppins text-base">Register</Button>
+            <Button size="md" radius="sm" className="bg-[#0081FE] px-7 text-white font-satoshi text-base">Register</Button>
           </NavLink>
         </nav>
       </header>

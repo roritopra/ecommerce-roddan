@@ -13,25 +13,7 @@ export function ItemDetailsPage() {
   const { productId } = useParams();
   const [count, setCount] = useState(1);
   const [product, setProduct] = useState(null);
-  const data = [
-    {
-      imgelink:
-        "https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-    },
-    {
-      imgelink:
-        "https://images.unsplash.com/photo-1432462770865-65b70566d673?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
-    },
-    {
-      imgelink:
-        "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80",
-    },
-    {
-      imgelink:
-        "https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80",
-    },
-  ];
-
+  
   const [active, setActive] = useState(
     "https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
   );
@@ -77,7 +59,7 @@ export function ItemDetailsPage() {
               <NavLink to={"/"}>
                 <Button
                   variant="bordered"
-                  className="font-poppins font-normal rounded-full border-[#D9D9D9] mb-6"
+                  className="font-satoshi font-normal rounded-full border-[#D9D9D9] mb-6"
                 >
                   Back to home
                 </Button>
@@ -87,49 +69,49 @@ export function ItemDetailsPage() {
               </div>
             </div>
 
-            <h2 className="font-poppins text-[#19191B] font-semibold text-[45px] mt-3 mb-5 w-[80%]">
+            <h2 className="font-satoshi text-[#19191B] font-semibold text-[45px] mt-3 mb-5 w-[80%]">
               {product.title}
             </h2>
-            <h6 className="font-poppins text-[#19191B] font-semibold text-[18px] mb-5">
+            <h6 className="font-satoshi text-[#19191B] font-semibold text-[18px] mb-5">
               Category:{" "}
-              <span className="font-poppins text-[#0081FE] text-[18px]">
+              <span className="font-satoshi text-[#0081FE] text-[18px]">
                 {product.category}
               </span>
             </h6>
-            <p className="font-poppins text-[#3F3F40] text-[16px] w-[80%] mb-5">
+            <p className="font-satoshi text-[#3F3F40] text-[16px] w-[80%] mb-5">
               {product.description}
             </p>
 
             <div className="mb-10">
-              <p className="font-poppins font-semibold text-[18px] text-[#19191B] mt-5 mb-2">
+              <p className="font-satoshi font-semibold text-[18px] text-[#19191B] mt-5 mb-2">
                 Characteristics
               </p>
-                  <p className="font-poppins text-[#3F3F40] font-normal">
+                  <p className="font-satoshi text-[#3F3F40] font-normal">
                     <span className="text-[#19191B] font-semibold">Size:</span> {product.length} x {product.width} x {product.breadth} cm
                   </p>
             </div>
 
             <div className="flex gap-4 items-center">
-              <p className="font-poppins text-[#19191B] text-[18px]">
+              <p className="font-satoshi text-[#19191B] text-[18px]">
                 Quantity
               </p>
               <button
                 onClick={decreaseCount}
-                className="rounded-full bg-white border border-[#D9D9D9] px-3 font-poppins text-[25px] text-[#19191B] focus:border focus:border-[#0081FE] focus:bg-[#0081FE] focus:text-white"
+                className="rounded-full bg-white border border-[#D9D9D9] px-3 font-satoshi text-[25px] text-[#19191B] focus:border focus:border-[#0081FE] focus:bg-[#0081FE] focus:text-white"
               >
                 -
               </button>
               <p>{count}</p>
               <button
                 onClick={increaseCount}
-                className="rounded-full bg-white border border-[#D9D9D9] px-3 font-poppins text-[25px] text-[#19191B] focus:border focus:border-[#0081FE] focus:bg-[#0081FE] focus:text-white"
+                className="rounded-full bg-white border border-[#D9D9D9] px-3 font-satoshi text-[25px] text-[#19191B] focus:border focus:border-[#0081FE] focus:bg-[#0081FE] focus:text-white"
               >
                 +
               </button>
             </div>
 
             <div className="flex items-center mt-10 gap-6">
-              <p className="font-poppins text-[#19191B] text-[25px] font-medium">
+              <p className="font-satoshi text-[#19191B] text-[25px] font-medium">
                 ${product.price}
               </p>
               <Button
@@ -160,7 +142,7 @@ export function ItemDetailsPage() {
                     />
                   </svg>
                 }
-                className="flex items-center gap-5 rounded-full font-poppins font-medium py-7 bg-[#0081FE] text-white"
+                className="flex items-center gap-5 rounded-full font-satoshi font-medium py-7 bg-[#0081FE] text-white"
               >
                 Add to Cart
               </Button>
@@ -169,7 +151,7 @@ export function ItemDetailsPage() {
             <div className="flex w-full flex-wrap md:flex-nowrap gap-4 mt-10">
               <Select
                 label="Select an color"
-                className="max-w-xs font-poppins font-light text-[18px] text-[#19191B] border border-[#D9D9D9] rounded-xl"
+                className="max-w-xs font-satoshi font-light text-[18px] text-[#19191B] border border-[#D9D9D9] rounded-xl"
               >
                 {product.colors.map((color, index) => (
                   <SelectItem key={index} value={color}>
@@ -182,21 +164,20 @@ export function ItemDetailsPage() {
 
           <div className="w-1/2">
             <div className="grid gap-4">
-              <div>
+              <div className={active === product.images[product.images.length - 1] ? "flex justify-center rounded-2xl" : "second-card flex justify-center rounded-2xl"}>
                 <Image
-                  isZoomed
                   className="h-auto w-full max-w-full rounded-[20px] object-cover object-center md:h-[480px]"
                   src={active}
                   alt=""
                 />
               </div>
               <div className="grid grid-cols-4 gap-4">
-                {data.map(({ imgelink }, index) => (
-                  <div key={index}>
+              {product.images.map((image, index) => (
+                  <div key={index} className={`${index === product.images.length - 1 ? 'w-full' : 'card'} flex justify-center rounded-2xl`}>
                     <img
-                      onClick={() => setActive(imgelink)}
-                      src={imgelink}
-                      className="h-28 max-w-full cursor-pointer rounded-xl object-cover object-center"
+                      onClick={() => setActive(image)}
+                      src={image}
+                      className="max-h-32 max-w-full cursor-pointer rounded-xl object-cover object-center"
                       alt="gallery-image"
                     />
                   </div>
@@ -208,21 +189,21 @@ export function ItemDetailsPage() {
 
         <section className="flex justify-between mt-20 px-36">
           <div className="flex flex-col justify-center">
-            <p className="font-poppins font-light text-[30px] text-center text-[#696969]">
+            <p className="font-satoshi font-light text-[30px] text-center text-[#696969]">
               Stop by new <br />
               arrivals
             </p>
             <hr className="border-[#696969]" />
           </div>
           <div className="flex flex-col justify-center">
-            <p className="font-poppins font-medium text-[30px] text-center text-[#19191B]">
+            <p className="font-satoshi font-medium text-[30px] text-center text-[#19191B]">
               Shop by top <br />
               collections
             </p>
             <hr className="border-[#696969]" />
           </div>
           <div className="flex flex-col justify-center">
-            <p className="font-poppins font-light text-[30px] text-center text-[#696969]">
+            <p className="font-satoshi font-light text-[30px] text-center text-[#696969]">
               Shop by pro starp <br />
               extra
             </p>
@@ -231,11 +212,11 @@ export function ItemDetailsPage() {
         </section>
 
         <div className="flex justify-between mt-28 mb-8">
-          <p className="bg-[#EBEBEB] font-poppins text-[#636367] rounded-full px-4 py-2 text-[14px]">
+          <p className="bg-[#EBEBEB] font-satoshi text-[#636367] rounded-full px-4 py-2 text-[14px]">
             104 products
           </p>
           <div className="flex items-center gap-3 bg-[#0081FE] rounded-full px-4 py-2">
-            <p className="font-poppins text-white text-[14px]">Show less</p>
+            <p className="font-satoshi text-white text-[14px]">Show less</p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="17"

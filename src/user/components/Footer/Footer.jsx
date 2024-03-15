@@ -16,7 +16,7 @@ export function Footer() {
     <>
       <footer className="bg-white mt-32">
         <div className="news mx-auto max-w-md">
-          <strong className="block text-center text-xl font-poppins font-bold text-gray-900 sm:text-3xl">
+          <strong className="block text-center text-xl font-satoshi font-bold text-gray-900 sm:text-3xl">
             Want us to email you with the latest blockbuster news?
           </strong>
 
@@ -25,13 +25,13 @@ export function Footer() {
               <label className="sr-only"> Email </label>
 
               <input
-                className="w-full rounded-full border-gray-200 bg-gray-100 p-4 pe-32 text-sm font-medium placeholder:font-poppins placeholder:font-light"
+                className="w-full rounded-full border-gray-200 bg-gray-100 p-4 pe-32 text-sm font-medium placeholder:font-satoshi placeholder:font-light"
                 id="email"
                 type="email"
                 placeholder="john@doe.com"
               />
 
-              <button className="absolute end-1 top-1/2 -translate-y-1/2 rounded-full bg-blue-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-blue-700 font-poppins">
+              <button className="absolute end-1 top-1/2 -translate-y-1/2 rounded-full bg-blue-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-blue-700 font-satoshi">
                 Subscribe
               </button>
             </div>
@@ -67,7 +67,7 @@ export function Footer() {
                 <img src="icons/logo-nav.png" alt="" />
               </div>
 
-              <p className="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500 lg:text-left font-poppins">
+              <p className="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500 lg:text-left font-satoshi">
               Veen altered in some form, injected humor, or random words. Explore our cutting-edge technology for a transformative future.
               </p>
             </div>
@@ -85,7 +85,7 @@ export function Footer() {
 
               <li>
                 <NavLink
-                  className="text-gray-700 transition hover:text-gray-700/75 font-poppins"
+                  className="text-gray-700 transition hover:text-gray-700/75 font-satoshi"
                   to={"/about-us"}
                 >
                   {" "}
@@ -95,7 +95,7 @@ export function Footer() {
 
               <li>
                 <NavLink
-                  className="text-gray-700 transition hover:text-gray-700/75 font-poppins"
+                  className="text-gray-700 transition hover:text-gray-700/75 font-satoshi"
                   to={"/contact-us"}
                 >
                   {" "}
@@ -105,7 +105,7 @@ export function Footer() {
 
               <li>
                 <NavLink
-                  className="text-gray-700 transition hover:text-gray-700/75 font-poppins"
+                  className="text-gray-700 transition hover:text-gray-700/75 font-satoshi"
                   to={"/blog"}
                 >
                   {" "}
@@ -115,7 +115,7 @@ export function Footer() {
             </ul>
           </div>
 
-          <p className="mt-12 text-center text-sm text-gray-500 lg:text-right font-poppins">
+          <p className="mt-12 text-center text-sm text-gray-500 lg:text-right font-satoshi">
             Copyright &copy; 2024. All rights reserved.
           </p>
         </div>
