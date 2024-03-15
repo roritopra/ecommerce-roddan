@@ -16,7 +16,7 @@ export function ShopItemGrid({ image, name, price, link }) {
         onMouseLeave={() => setHovered(false)}
       >
           <figure className="card flex justify-center h-full items-center rounded-[35px] max-w-[350px] relative">
-            <img className="" src={image} alt="Product" />
+            <img className="w-[100px]" src={image} alt="Product" />
           </figure>
           <div className="pt-5">
             <p className="text-[#19191B] font-satoshi text-[16px] mb-3">{name}</p>

@@ -164,7 +164,7 @@ export function ItemDetailsPage() {
 
           <div className="w-1/2">
             <div className="grid gap-4">
-              <div className={active === product.images[product.images.length - 1] ? "flex justify-center rounded-2xl" : "second-card flex justify-center rounded-2xl"}>
+              <div className={active === product.images[product.images.length - 1] ? "flex justify-center w-full rounded-2xl" : "second-card flex justify-center rounded-2xl"}>
                 <Image
                   className="h-auto w-full max-w-full rounded-[20px] object-cover object-center md:h-[480px]"
                   src={active}
