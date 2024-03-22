@@ -91,7 +91,7 @@ export function ShopPage() {
       );
     }
 
-    if (searchTerm.trim() !== "") {
+    if (searchTerm.trim() !== "No products") {
       filtered = filtered.filter((product) =>
         product.title.toLowerCase().includes(searchTerm.toLowerCase())
       );

@@ -13,10 +13,8 @@ export function ItemDetailsPage() {
   const { productId } = useParams();
   const [count, setCount] = useState(1);
   const [product, setProduct] = useState(null);
-  
-  const [active, setActive] = useState(
-    "https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-  );
+
+  const [active, setActive] = useState(product ? product?.images[0] : "");
 
   const decreaseCount = () => {
     if (count > 1) {
@@ -41,6 +39,12 @@ export function ItemDetailsPage() {
 
     fetchProduct();
   }, [productId]);
+
+  useEffect(() => {
+    if (!product) return;
+
+    setActive(product.images[0]);
+  }, [product]);
 
   if (!product) {
     return (
@@ -86,9 +90,10 @@ export function ItemDetailsPage() {
               <p className="font-satoshi font-semibold text-[18px] text-[#19191B] mt-5 mb-2">
                 Characteristics
               </p>
-                  <p className="font-satoshi text-[#3F3F40] font-normal">
-                    <span className="text-[#19191B] font-semibold">Size:</span> {product.length} x {product.width} x {product.breadth} cm
-                  </p>
+              <p className="font-satoshi text-[#3F3F40] font-normal">
+                <span className="text-[#19191B] font-semibold">Size:</span>{" "}
+                {product.length} x {product.width} x {product.breadth} cm
+              </p>
             </div>
 
             <div className="flex gap-4 items-center">
@@ -164,7 +169,13 @@ export function ItemDetailsPage() {
 
           <div className="w-1/2">
             <div className="grid gap-4">
-              <div className={active === product.images[product.images.length - 1] ? "flex justify-center w-full rounded-2xl" : "second-card flex justify-center rounded-2xl"}>
+              <div
+                className={
+                  active === product.images[product.images.length - 1]
+                    ? "flex justify-center w-full rounded-2xl"
+                    : "second-card flex justify-center rounded-2xl"
+                }
+              >
                 <Image
                   className="h-auto w-full max-w-full rounded-[20px] object-cover object-center md:h-[480px]"
                   src={active}
@@ -172,8 +183,13 @@ export function ItemDetailsPage() {
                 />
               </div>
               <div className="grid grid-cols-4 gap-4">
-              {product.images.map((image, index) => (
-                  <div key={index} className={`${index === product.images.length - 1 ? 'w-full' : 'card'} flex justify-center rounded-2xl`}>
+                {product.images.map((image, index) => (
+                  <div
+                    key={index}
+                    className={`${
+                      index === product.images.length - 1 ? "w-full" : "card"
+                    } flex justify-center rounded-2xl`}
+                  >
                     <img
                       onClick={() => setActive(image)}
                       src={image}
