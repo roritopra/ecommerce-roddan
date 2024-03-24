@@ -1,5 +1,5 @@
 import "./HomeHeader.css";
-import { Button } from "@material-tailwind/react";
+import  {Button } from "@nextui-org/react";
 import { NavLink } from "react-router-dom";
 import { useEffect } from "react";
 import { Carousel } from "@material-tailwind/react";
@@ -25,7 +25,7 @@ export function HomeHeader() {
         <div className="div1 rounded-[35px] p-12 bg-linear-black">
           <div className="time flex items-center gap-5">
             <img src="/icons/logo-icon.svg" alt="Logo icon" />
-            <p className="text-white text-sm font-poppins">
+            <p className="text-white text-sm font-satoshi">
               Time for offers-24
             </p>
           </div>
@@ -33,7 +33,7 @@ export function HomeHeader() {
             JANUARY OFFERS, WE START THE YEAR
           </h1>
           <NavLink to={"/shop"} className="button">
-            <Button color="blue" size="lg" className="rounded-full px-16 mt-10 font-poppins">
+            <Button className="rounded-full px-[50px] py-6 mt-10 font-satoshi text-white text-xl bg-[#0081FE]">
               WATCH THE OFFERS!
             </Button>
           </NavLink>
@@ -131,17 +131,17 @@ export function HomeHeader() {
           </Carousel>
         </div>
         <div className="div3 relative flex flex-col justify-end rounded-[35px] p-7">
-          <p className="relative z-10 text-white font-poppins text-base mb-1 tracking-[-0.64px]">
+          <p className="relative z-10 text-white font-satoshi text-base mb-1 tracking-[-0.64px]">
             Know
           </p>
-          <p className="relative z-10 text-white font-poppins text-3xl mb-1 tracking-[-1.2px]">
+          <p className="relative z-10 text-white font-satoshi text-3xl mb-1 tracking-[-1.2px]">
             Home
           </p>
-          <span className="relative z-10 font-poppins text-items-rgba text-5xl  tracking-[-1.8px] font-semibold">
+          <span className="relative z-10 font-satoshi text-items-rgba text-5xl  tracking-[-1.8px] font-semibold">
             Assistant
           </span>
           <NavLink to={"/shop"}>
-            <Button color="white" className="rounded-full text-blue-500 mt-4 font-poppins">
+            <Button className="rounded-full text-[#0081FE] bg-white px-7 mt-4 font-satoshi">
               Browse
             </Button>
           </NavLink>
@@ -153,17 +153,17 @@ export function HomeHeader() {
         </div>
 
         <div className="div4 relative flex flex-col justify-end rounded-[35px] p-7">
-          <p className="relative z-10 text-white font-poppins text-base mb-1 tracking-[-0.64px]">
+          <p className="relative z-10 text-white font-satoshi text-base mb-1 tracking-[-0.64px]">
             Virtual
           </p>
-          <p className="relative z-10 text-white font-poppins text-3xl mb-1 tracking-[-1.2px]">
+          <p className="relative z-10 text-white font-satoshi text-3xl mb-1 tracking-[-1.2px]">
             Game
           </p>
-          <span className="relative z-10 font-poppins text-items-rgba text-5xl  tracking-[-1.8px] font-semibold">
+          <span className="relative z-10 font-satoshi text-items-rgba text-5xl  tracking-[-1.8px] font-semibold">
             Reality
           </span>
           <NavLink to={"/shop"}>
-            <Button color="white" className="rounded-full text-green-500 mt-4 font-poppins">
+            <Button color="white" className="rounded-full bg-white px-7 text-green-500 mt-4 font-satoshi">
               Browse
             </Button>
           </NavLink>
@@ -174,17 +174,17 @@ export function HomeHeader() {
           />
         </div>
         <div className="div5 relative flex flex-col justify-end rounded-[35px] p-7">
-          <p className="relative z-10 text-white font-poppins text-base mb-1 tracking-[-0.64px]">
+          <p className="relative z-10 text-white font-satoshi text-base mb-1 tracking-[-0.64px]">
             Wear
           </p>
-          <p className="relative z-10 text-white font-poppins text-3xl mb-1 tracking-[-1.2px]">
+          <p className="relative z-10 text-white font-satoshi text-3xl mb-1 tracking-[-1.2px]">
             Intelligent
           </p>
-          <span className="relative z-10 font-poppins text-items-rgba text-5xl  tracking-[-1.8px] font-semibold">
+          <span className="relative z-10 font-satoshi text-items-rgba text-5xl  tracking-[-1.8px] font-semibold">
             Smartwatches
           </span>
           <NavLink to={"/shop"}>
-            <Button color="white" className="rounded-full text-yellow-300 mt-4 font-poppins">
+            <Button color="white" className="rounded-full bg-white px-7 text-yellow-300 mt-4 font-satoshi">
               Browse
             </Button>
           </NavLink>
@@ -195,17 +195,17 @@ export function HomeHeader() {
           />
         </div>
         <div className="div6 relative flex flex-col justify-end rounded-[35px] p-7">
-          <p className="relative z-10 text-white font-poppins text-base mb-1 tracking-[-0.64px]">
+          <p className="relative z-10 text-white font-satoshi text-base mb-1 tracking-[-0.64px]">
             New
           </p>
-          <p className="relative z-10 text-white font-poppins text-3xl mb-1 tracking-[-1.2px]">
+          <p className="relative z-10 text-white font-satoshi text-3xl mb-1 tracking-[-1.2px]">
             Device
           </p>
-          <span className="relative z-10 font-poppins text-items-rgba text-5xl  tracking-[-1.8px] font-semibold">
+          <span className="relative z-10 font-satoshi text-items-rgba text-5xl  tracking-[-1.8px] font-semibold">
             Laptops
           </span>
           <NavLink to={"/shop"}>
-            <Button color="blue" className="rounded-full mt-4 font-poppins">
+            <Button color="blue" className="rounded-full text-white bg-[#0081FE] px-7 mt-4 font-satoshi">
               Browse
             </Button>
           </NavLink>
@@ -216,17 +216,17 @@ export function HomeHeader() {
           />
         </div>
         <div className="div7 relative flex flex-col justify-end rounded-[35px] p-7">
-          <p className="relative z-10 text-[#19191B] font-poppins text-base mb-1 tracking-[-0.64px]">
+          <p className="relative z-10 text-[#19191B] font-satoshi text-base mb-1 tracking-[-0.64px]">
             Listen
           </p>
-          <p className="relative z-10 text-[#19191B] font-poppins text-3xl mb-1 tracking-[-1.2px]">
+          <p className="relative z-10 text-[#19191B] font-satoshi text-3xl mb-1 tracking-[-1.2px]">
             High
           </p>
-          <span className="relative z-10 font-poppins text-items-rgba-2 text-5xl  tracking-[-1.8px] font-semibold">
+          <span className="relative z-10 font-satoshi text-items-rgba-2 text-5xl  tracking-[-1.8px] font-semibold">
             Definition
           </span>
           <NavLink to={"/shop"}>
-            <Button color="blue" className="rounded-full mt-4 font-poppins">
+            <Button color="blue" className="rounded-full text-white bg-[#0081FE] px-7 mt-4 font-satoshi">
               Browse
             </Button>
           </NavLink>
