@@ -23,7 +23,7 @@ export function ShopPage() {
   const [isGridVisible, setIsGridVisible] = useState(true);
   const [filteredProducts, setfilteredProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [priceRange, setPriceRange] = useState([0, 1750]); 
+  const [priceRange, setPriceRange] = useState([0, 1000]); // Adjust the range as needed
   const [filters, setFilters] = useState({
     smartwatches: false,
     tablets: false,
@@ -46,52 +46,35 @@ export function ShopPage() {
     })();
   }, []);
 
-  useEffect(() => {}, [filters, searchTerm]);
-
-  const handleFilterButtonClick = () => {
+  useEffect(() => {
     applyFilters();
-  };
+  }, [filters, searchTerm, priceRange]);
 
   const applyFilters = () => {
     let filtered = products;
 
-    filtered = filtered.filter(
-      (product) =>
-        product.price >= priceRange[0] && product.price <= priceRange[1]
-    );
+    filtered = filtered.filter(product => product.price >= priceRange[0] && product.price <= priceRange[1]);
 
     if (filters.laptops) {
-      filtered = filtered.filter((product) =>
-        product.category.includes("laptops")
-      );
+      filtered = filtered.filter((product) => product.category.includes("laptops"));
     }
     if (filters.speakers) {
-      filtered = filtered.filter((product) =>
-        product.category.includes("speakers")
-      );
+      filtered = filtered.filter((product) => product.category.includes("speakers"));
     }
     if (filters.consoles) {
-      filtered = filtered.filter((product) =>
-        product.category.includes("consoles")
-      );
+      filtered = filtered.filter((product) => product.category.includes("consoles"));
     }
     if (filters.smartwatches) {
-      filtered = filtered.filter((product) =>
-        product.category.includes("smartwatches")
-      );
+      filtered = filtered.filter((product) => product.category.includes("smartwatches"));
     }
     if (filters.tablets) {
-      filtered = filtered.filter((product) =>
-        product.category.includes("tablets")
-      );
+      filtered = filtered.filter((product) => product.category.includes("tablets"));
     }
     if (filters.smartphones) {
-      filtered = filtered.filter((product) =>
-        product.category.includes("smartphones")
-      );
+      filtered = filtered.filter((product) => product.category.includes("smartphones"));
     }
 
-    if (searchTerm.trim() !== "No products") {
+    if (searchTerm.trim() !== "") {
       filtered = filtered.filter((product) =>
         product.title.toLowerCase().includes(searchTerm.toLowerCase())
       );
@@ -269,14 +252,8 @@ export function ShopPage() {
                   onChange={(value) => setPriceRange(value)}
                   defaultValue={[100, 500]}
                   formatOptions={{ style: "currency", currency: "USD" }}
-                  className="max-w-md font-satoshi"
+                  className="max-w-md font-satoshi mb-3"
                 />
-                <Button
-                  className="w-full bg-[#0081FE] text-white font-satoshi mt-7 mb-3 text-[17px]"
-                  onClick={handleFilterButtonClick}
-                >
-                  Filter
-                </Button>
               </AccordionItem>
             </Accordion>
           </aside>
