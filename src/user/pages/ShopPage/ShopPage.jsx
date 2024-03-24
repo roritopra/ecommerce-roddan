@@ -7,15 +7,18 @@ import {
   AccordionItem,
   Button,
 } from "@nextui-org/react";
+import { useEffect, useState } from "react";
+
 import { ShopItemGrid } from "../../components/ShopItemGrid/ShopItemGrid";
 import { ShopItemList } from "../../components/ShopItemList/ShopItemList";
-import ScrollReveal from "scrollreveal";
-import { useEffect, useState } from "react";
+import { useScrollReveal } from "../../../libs/ScrollReveal";
 import { Footer } from "../../components/Footer/Footer";
 import { collection, getDocs } from "firebase/firestore";
 import { database } from "../../../firebase/firebase";
+import { applyFilters } from "../../../hooks/useFilters";
 
 export function ShopPage() {
+  useScrollReveal();
   const [products, setProducts] = useState([]);
   const [color1, setColor1] = useState("#323232");
   const [color2, setColor2] = useState("#0081FE");
@@ -23,7 +26,7 @@ export function ShopPage() {
   const [isGridVisible, setIsGridVisible] = useState(true);
   const [filteredProducts, setfilteredProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [priceRange, setPriceRange] = useState([0, 1000]); // Adjust the range as needed
+  const [priceRange, setPriceRange] = useState([0, 1750]);
   const [filters, setFilters] = useState({
     smartwatches: false,
     tablets: false,
@@ -47,32 +50,8 @@ export function ShopPage() {
   }, []);
 
   useEffect(() => {
-    applyFilters();
-  }, [filters, searchTerm, priceRange]);
-
-  const applyFilters = () => {
-    let filtered = products;
-
-    filtered = filtered.filter(product => product.price >= priceRange[0] && product.price <= priceRange[1]);
-
-    if (filters.laptops) {
-      filtered = filtered.filter((product) => product.category.includes("laptops"));
-    }
-    if (filters.speakers) {
-      filtered = filtered.filter((product) => product.category.includes("speakers"));
-    }
-    if (filters.consoles) {
-      filtered = filtered.filter((product) => product.category.includes("consoles"));
-    }
-    if (filters.smartwatches) {
-      filtered = filtered.filter((product) => product.category.includes("smartwatches"));
-    }
-    if (filters.tablets) {
-      filtered = filtered.filter((product) => product.category.includes("tablets"));
-    }
-    if (filters.smartphones) {
-      filtered = filtered.filter((product) => product.category.includes("smartphones"));
-    }
+    let filtered = applyFilters(products, filters, priceRange);
+    setfilteredProducts(filtered);
 
     if (searchTerm.trim() !== "") {
       filtered = filtered.filter((product) =>
@@ -81,28 +60,12 @@ export function ShopPage() {
     }
 
     setfilteredProducts(filtered);
-  };
+  }, [filters, searchTerm, priceRange]);
 
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
   };
 
-  console.log(products);
-
-  useEffect(() => {
-    ScrollReveal().reveal(".filter-section", {
-      delay: 500,
-      duration: "1300",
-      distance: "50px",
-      origin: "left",
-    });
-    ScrollReveal().reveal(".items", {
-      delay: 500,
-      duration: "1300",
-      distance: "50px",
-      origin: "right",
-    });
-  }, []);
   return (
     <>
       <main className="content-shop px-5 max-w-[1440px] mx-auto mb-28 text-sm mt-5">
@@ -116,7 +79,10 @@ export function ShopPage() {
             </Button>
           </NavLink>
 
-          <aside className="border border-[#D9D9D9] rounded-2xl px-5 py-5">
+          <aside
+            onClick={() => applyFilters(products, filters, priceRange)}
+            className="border border-[#D9D9D9] rounded-2xl px-5 py-5"
+          >
             <div className="mb-6">
               <div className="relative">
                 <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"></div>
@@ -129,10 +95,7 @@ export function ShopPage() {
                   onChange={handleSearch}
                   required
                 />
-                <button
-                  className="text-white absolute end-2.5 bottom-2.5 bg-[#0081FE] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-2 py-2"
-                  onClick={() => applyFilters()}
-                >
+                <button className="text-white absolute end-2.5 bottom-2.5 bg-[#0081FE] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-2 py-2">
                   <svg
                     className="w-4 h-4 text-white"
                     aria-hidden="true"
@@ -321,6 +284,10 @@ export function ShopPage() {
               </div>
             </div>
           </div>
+
+          {filteredProducts.length === 0 && (
+            <p className="grid h-screen place-items-center font-satoshi font-bold text-xl">No products found with the applied filters.</p>
+          )}
 
           <section
             className={
