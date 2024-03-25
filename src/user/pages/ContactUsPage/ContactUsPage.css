@@ -1,6 +1,84 @@
 .getintouch {
-    background: var(--Linear-blue, linear-gradient(90deg, #167DFF 0%, #4F9DFF 100%));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  background: var(
+    --Linear-blue,
+    linear-gradient(90deg, #167dff 0%, #4f9dff 100%)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.inputs {
+  border-radius: 10px;
+  border: 1px solid var(--Grey-300, #d8dde3);
+  background: #fff;
+  box-shadow: 0px 0px 4px 0px rgba(23, 25, 28, 0.05);
+}
+
+.form-area {
+  border-radius: var(--units-unit-5, 20px);
+  border: 1px solid var(--Linear-blue, #167dff);
+  background: linear-gradient(65deg, #eff0f4 2.11%, #ececec 98.43%);
+}
+
+.contenedor {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 19px;
+  grid-auto-flow: row;
+}
+
+.phone-hand {
+  grid-area: 1 / 1 / 2 / 2;
+  border-radius: 12px;
+  background: var(
+    --Linear-black,
+    linear-gradient(99deg, #222 1.21%, #515151 99.17%, #222 99.17%)
+  );
+}
+
+.vr-men {
+  grid-area: 1 / 2 / 3 / 3;
+  border-radius: 12px;
+  background: var(
+    --Linear-blue,
+    linear-gradient(90deg, #167dff 0%, #4f9dff 100%)
+  );
+}
+
+.head-girl {
+  grid-area: 2 / 1 / 5 / 2;
+  border-radius: 12px;
+  background: var(
+    --Linear-red,
+    linear-gradient(90deg, #f42c37 0%, #ff4e59 100%)
+  );
+}
+
+.mac-gray {
+  grid-area: 4 / 2 / 6 / 3;
+  border-radius: 12px;
+  background: var(
+    --Linear-white,
+    linear-gradient(65deg, #eff0f4 2.11%, #ececec 98.43%)
+  );
+}
+
+.jbl-yellow {
+  grid-area: 3 / 2 / 4 / 3;
+  border-radius: 12px;
+  background: var(
+    --Linear-Yellow,
+    linear-gradient(114deg, #fdc62e 60.36%, #fece49 96.83%)
+  );
+}
+
+.watch-hand {
+  grid-area: 5 / 1 / 6 / 2;
+  border-radius: 12px;
+  background: var(
+    --Linear-green,
+    linear-gradient(89deg, #45bf55 0.53%, #5dda6d 99.58%)
+  );
 }
