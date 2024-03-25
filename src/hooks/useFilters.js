@@ -1,5 +1,3 @@
-import React from "react";
-
 export const applyFilters = (products, filters, priceRange) => {
     let filtered = products;
   
@@ -19,6 +17,9 @@ export const applyFilters = (products, filters, priceRange) => {
     }
     if (filters.tablets) {
       filtered = filtered.filter((product) => product.category.includes("Tablets"));
+    }
+    if (filters.smartphones) {
+      filtered = filtered.filter((product) => product.category.includes("Smartphones"));
     }
   
     return filtered;
