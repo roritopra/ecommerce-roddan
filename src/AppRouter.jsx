@@ -5,6 +5,7 @@ import { RegisterPage } from "./auth/pages/RegisterPage/RegisterPage";
 import { HomePage } from "./user/pages/HomePage/HomePage";
 import { ShopPage } from "./user/pages/ShopPage/ShopPage";
 import { ItemDetailsPage } from "./user/pages/ItemDetailsPage/ItemDetailsPage";
+import { ContactUsPage } from "./user/pages/ContactUsPage/ContactUsPage";
 export function AppRouter() {
   return (
     <Routes>
@@ -13,6 +14,7 @@ export function AppRouter() {
         <Route path="/shop" element={<ShopPage />} />
         <Route path="/shop/:productId" element={<ItemDetailsPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/contact-us" element={<ContactUsPage />} />
         <Route path="/register" element={<RegisterPage />} />
       </Route>
     </Routes>
