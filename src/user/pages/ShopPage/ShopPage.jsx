@@ -6,6 +6,7 @@ import {
   Accordion,
   AccordionItem,
   Button,
+  Pagination,
 } from "@nextui-org/react";
 import { useEffect, useState } from "react";
 
@@ -19,6 +20,7 @@ import { applyFilters } from "../../../hooks/useFilters";
 
 export function ShopPage() {
   useScrollReveal();
+  const [currentPage, setCurrentPage] = useState(1);
   const [products, setProducts] = useState([]);
   const [color1, setColor1] = useState("#323232");
   const [color2, setColor2] = useState("#0081FE");
@@ -35,6 +37,8 @@ export function ShopPage() {
     smartphones: false,
     consoles: false,
   });
+
+  const itemsPerPage = 1;
 
   useEffect(() => {
     (async () => {
@@ -286,7 +290,9 @@ export function ShopPage() {
           </div>
 
           {filteredProducts.length === 0 && (
-            <p className="grid h-screen place-items-center font-satoshi font-bold text-xl">No products found with the applied filters.</p>
+            <p className="grid h-screen place-items-center font-satoshi font-bold text-xl">
+              No products found with the applied filters.
+            </p>
           )}
 
           <section
@@ -313,16 +319,28 @@ export function ShopPage() {
                 : "hidden"
             }
           >
-            {filteredProducts.map((product) => (
-              <ShopItemGrid
-                key={product.key}
-                name={product.title}
-                price={product.price}
-                image={product.images[0]}
-                link={`/shop/${product.key}`}
-              />
-            ))}
+            {filteredProducts
+              .slice(
+                (currentPage - 1) * itemsPerPage,
+                currentPage * itemsPerPage
+              )
+              .map((product) => (
+                <ShopItemGrid
+                  key={product.key}
+                  name={product.title}
+                  price={product.price}
+                  image={product.images[0]}
+                  link={`/shop/${product.key}`}
+                />
+              ))}
           </section>
+          <div className="flex justify-center mt-20">
+          <Pagination
+            total={Math.ceil(filteredProducts.length / itemsPerPage)}
+            page={currentPage}
+            onChange={(newPage) => setCurrentPage(newPage)}
+          />
+          </div>
         </section>
       </main>
       <Footer />
