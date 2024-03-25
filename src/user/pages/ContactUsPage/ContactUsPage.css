@@ -1,0 +1,6 @@
+.getintouch {
+    background: var(--Linear-blue, linear-gradient(90deg, #167DFF 0%, #4F9DFF 100%));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
