@@ -36,7 +36,7 @@ export function HomePage() {
             <h6 className="january-text text-white text-sm font-satoshi mb-3">
               20% OFF
             </h6>
-            <h4 className="january-text text-white text-4xl font-satoshi font-bold mb-5">
+            <h4 className="january-text text-white text-4xl font-satoshi font-extrabold mb-5">
               January Sale
             </h4>
             <p className="january-text text-[#EBEBEB] text-[15px] font-satoshi font-light mb-6">
@@ -117,7 +117,7 @@ export function HomePage() {
 
       <section className="product-title">
         <div className="flex justify-center items-center flex-col mb-16">
-          <h2 className="text-[#19191B] font-satoshi text-[35px] font-bold">
+          <h2 className="text-[#19191B] font-satoshi text-[35px] font-extrabold">
             Trending week
           </h2>
           <p className="text-[#6B6B6B] font-satoshi text-base">
@@ -171,7 +171,7 @@ export function HomePage() {
 
       <section className="blog-title">
         <div className="flex justify-center items-center flex-col mb-16 mt-28">
-          <h2 className="text-[#19191B] font-satoshi text-[35px] font-bold">
+          <h2 className="text-[#19191B] font-satoshi text-[35px] font-extrabold">
             Recent News
           </h2>
           <p className="text-[#6B6B6B] font-satoshi text-base">

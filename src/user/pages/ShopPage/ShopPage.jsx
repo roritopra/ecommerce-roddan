@@ -24,6 +24,10 @@ export function ShopPage() {
   const [products, setProducts] = useState([]);
   const [color1, setColor1] = useState("#323232");
   const [color2, setColor2] = useState("#0081FE");
+  const [border1, setBorder1] = useState("");
+  const [border2, setBorder2] = useState(
+    "border border-[#0081FE] p-3 rounded-lg"
+  );
   const [isListVisible, setIsListVisible] = useState(false);
   const [isGridVisible, setIsGridVisible] = useState(true);
   const [filteredProducts, setfilteredProducts] = useState([]);
@@ -235,11 +239,14 @@ export function ShopPage() {
               </span>
             </h1>
             <div>
-              <div className="flex items-center flex-row-reverse gap-9">
+              <div className="flex items-center flex-row-reverse gap-5">
                 <button
+                  className={`${border1} p-3 rounded-lg transition-all`}
                   onClick={() => {
                     setColor1("#0081FE");
                     setColor2("#323232");
+                    setBorder1(" border-[#0081FE] border");
+                    setBorder2("");
                     setIsListVisible(true);
                     setIsGridVisible(false);
                   }}
@@ -250,6 +257,7 @@ export function ShopPage() {
                     height="19"
                     viewBox="0 0 26 19"
                     fill="none"
+                    className="transition-all"
                   >
                     <g clipPath="url(#clip0_191_136)">
                       <path
@@ -265,9 +273,12 @@ export function ShopPage() {
                   </svg>
                 </button>
                 <button
+                  className={`${border2} p-3 rounded-lg transition-all`}
                   onClick={() => {
                     setColor2("#0081FE");
                     setColor1("#323232");
+                    setBorder1("");
+                    setBorder2("border-[#0081FE] border");
                     setIsListVisible(false);
                     setIsGridVisible(true);
                   }}
@@ -277,7 +288,7 @@ export function ShopPage() {
                     width="25"
                     height="19"
                     viewBox="0 0 25 19"
-                    fill="none"
+                    fill="none"                   
                   >
                     <path
                       d="M0 8.76923H7.35294V0H0V8.76923ZM0 19H7.35294V10.2308H0V19ZM8.82353 19H16.1765V10.2308H8.82353V19ZM17.6471 19H25V10.2308H17.6471V19ZM8.82353 8.76923H16.1765V0H8.82353V8.76923ZM17.6471 0V8.76923H25V0H17.6471Z"
@@ -306,15 +317,15 @@ export function ShopPage() {
                 currentPage * itemsPerPage
               )
               .map((product) => (
-              <ShopItemList
-                key={product.key}
-                name={product.title}
-                price={product.price}
-                img={product.images[0]}
-                category={product.category}
-                link={`/shop/${product.key}`}
-              />
-            ))}
+                <ShopItemList
+                  key={product.key}
+                  name={product.title}
+                  price={product.price}
+                  img={product.images[0]}
+                  category={product.category}
+                  link={`/shop/${product.key}`}
+                />
+              ))}
           </section>
 
           <section
@@ -340,13 +351,14 @@ export function ShopPage() {
               ))}
           </section>
           <div className="flex justify-center mt-20">
-          <Pagination
-            total={Math.ceil(filteredProducts.length / itemsPerPage)}
-            initialPage={1}
-            showShadow color="primary"
-            page={currentPage}
-            onChange={(newPage) => setCurrentPage(newPage)}
-          />
+            <Pagination
+              total={Math.ceil(filteredProducts.length / itemsPerPage)}
+              initialPage={1}
+              showShadow
+              color="primary"
+              page={currentPage}
+              onChange={(newPage) => setCurrentPage(newPage)}
+            />
           </div>
         </section>
       </main>
