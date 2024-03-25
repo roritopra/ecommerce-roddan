@@ -4,90 +4,10 @@ import { LogoCarousel } from "../../components/LogoCarousel/LogoCarousel";
 import { ProductItem } from "../../components/ProductItem/ProductItem";
 import { Footer } from "../../components/Footer/Footer";
 import { Button } from "@nextui-org/react";
-import { useEffect } from "react";
-import ScrollReveal from "scrollreveal";
+import { useScrollReveal } from "../../../libs/ScrollReveal";
 
 export function HomePage() {
-  useEffect(() => {
-    ScrollReveal().reveal(".january", {
-      delay: 500,
-      duration: "1300",
-      distance: "50px",
-      origin: "bottom",
-    });
-    ScrollReveal().reveal(".play", {
-      delay: 700,
-      duration: "1300",
-      distance: "30px",
-      origin: "top",
-    });
-    ScrollReveal().reveal(".january-title", {
-      delay: 700,
-      duration: "1300",
-      distance: "30px",
-      origin: "bottom",
-    });
-    ScrollReveal().reveal(".january-text", {
-      delay: 900,
-      duration: "1300",
-      distance: "30px",
-      origin: "bottom",
-    });
-    ScrollReveal().reveal(".january-button", {
-      delay: 1500,
-      duration: "1300",
-      distance: "30px",
-      origin: "bottom",
-    });
-    ScrollReveal().reveal(".box1", {
-      delay: 500,
-      duration: "1300",
-      distance: "30px",
-      origin: "right",
-    });
-    ScrollReveal().reveal(".box2", {
-      delay: 700,
-      duration: "1300",
-      distance: "30px",
-      origin: "right",
-    });
-    ScrollReveal().reveal(".box3", {
-      delay: 900,
-      duration: "1300",
-      distance: "30px",
-      origin: "right",
-    });
-    ScrollReveal().reveal(".box4", {
-      delay: 1100,
-      duration: "1300",
-      distance: "30px",
-      origin: "right",
-    });
-    ScrollReveal().reveal(".product-title", {
-      delay: 500,
-      duration: "1300",
-      distance: "0px",
-      origin: "bottom",
-    });
-    ScrollReveal().reveal(".products", {
-      delay: 500,
-      duration: "1600",
-      distance: "30px",
-      origin: "bottom",
-    });
-    ScrollReveal().reveal(".blog-title", {
-      delay: 500,
-      duration: "1600",
-      distance: "30px",
-      origin: "bottom",
-    });
-    ScrollReveal().reveal(".blog", {
-      delay: 700,
-      duration: "1600",
-      distance: "30px",
-      origin: "bottom",
-    });
-  }, []);
+  useScrollReveal();
 
   return (
     <>
@@ -116,7 +36,7 @@ export function HomePage() {
             <h6 className="january-text text-white text-sm font-satoshi mb-3">
               20% OFF
             </h6>
-            <h4 className="january-text text-white text-4xl font-satoshi font-bold mb-5">
+            <h4 className="january-text text-white text-4xl font-satoshi font-extrabold mb-5">
               January Sale
             </h4>
             <p className="january-text text-[#EBEBEB] text-[15px] font-satoshi font-light mb-6">
@@ -197,7 +117,7 @@ export function HomePage() {
 
       <section className="product-title">
         <div className="flex justify-center items-center flex-col mb-16">
-          <h2 className="text-[#19191B] font-satoshi text-[35px] font-bold">
+          <h2 className="text-[#19191B] font-satoshi text-[35px] font-extrabold">
             Trending week
           </h2>
           <p className="text-[#6B6B6B] font-satoshi text-base">
@@ -251,7 +171,7 @@ export function HomePage() {
 
       <section className="blog-title">
         <div className="flex justify-center items-center flex-col mb-16 mt-28">
-          <h2 className="text-[#19191B] font-satoshi text-[35px] font-bold">
+          <h2 className="text-[#19191B] font-satoshi text-[35px] font-extrabold">
             Recent News
           </h2>
           <p className="text-[#6B6B6B] font-satoshi text-base">
