@@ -6,24 +6,33 @@ import {
   Accordion,
   AccordionItem,
   Button,
+  Pagination,
 } from "@nextui-org/react";
+import { useEffect, useState } from "react";
+
 import { ShopItemGrid } from "../../components/ShopItemGrid/ShopItemGrid";
 import { ShopItemList } from "../../components/ShopItemList/ShopItemList";
-import ScrollReveal from "scrollreveal";
-import { useEffect, useState } from "react";
+import { useScrollReveal } from "../../../libs/ScrollReveal";
 import { Footer } from "../../components/Footer/Footer";
 import { collection, getDocs } from "firebase/firestore";
 import { database } from "../../../firebase/firebase";
+import { applyFilters } from "../../../hooks/useFilters";
 
 export function ShopPage() {
+  useScrollReveal();
+  const [currentPage, setCurrentPage] = useState(1);
   const [products, setProducts] = useState([]);
   const [color1, setColor1] = useState("#323232");
   const [color2, setColor2] = useState("#0081FE");
+  const [border1, setBorder1] = useState("");
+  const [border2, setBorder2] = useState(
+    "border border-[#0081FE] p-3 rounded-lg"
+  );
   const [isListVisible, setIsListVisible] = useState(false);
   const [isGridVisible, setIsGridVisible] = useState(true);
   const [filteredProducts, setfilteredProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [priceRange, setPriceRange] = useState([0, 1750]); 
+  const [priceRange, setPriceRange] = useState([0, 1750]);
   const [filters, setFilters] = useState({
     smartwatches: false,
     tablets: false,
@@ -32,6 +41,8 @@ export function ShopPage() {
     smartphones: false,
     consoles: false,
   });
+
+  const itemsPerPage = 9;
 
   useEffect(() => {
     (async () => {
@@ -46,80 +57,23 @@ export function ShopPage() {
     })();
   }, []);
 
-  useEffect(() => {}, [filters, searchTerm]);
+  useEffect(() => {
+    let filtered = applyFilters(products, filters, priceRange);
+    setfilteredProducts(filtered);
 
-  const handleFilterButtonClick = () => {
-    applyFilters();
-  };
-
-  const applyFilters = () => {
-    let filtered = products;
-
-    filtered = filtered.filter(
-      (product) =>
-        product.price >= priceRange[0] && product.price <= priceRange[1]
-    );
-
-    if (filters.laptops) {
-      filtered = filtered.filter((product) =>
-        product.category.includes("laptops")
-      );
-    }
-    if (filters.speakers) {
-      filtered = filtered.filter((product) =>
-        product.category.includes("speakers")
-      );
-    }
-    if (filters.consoles) {
-      filtered = filtered.filter((product) =>
-        product.category.includes("consoles")
-      );
-    }
-    if (filters.smartwatches) {
-      filtered = filtered.filter((product) =>
-        product.category.includes("smartwatches")
-      );
-    }
-    if (filters.tablets) {
-      filtered = filtered.filter((product) =>
-        product.category.includes("tablets")
-      );
-    }
-    if (filters.smartphones) {
-      filtered = filtered.filter((product) =>
-        product.category.includes("smartphones")
-      );
-    }
-
-    if (searchTerm.trim() !== "No products") {
+    if (searchTerm.trim() !== "") {
       filtered = filtered.filter((product) =>
         product.title.toLowerCase().includes(searchTerm.toLowerCase())
       );
     }
 
     setfilteredProducts(filtered);
-  };
+  }, [filters, searchTerm, priceRange]);
 
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
   };
 
-  console.log(products);
-
-  useEffect(() => {
-    ScrollReveal().reveal(".filter-section", {
-      delay: 500,
-      duration: "1300",
-      distance: "50px",
-      origin: "left",
-    });
-    ScrollReveal().reveal(".items", {
-      delay: 500,
-      duration: "1300",
-      distance: "50px",
-      origin: "right",
-    });
-  }, []);
   return (
     <>
       <main className="content-shop px-5 max-w-[1440px] mx-auto mb-28 text-sm mt-5">
@@ -133,7 +87,10 @@ export function ShopPage() {
             </Button>
           </NavLink>
 
-          <aside className="border border-[#D9D9D9] rounded-2xl px-5 py-5">
+          <aside
+            onClick={() => applyFilters(products, filters, priceRange)}
+            className="border border-[#D9D9D9] rounded-2xl px-5 py-5"
+          >
             <div className="mb-6">
               <div className="relative">
                 <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"></div>
@@ -146,10 +103,7 @@ export function ShopPage() {
                   onChange={handleSearch}
                   required
                 />
-                <button
-                  className="text-white absolute end-2.5 bottom-2.5 bg-[#0081FE] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-2 py-2"
-                  onClick={() => applyFilters()}
-                >
+                <button className="text-white absolute end-2.5 bottom-2.5 bg-[#0081FE] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-2 py-2">
                   <svg
                     className="w-4 h-4 text-white"
                     aria-hidden="true"
@@ -269,14 +223,8 @@ export function ShopPage() {
                   onChange={(value) => setPriceRange(value)}
                   defaultValue={[100, 500]}
                   formatOptions={{ style: "currency", currency: "USD" }}
-                  className="max-w-md font-satoshi"
+                  className="max-w-md font-satoshi mb-3"
                 />
-                <Button
-                  className="w-full bg-[#0081FE] text-white font-satoshi mt-7 mb-3 text-[17px]"
-                  onClick={handleFilterButtonClick}
-                >
-                  Filter
-                </Button>
               </AccordionItem>
             </Accordion>
           </aside>
@@ -291,11 +239,14 @@ export function ShopPage() {
               </span>
             </h1>
             <div>
-              <div className="flex items-center flex-row-reverse gap-9">
+              <div className="flex items-center flex-row-reverse gap-5">
                 <button
+                  className={`${border1} p-3 rounded-lg transition-all`}
                   onClick={() => {
                     setColor1("#0081FE");
                     setColor2("#323232");
+                    setBorder1(" border-[#0081FE] border");
+                    setBorder2("");
                     setIsListVisible(true);
                     setIsGridVisible(false);
                   }}
@@ -306,6 +257,7 @@ export function ShopPage() {
                     height="19"
                     viewBox="0 0 26 19"
                     fill="none"
+                    className="transition-all"
                   >
                     <g clipPath="url(#clip0_191_136)">
                       <path
@@ -321,9 +273,12 @@ export function ShopPage() {
                   </svg>
                 </button>
                 <button
+                  className={`${border2} p-3 rounded-lg transition-all`}
                   onClick={() => {
                     setColor2("#0081FE");
                     setColor1("#323232");
+                    setBorder1("");
+                    setBorder2("border-[#0081FE] border");
                     setIsListVisible(false);
                     setIsGridVisible(true);
                   }}
@@ -333,7 +288,7 @@ export function ShopPage() {
                     width="25"
                     height="19"
                     viewBox="0 0 25 19"
-                    fill="none"
+                    fill="none"                   
                   >
                     <path
                       d="M0 8.76923H7.35294V0H0V8.76923ZM0 19H7.35294V10.2308H0V19ZM8.82353 19H16.1765V10.2308H8.82353V19ZM17.6471 19H25V10.2308H17.6471V19ZM8.82353 8.76923H16.1765V0H8.82353V8.76923ZM17.6471 0V8.76923H25V0H17.6471Z"
@@ -345,21 +300,32 @@ export function ShopPage() {
             </div>
           </div>
 
+          {filteredProducts.length === 0 && (
+            <p className="grid h-screen place-items-center font-satoshi font-bold text-xl">
+              No products found with the applied filters.
+            </p>
+          )}
+
           <section
             className={
               isListVisible ? "mt-[45px] mx-auto max-w-[1440px]" : "hidden"
             }
           >
-            {filteredProducts.map((product) => (
-              <ShopItemList
-                key={product.key}
-                name={product.title}
-                price={product.price}
-                img={product.images[0]}
-                category={product.category}
-                link={`/shop/${product.key}`}
-              />
-            ))}
+            {filteredProducts
+              .slice(
+                (currentPage - 1) * itemsPerPage,
+                currentPage * itemsPerPage
+              )
+              .map((product) => (
+                <ShopItemList
+                  key={product.key}
+                  name={product.title}
+                  price={product.price}
+                  img={product.images[0]}
+                  category={product.category}
+                  link={`/shop/${product.key}`}
+                />
+              ))}
           </section>
 
           <section
@@ -369,16 +335,31 @@ export function ShopPage() {
                 : "hidden"
             }
           >
-            {filteredProducts.map((product) => (
-              <ShopItemGrid
-                key={product.key}
-                name={product.title}
-                price={product.price}
-                image={product.images[0]}
-                link={`/shop/${product.key}`}
-              />
-            ))}
+            {filteredProducts
+              .slice(
+                (currentPage - 1) * itemsPerPage,
+                currentPage * itemsPerPage
+              )
+              .map((product) => (
+                <ShopItemGrid
+                  key={product.key}
+                  name={product.title}
+                  price={product.price}
+                  image={product.images[0]}
+                  link={`/shop/${product.key}`}
+                />
+              ))}
           </section>
+          <div className="flex justify-center mt-20">
+            <Pagination
+              total={Math.ceil(filteredProducts.length / itemsPerPage)}
+              initialPage={1}
+              showShadow
+              color="primary"
+              page={currentPage}
+              onChange={(newPage) => setCurrentPage(newPage)}
+            />
+          </div>
         </section>
       </main>
       <Footer />

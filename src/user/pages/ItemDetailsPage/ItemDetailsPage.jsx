@@ -13,8 +13,8 @@ export function ItemDetailsPage() {
   const { productId } = useParams();
   const [count, setCount] = useState(1);
   const [product, setProduct] = useState(null);
-
   const [active, setActive] = useState(product ? product?.images[0] : "");
+  const [showCarousel, setShowCarousel] = useState(true);
 
   const decreaseCount = () => {
     if (count > 1) {
@@ -231,27 +231,30 @@ export function ItemDetailsPage() {
           <p className="bg-[#EBEBEB] font-satoshi text-[#636367] rounded-full px-4 py-2 text-[14px]">
             104 products
           </p>
-          <div className="flex items-center gap-3 bg-[#0081FE] rounded-full px-4 py-2">
-            <p className="font-satoshi text-white text-[14px]">Show less</p>
+          <button
+            onClick={() => setShowCarousel(!showCarousel)}
+            className={`flex items-center gap-3 bg-[#0081FE] rounded-full px-4 py-2 transition-all [&>svg]:transition ${showCarousel ? "[&>svg]:rotate-0" : "[&>svg]:rotate-[280deg]"}`}
+          >
+            <p className="font-satoshi text-white text-[14px]">{showCarousel ? "Show less" : "Show more"}</p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="17"
-              height="17"
-              viewBox="0 0 17 17"
               fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="white"
+              className="w-6 h-6"
             >
               <path
-                d="M15 17L16.5 15L3.5 2H14V0H0V14L2 14V4L15 17Z"
-                fill="white"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="m19.5 19.5-15-15m0 0v11.25m0-11.25h11.25"
               />
             </svg>
-          </div>
+          </button>
         </div>
         <hr className="border-[#D1D1D1]" />
 
-        <div className="mt-12">
-          <CarouselProducts />
-        </div>
+        <div className="mt-12">{showCarousel && <CarouselProducts />}</div>
       </main>
       <Footer />
     </>
