@@ -38,7 +38,7 @@ export function ShopPage() {
     consoles: false,
   });
 
-  const itemsPerPage = 1;
+  const itemsPerPage = 9;
 
   useEffect(() => {
     (async () => {
@@ -300,7 +300,12 @@ export function ShopPage() {
               isListVisible ? "mt-[45px] mx-auto max-w-[1440px]" : "hidden"
             }
           >
-            {filteredProducts.map((product) => (
+            {filteredProducts
+              .slice(
+                (currentPage - 1) * itemsPerPage,
+                currentPage * itemsPerPage
+              )
+              .map((product) => (
               <ShopItemList
                 key={product.key}
                 name={product.title}
@@ -337,6 +342,8 @@ export function ShopPage() {
           <div className="flex justify-center mt-20">
           <Pagination
             total={Math.ceil(filteredProducts.length / itemsPerPage)}
+            initialPage={1}
+            showShadow color="primary"
             page={currentPage}
             onChange={(newPage) => setCurrentPage(newPage)}
           />
