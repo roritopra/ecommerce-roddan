@@ -50,7 +50,7 @@ export function ShopItemGrid({ image, name, price, link, ...props }) {
 ShopItemGrid.propTypes = {
   image: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
+  price: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
 };
 

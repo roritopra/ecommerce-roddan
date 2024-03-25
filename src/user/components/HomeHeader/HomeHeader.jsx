@@ -134,10 +134,10 @@ export function HomeHeader() {
           <p className="relative z-10 text-white font-satoshi text-base mb-1 tracking-[-0.64px]">
             Know
           </p>
-          <p className="relative z-10 text-white font-satoshi text-3xl mb-1 tracking-[-1.2px]">
+          <p className="relative z-10 font-bold text-white font-satoshi text-3xl mb-1 tracking-[-1.2px]">
             Home
           </p>
-          <span className="relative z-10 font-satoshi text-items-rgba text-5xl  tracking-[-1.8px] font-semibold">
+          <span className="relative z-10 font-bold font-satoshi text-items-rgba text-5xl  tracking-[-1.8px] font-semibold">
             Assistant
           </span>
           <NavLink to={"/shop"}>
@@ -156,10 +156,10 @@ export function HomeHeader() {
           <p className="relative z-10 text-white font-satoshi text-base mb-1 tracking-[-0.64px]">
             Virtual
           </p>
-          <p className="relative z-10 text-white font-satoshi text-3xl mb-1 tracking-[-1.2px]">
+          <p className="relative z-10 font-bold text-white font-satoshi text-3xl mb-1 tracking-[-1.2px]">
             Game
           </p>
-          <span className="relative z-10 font-satoshi text-items-rgba text-5xl  tracking-[-1.8px] font-semibold">
+          <span className="relative z-10 font-bold font-satoshi text-items-rgba text-5xl  tracking-[-1.8px] font-semibold">
             Reality
           </span>
           <NavLink to={"/shop"}>
@@ -177,10 +177,10 @@ export function HomeHeader() {
           <p className="relative z-10 text-white font-satoshi text-base mb-1 tracking-[-0.64px]">
             Wear
           </p>
-          <p className="relative z-10 text-white font-satoshi text-3xl mb-1 tracking-[-1.2px]">
+          <p className="relative z-10 font-bold text-white font-satoshi text-3xl mb-1 tracking-[-1.2px]">
             Intelligent
           </p>
-          <span className="relative z-10 font-satoshi text-items-rgba text-5xl  tracking-[-1.8px] font-semibold">
+          <span className="relative z-10 font-bold font-satoshi text-items-rgba text-5xl  tracking-[-1.8px] font-semibold">
             Smartwatches
           </span>
           <NavLink to={"/shop"}>
@@ -198,10 +198,10 @@ export function HomeHeader() {
           <p className="relative z-10 text-white font-satoshi text-base mb-1 tracking-[-0.64px]">
             New
           </p>
-          <p className="relative z-10 text-white font-satoshi text-3xl mb-1 tracking-[-1.2px]">
+          <p className="relative z-10 font-bold text-white font-satoshi text-3xl mb-1 tracking-[-1.2px]">
             Device
           </p>
-          <span className="relative z-10 font-satoshi text-items-rgba text-5xl  tracking-[-1.8px] font-semibold">
+          <span className="relative z-10 font-bold font-satoshi text-items-rgba text-5xl  tracking-[-1.8px] font-semibold">
             Laptops
           </span>
           <NavLink to={"/shop"}>
@@ -219,10 +219,10 @@ export function HomeHeader() {
           <p className="relative z-10 text-[#19191B] font-satoshi text-base mb-1 tracking-[-0.64px]">
             Listen
           </p>
-          <p className="relative z-10 text-[#19191B] font-satoshi text-3xl mb-1 tracking-[-1.2px]">
+          <p className="relative z-10 font-bold text-[#19191B] font-satoshi text-3xl mb-1 tracking-[-1.2px]">
             High
           </p>
-          <span className="relative z-10 font-satoshi text-items-rgba-2 text-5xl  tracking-[-1.8px] font-semibold">
+          <span className="relative z-10 font-bold font-satoshi text-items-rgba-2 text-5xl  tracking-[-1.8px] font-semibold">
             Definition
           </span>
           <NavLink to={"/shop"}>
