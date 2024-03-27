@@ -1,8 +1,8 @@
 .big-div {
   display: grid;
-  grid-template-columns: 1.4fr repeat(2, 0.8fr);
+  grid-template-columns: 1.5fr repeat(2, 0.75fr);
   grid-template-rows: repeat(2, 1fr);
-  gap: 0px 0px;
+  gap: 19px;
   grid-auto-flow: row;
 }
 
@@ -11,9 +11,9 @@
   border-radius: var(--units-unit-5, 20px);
   background: linear-gradient(
     41deg,
-    #2f2f2f 30.76%,
-    #323232 77.12%,
-    #515151 77.12%
+    #2f2f2f 19.85%,
+    #323232 85.9%,
+    #515151 85.9%
   );
 }
 
