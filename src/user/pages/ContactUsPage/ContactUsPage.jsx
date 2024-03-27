@@ -8,12 +8,24 @@ export function ContactUsPage() {
     <>
       <section className="flex font-satoshi max-w-[1440px] mx-auto px-5">
         <section className="contenedor w-1/2">
-          <div className="phone-hand"></div>
-          <div className="vr-men"></div>
-          <div className="head-girl"></div>
-          <div className="mac-gray"></div>
-          <div className="jbl-yellow"></div>
-          <div className="watch-hand"></div>
+          <div className="phone-hand">
+            <img src="" alt="" />
+          </div>
+          <div className="vr-men">
+            <img src="imgs/vr-men.png" alt="" />
+          </div>
+          <div className="head-girl flex justify-center">
+            <img className="" src="imgs/contact-us girl.png" alt=""/>
+          </div>
+          <div className="mac-gray flex justify-center">
+            <img src="imgs/macgray.png" alt="" />
+          </div>
+          <div className="jbl-yellow">
+            <img src="" alt="" />
+          </div>
+          <div className="watch-hand">
+            <img src="" alt="" />
+          </div>
         </section>
         <form
           action=""
