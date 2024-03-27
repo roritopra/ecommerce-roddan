@@ -1,35 +1,38 @@
 import "./ContactUsPage.css";
 import { Footer } from "../../components/Footer/Footer";
-import ScrollReveal from "scrollreveal";
 import { Button } from "@nextui-org/react";
 
 export function ContactUsPage() {
   return (
-    <>
+    <main>
       <section className="flex font-satoshi max-w-[1440px] mx-auto px-5">
         <section className="contenedor w-1/2">
-          <div className="phone-hand">
-            <img src="" alt="" />
+          <div className="phone-hand flex flex-col justify-end">
+            <img src="/imgs/phone-hand.png" alt="Image" />
           </div>
-          <div className="vr-men">
-            <img src="imgs/vr-men.png" alt="" />
+          <div className="vr-men flex flex-col justify-end">
+            <img className="" src="imgs/vr-men.png" alt="Image" />
           </div>
-          <div className="head-girl flex justify-center">
-            <img className="" src="imgs/contact-us girl.png" alt=""/>
+          <div className="head-girl flex flex-col justify-end items-center">
+            <img className="" src="/imgs/contact-us girl.png" alt="Image" />
           </div>
-          <div className="mac-gray flex justify-center">
-            <img src="imgs/macgray.png" alt="" />
+          <div className="mac-gray flex flex-col justify-end">
+            <img src="/imgs/macgray.png" alt="Image" />
           </div>
-          <div className="jbl-yellow">
-            <img src="" alt="" />
+          <div className="jbl-yellow flex flex-col justify-center items-center">
+            <img src="/imgs/jbl-yellow.png" alt="Image" />
           </div>
-          <div className="watch-hand">
-            <img src="" alt="" />
+          <div className="watch-hand flex flex-col justify-center items-center w-full h-full">
+            <img
+              className="w-full h-full"
+              src="/imgs/watch-hand.png"
+              alt="Image"
+            />
           </div>
         </section>
         <form
           action=""
-          className="form-area flex flex-col justify-center items-center w-1/2 bg-gray-100 gap-[21px] px-28 py-12 ml-[18px]"
+          className="form-area flex flex-col justify-center items-center w-1/2 bg-gray-100 gap-[21px] px-28 ml-[18px]"
         >
           <p className="text-[16px] font-[500] font-satoshi text-customColor">
             Contact us
@@ -75,13 +78,16 @@ export function ContactUsPage() {
               className="inputs border-none rounded-[6px] text-[13px] mt-1 text-[#4C5C6B] font-[400] "
               rows={7}
             ></textarea>
-            
           </label>
-          <Button className="font-satoshi font-[400] text-[14px] px-16" color="primary">Submit</Button>
+          <Button
+            className="font-satoshi font-[400] text-[14px] px-16"
+            color="primary"
+          >
+            Submit
+          </Button>
         </form>
       </section>
       <Footer />
-
-    </>
+    </main>
   );
 }
