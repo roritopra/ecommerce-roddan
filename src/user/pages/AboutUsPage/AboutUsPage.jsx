@@ -33,9 +33,47 @@ export function AboutUsPage() {
               <img src="icons/Cart.svg" alt="" />
             </NavLink>
           </div>
-          <div className="info-div">2</div>
-          <div className="contact-us">3</div>
-          <div className="our-blog">4</div>
+          <div className="info-div relative pl-[24px] pt-[32px] pr-[32px]">
+            <img src="icons/roddan_about.svg" alt="" />
+            <p className="font-normal text-[18px] text-[#19191B] mt-[28px]">
+              Sed ut perspiciatis unde omnis iste laudantium, totam rem aperiam,
+              eaque ipsa quae ab pariatur?Sed ut perspiciatis unde omnis iste
+              laudantium, totam rem aperiam, eaque ipsa quae ab pariatur?
+            </p>
+            <div className="flex absolute bottom-0 mb-[25px] items-center justify-between gap-[370px]">
+              <div className="flex gap-[39px]">
+                <img src="icons/left_arrow.svg" alt="" />
+                <img src="icons/right_arrow.svg" alt="" />
+              </div>
+              <div className="flex gap-[15px]">
+                <img src="icons/in_circle.svg" alt="" />
+                <img src="icons/git_circle.svg" alt="" />
+                <img src="icons/behance_circle.svg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div className="contact-us relative">
+            <div className="flex ml-[16px] mt-[16px]">
+              <p className="text-[#FFFFFF] font-satoshi font-regular text-base">
+                Have some questions?
+              </p>
+              <img src="icons/Vector_arrow.svg" alt="" />
+            </div>
+            <p className="text-[#FFFFFF] font-satoshi font-bold text-[44px] absolute bottom-0 ml-[16px]">
+              Contact us
+            </p>
+          </div>
+          <div className="our-blog relative">
+            <div className="flex ml-[16px] mt-[16px]">
+              <p className="text-[#FFFFFF] font-satoshi font-regular text-base">
+                Whats new?
+              </p>
+              <img src="icons/Sendit.svg" alt="" />
+            </div>
+            <p className="text-[#FFFFFF] font-satoshi font-bold text-[44px] absolute bottom-0 ml-[16px]">
+              Our blog
+            </p>
+          </div>
         </section>
       </section>
     </>
