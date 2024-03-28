@@ -1,9 +1,10 @@
 import "./AboutUsPage.css";
 import { NavLink } from "react-router-dom";
+import { Footer } from "../../components/Footer/Footer";
 
 export function AboutUsPage() {
   return (
-    <>
+    <main>
       <section className="flex font-satoshi max-w-[1440px] mx-auto px-5">
         <section className="big-div w-full">
           <div className="welcome-roddan relative">
@@ -33,14 +34,18 @@ export function AboutUsPage() {
               <img src="icons/Cart.svg" alt="" />
             </NavLink>
           </div>
-          <div className="info-div relative pl-[24px] pt-[32px] pr-[32px]">
-            <img src="icons/roddan_about.svg" alt="" />
-            <p className="font-normal text-[18px] text-[#19191B] mt-[28px]">
-              Sed ut perspiciatis unde omnis iste laudantium, totam rem aperiam,
-              eaque ipsa quae ab pariatur?Sed ut perspiciatis unde omnis iste
-              laudantium, totam rem aperiam, eaque ipsa quae ab pariatur?
-            </p>
-            <div className="flex absolute bottom-0 mb-[25px] items-center justify-between gap-[370px]">
+
+          <div className="info-div flex flex-col justify-between p-4 h-full">
+            <div>
+              <img src="icons/roddan_about.svg" alt="" />
+              <p className="font-normal text-[18px] text-[#19191B] mt-[28px]">
+                Sed ut perspiciatis unde omnis iste laudantium, totam rem
+                aperiam, eaque ipsa quae ab pariatur?Sed ut perspiciatis unde
+                omnis iste laudantium, totam rem aperiam, eaque ipsa quae ab
+                pariatur?
+              </p>
+            </div>
+            <div className="flex items-center justify-between">
               <div className="flex gap-[39px]">
                 <img src="icons/left_arrow.svg" alt="" />
                 <img src="icons/right_arrow.svg" alt="" />
@@ -52,30 +57,33 @@ export function AboutUsPage() {
               </div>
             </div>
           </div>
-          <div className="contact-us relative">
-            <div className="flex ml-[16px] mt-[16px]">
+
+          <div className="contact-us flex flex-col justify-between p-4">
+            <div className="flex items-center justify-between">
               <p className="text-[#FFFFFF] font-satoshi font-regular text-base">
                 Have some questions?
               </p>
               <img src="icons/Vector_arrow.svg" alt="" />
             </div>
-            <p className="text-[#FFFFFF] font-satoshi font-bold text-[44px] absolute bottom-0 ml-[16px]">
+            <p className="text-[#FFFFFF] font-satoshi font-bold text-[44px]">
               Contact us
             </p>
           </div>
-          <div className="our-blog relative">
-            <div className="flex ml-[16px] mt-[16px]">
+
+          <div className="our-blog flex flex-col justify-between p-4">
+            <div className="flex justify-between items-center">
               <p className="text-[#FFFFFF] font-satoshi font-regular text-base">
                 Whats new?
               </p>
               <img src="icons/Sendit.svg" alt="" />
             </div>
-            <p className="text-[#FFFFFF] font-satoshi font-bold text-[44px] absolute bottom-0 ml-[16px]">
+            <p className="text-[#FFFFFF] font-satoshi font-bold text-[44px]">
               Our blog
             </p>
           </div>
         </section>
       </section>
-    </>
+      <Footer />
+    </main>
   );
 }
