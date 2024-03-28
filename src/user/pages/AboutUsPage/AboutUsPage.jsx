@@ -1,6 +1,7 @@
 import "./AboutUsPage.css";
 import { NavLink } from "react-router-dom";
 import { Footer } from "../../components/Footer/Footer";
+import { LogoCarousel } from "../../components/LogoCarousel/LogoCarousel";
 
 export function AboutUsPage() {
   return (
@@ -83,6 +84,9 @@ export function AboutUsPage() {
           </div>
         </section>
       </section>
+      <LogoCarousel>
+        
+      </LogoCarousel>
       <Footer />
     </main>
   );
