@@ -1,11 +1,13 @@
 import "./ContactUsPage.css";
-import { Footer } from "../../components/Footer/Footer";
 import { Button } from "@nextui-org/react";
+
+import { Footer } from "../../components/Footer/Footer";
+import { Layout } from "../../../layout/Layout";
 
 export function ContactUsPage() {
   return (
-    <main>
-      <section className="flex font-satoshi max-w-[1440px] mx-auto px-5">
+    <Layout>
+      <section className="flex font-satoshi">
         <section className="contenedor w-1/2">
           <div className="phone-hand flex flex-col justify-end">
             <img src="/imgs/phone-hand.png" alt="Image" />
@@ -88,6 +90,6 @@ export function ContactUsPage() {
         </form>
       </section>
       <Footer />
-    </main>
+    </Layout>
   );
 }

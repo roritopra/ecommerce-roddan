@@ -17,6 +17,7 @@ import { Footer } from "../../components/Footer/Footer";
 import { collection, getDocs } from "firebase/firestore";
 import { database } from "../../../firebase/firebase";
 import { applyFilters } from "../../../hooks/useFilters";
+import { Layout } from "../../../layout/Layout";
 
 export function ShopPage() {
   useScrollReveal();
@@ -75,8 +76,8 @@ export function ShopPage() {
   };
 
   return (
-    <>
-      <main className="content-shop px-5 max-w-[1440px] mx-auto mb-28 text-sm mt-5">
+    <Layout>
+      <section className="content-shop mb-28 text-sm mt-5">
         <section className="filter-section">
           <NavLink to={"/"}>
             <Button
@@ -288,7 +289,7 @@ export function ShopPage() {
                     width="25"
                     height="19"
                     viewBox="0 0 25 19"
-                    fill="none"                   
+                    fill="none"
                   >
                     <path
                       d="M0 8.76923H7.35294V0H0V8.76923ZM0 19H7.35294V10.2308H0V19ZM8.82353 19H16.1765V10.2308H8.82353V19ZM17.6471 19H25V10.2308H17.6471V19ZM8.82353 8.76923H16.1765V0H8.82353V8.76923ZM17.6471 0V8.76923H25V0H17.6471Z"
@@ -361,8 +362,8 @@ export function ShopPage() {
             />
           </div>
         </section>
-      </main>
+      </section>
       <Footer />
-    </>
+    </Layout>
   );
 }

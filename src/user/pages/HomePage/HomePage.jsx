@@ -1,20 +1,22 @@
 import "./HomePage.css";
+import { Button } from "@nextui-org/react";
+
+import { Footer } from "../../components/Footer/Footer";
 import { HomeHeader } from "../../components/HomeHeader/HomeHeader";
 import { LogoCarousel } from "../../components/LogoCarousel/LogoCarousel";
 import { ProductItem } from "../../components/ProductItem/ProductItem";
-import { Footer } from "../../components/Footer/Footer";
-import { Button } from "@nextui-org/react";
+import { Layout } from "../../../layout/Layout";
 import { useScrollReveal } from "../../../libs/ScrollReveal";
 
 export function HomePage() {
   useScrollReveal();
 
   return (
-    <>
+    <Layout>
       <HomeHeader />
       <LogoCarousel />
 
-      <section className="px-5 max-w-[1440px] mx-auto mb-28 mt-48">
+      <section className="mb-28 mt-48">
         <div className="january relative flex justify-between pl-11 pr-20 rounded-[35px] py-20">
           <div className="relative h-full">
             <img
@@ -126,7 +128,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="products grid sm:grid-cols-2 lg:grid-cols-4 px-5 max-w-[1440px] mx-auto gap-[16px]">
+      <section className="products grid sm:grid-cols-2 lg:grid-cols-4 gap-[16px]">
         <ProductItem
           image="imgs/home-item-1.png"
           name="Sony WH-1000XM4"
@@ -180,7 +182,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="blog grid sm:grid-cols-2 lg:grid-cols-3 px-5 max-w-[1440px] mx-auto gap-[16px]">
+      <section className="blog grid sm:grid-cols-2 lg:grid-cols-3 gap-[16px]">
         <div className="mt-5 mb-28 cursor-pointer hover:filter hover:drop-shadow-2xl transition-all">
           <figure className="flex justify-center items-center">
             <img className="" src="imgs/new-1.png" alt="News home" />
@@ -237,6 +239,6 @@ export function HomePage() {
       </section>
 
       <Footer />
-    </>
+    </Layout>
   );
 }
