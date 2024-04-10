@@ -6,6 +6,7 @@ import { HomePage } from "./user/pages/HomePage/HomePage";
 import { ShopPage } from "./user/pages/ShopPage/ShopPage";
 import { ItemDetailsPage } from "./user/pages/ItemDetailsPage/ItemDetailsPage";
 import { ContactUsPage } from "./user/pages/ContactUsPage/ContactUsPage";
+import { AboutUsPage } from "./user/pages/AboutUsPage/AboutUsPage";
 export function AppRouter() {
   return (
     <Routes>
@@ -15,6 +16,7 @@ export function AppRouter() {
         <Route path="/shop/:productId" element={<ItemDetailsPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/contact-us" element={<ContactUsPage />} />
+        <Route path="/about-us" element={<AboutUsPage />} />
         <Route path="/register" element={<RegisterPage />} />
       </Route>
     </Routes>
