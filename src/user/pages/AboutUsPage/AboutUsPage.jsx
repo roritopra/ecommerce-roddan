@@ -85,7 +85,6 @@ export function AboutUsPage() {
             </p>
           </div>
         </section>
-      </section>
       <LogoCarousel></LogoCarousel>
       <Footer />
     </Layout>
