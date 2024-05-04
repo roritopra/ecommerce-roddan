@@ -7,7 +7,6 @@ import { useMemo, useState } from "react";
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 
-import { Footer } from "../../components/Footer/Footer";
 import { Layout } from "../../../layout/Layout";
 
 export function ContactUsPage() {
