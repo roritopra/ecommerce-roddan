@@ -1,16 +1,7 @@
 import { NavLink } from "react-router-dom";
-import { useEffect } from "react";
-import ScrollReveal from "scrollreveal";
-
+import { useScrollReveal } from "../../../libs/ScrollReveal";
 export function Footer() {
-
-  useEffect(() => {
-    ScrollReveal().reveal('.news', { delay: 500, duration: '1300', distance: '30px', origin: 'bottom' })
-    ScrollReveal().reveal('.news', { delay: 500, duration: '1300', distance: '30px', origin: 'bottom' })
-    ScrollReveal().reveal('.left', { delay: 500, duration: '1300', distance: '30px', origin: 'left' })
-    ScrollReveal().reveal('.right', { delay: 700, duration: '1300', distance: '30px', origin: 'left' })
-  }
-  , [])
+  useScrollReveal();
 
   return (
     <>
@@ -40,9 +31,9 @@ export function Footer() {
 
         <div className="left relative mx-auto max-w-[1440px] px-4 py-16 lg:px-5 lg:pt-24">
           <div className="absolute end-4 top-4 sm:end-6 sm:top-6 lg:end-8 lg:top-8">
-            <a
+            <button
               className="inline-block rounded-full bg-[#0081FE] p-2 text-white shadow transition hover:bg-blue-500 sm:p-3 lg:p-4"
-              href="#header"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             >
               <span className="sr-only">Back to top</span>
 
@@ -58,7 +49,7 @@ export function Footer() {
                   clipRule="evenodd"
                 />
               </svg>
-            </a>
+            </button>
           </div>
 
           <div className="right lg:flex lg:items-end lg:justify-between">
@@ -68,7 +59,8 @@ export function Footer() {
               </div>
 
               <p className="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500 lg:text-left font-satoshi">
-              Veen altered in some form, injected humor, or random words. Explore our cutting-edge technology for a transformative future.
+                Veen altered in some form, injected humor, or random words.
+                Explore our cutting-edge technology for a transformative future.
               </p>
             </div>
 

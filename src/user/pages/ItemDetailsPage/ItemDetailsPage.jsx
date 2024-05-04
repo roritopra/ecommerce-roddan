@@ -2,12 +2,14 @@ import "./ItemDetailsPage.css";
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { Button, Spinner } from "@nextui-org/react";
+import { useParams } from "react-router-dom";
 import { Select, SelectItem, Image } from "@nextui-org/react";
+
 import { CarouselProducts } from "../../components/CarouselProduct/CarouselProducts";
 import { Footer } from "../../components/Footer/Footer";
-import { useParams } from "react-router-dom";
 import { doc, getDoc } from "firebase/firestore";
 import { database } from "../../../firebase/firebase";
+import { Layout } from "../../../layout/Layout";
 
 export function ItemDetailsPage() {
   const { productId } = useParams();
@@ -55,8 +57,8 @@ export function ItemDetailsPage() {
   }
 
   return (
-    <>
-      <main className="px-5 max-w-[1440px] mx-auto mt-5 mb-24">
+    <Layout>
+      <section className="mt-5 mb-24">
         <section className="flex gap-[40px]">
           <div className="w-1/2 h-full">
             <div className="flex justify-between">
@@ -233,9 +235,13 @@ export function ItemDetailsPage() {
           </p>
           <button
             onClick={() => setShowCarousel(!showCarousel)}
-            className={`flex items-center gap-3 bg-[#0081FE] rounded-full px-4 py-2 transition-all [&>svg]:transition ${showCarousel ? "[&>svg]:rotate-0" : "[&>svg]:rotate-[280deg]"}`}
+            className={`flex items-center gap-3 bg-[#0081FE] rounded-full px-4 py-2 transition-all [&>svg]:transition ${
+              showCarousel ? "[&>svg]:rotate-0" : "[&>svg]:rotate-[280deg]"
+            }`}
           >
-            <p className="font-satoshi text-white text-[14px]">{showCarousel ? "Show less" : "Show more"}</p>
+            <p className="font-satoshi text-white text-[14px]">
+              {showCarousel ? "Show less" : "Show more"}
+            </p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -255,8 +261,8 @@ export function ItemDetailsPage() {
         <hr className="border-[#D1D1D1]" />
 
         <div className="mt-12">{showCarousel && <CarouselProducts />}</div>
-      </main>
+      </section>
       <Footer />
-    </>
+    </Layout>
   );
 }

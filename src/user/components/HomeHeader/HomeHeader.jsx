@@ -1,27 +1,16 @@
 import "./HomeHeader.css";
-import  {Button } from "@nextui-org/react";
+import { Button } from "@nextui-org/react";
 import { NavLink } from "react-router-dom";
-import { useEffect } from "react";
 import { Carousel } from "@material-tailwind/react";
-import ScrollReveal from "scrollreveal";
+
+import { useScrollReveal } from "../../../libs/ScrollReveal";
 
 export function HomeHeader() {
-  useEffect(() => {
-    ScrollReveal().reveal('.div1', { delay: 500, duration: '1300', distance: '80px', origin: 'right' })
-    ScrollReveal().reveal('.div2', { delay: 600, duration: '1300', distance: '80px', origin: 'right' })
-    ScrollReveal().reveal('.div3', { delay: 800, duration: '1300', distance: '80px', origin: 'left' })
-    ScrollReveal().reveal('.div4', { delay: 900, duration: '1300', distance: '80px', origin: 'left' })
-    ScrollReveal().reveal('.div5', { delay: 1000, duration: '1300', distance: '80px', origin: 'left' })
-    ScrollReveal().reveal('.div6', { delay: 300, duration: '1300', distance: '80px', origin: 'right' })
-    ScrollReveal().reveal('.div7', { delay: 400, duration: '1300', distance: '80px', origin: 'right' })
-    ScrollReveal().reveal('.time', { delay: 1000, duration: '1300', distance: '30px', origin: 'top' })
-    ScrollReveal().reveal('.title', { delay: 1200, duration: '1300', distance: '30px', origin: 'top' })
-    ScrollReveal().reveal('.button', { delay: 1500, duration: '1300', distance: '30px', origin: 'top' })
-  }, [])
-  
+  useScrollReveal();
+
   return (
     <>
-      <section id="header" className="container-grid max-w-[1440px] mx-auto px-5">
+      <section id="header" className="container-grid">
         <div className="div1 rounded-[35px] p-12 bg-linear-black">
           <div className="time flex items-center gap-5">
             <img src="/icons/logo-icon.svg" alt="Logo icon" />
@@ -137,7 +126,7 @@ export function HomeHeader() {
           <p className="relative z-10 font-bold text-white font-satoshi text-3xl mb-1 tracking-[-1.2px]">
             Home
           </p>
-          <span className="relative z-10 font-bold font-satoshi text-items-rgba text-5xl  tracking-[-1.8px] font-semibold">
+          <span className="relative z-10 font-bold font-satoshi text-items-rgba text-5xl  tracking-[-1.8px]">
             Assistant
           </span>
           <NavLink to={"/shop"}>
@@ -159,11 +148,14 @@ export function HomeHeader() {
           <p className="relative z-10 font-bold text-white font-satoshi text-3xl mb-1 tracking-[-1.2px]">
             Game
           </p>
-          <span className="relative z-10 font-bold font-satoshi text-items-rgba text-5xl  tracking-[-1.8px] font-semibold">
+          <span className="relative z-10 font-bold font-satoshi text-items-rgba text-5xl  tracking-[-1.8px]">
             Reality
           </span>
           <NavLink to={"/shop"}>
-            <Button color="white" className="rounded-full bg-white px-7 text-green-500 mt-4 font-satoshi">
+            <Button
+              color="white"
+              className="rounded-full bg-white px-7 text-green-500 mt-4 font-satoshi"
+            >
               Browse
             </Button>
           </NavLink>
@@ -180,11 +172,14 @@ export function HomeHeader() {
           <p className="relative z-10 font-bold text-white font-satoshi text-3xl mb-1 tracking-[-1.2px]">
             Intelligent
           </p>
-          <span className="relative z-10 font-bold font-satoshi text-items-rgba text-5xl  tracking-[-1.8px] font-semibold">
+          <span className="relative z-10 font-bold font-satoshi text-items-rgba text-5xl  tracking-[-1.8px]">
             Smartwatches
           </span>
           <NavLink to={"/shop"}>
-            <Button color="white" className="rounded-full bg-white px-7 text-yellow-300 mt-4 font-satoshi">
+            <Button
+              color="white"
+              className="rounded-full bg-white px-7 text-yellow-300 mt-4 font-satoshi"
+            >
               Browse
             </Button>
           </NavLink>
@@ -201,11 +196,14 @@ export function HomeHeader() {
           <p className="relative z-10 font-bold text-white font-satoshi text-3xl mb-1 tracking-[-1.2px]">
             Device
           </p>
-          <span className="relative z-10 font-bold font-satoshi text-items-rgba text-5xl  tracking-[-1.8px] font-semibold">
+          <span className="relative z-10 font-bold font-satoshi text-items-rgba text-5xl  tracking-[-1.8px]">
             Laptops
           </span>
           <NavLink to={"/shop"}>
-            <Button color="blue" className="rounded-full text-white bg-[#0081FE] px-7 mt-4 font-satoshi">
+            <Button
+              color="blue"
+              className="rounded-full text-white bg-[#0081FE] px-7 mt-4 font-satoshi"
+            >
               Browse
             </Button>
           </NavLink>
@@ -222,11 +220,14 @@ export function HomeHeader() {
           <p className="relative z-10 font-bold text-[#19191B] font-satoshi text-3xl mb-1 tracking-[-1.2px]">
             High
           </p>
-          <span className="relative z-10 font-bold font-satoshi text-items-rgba-2 text-5xl  tracking-[-1.8px] font-semibold">
+          <span className="relative z-10 font-bold font-satoshi text-items-rgba-2 text-5xl  tracking-[-1.8px]">
             Definition
           </span>
           <NavLink to={"/shop"}>
-            <Button color="blue" className="rounded-full text-white bg-[#0081FE] px-7 mt-4 font-satoshi">
+            <Button
+              color="blue"
+              className="rounded-full text-white bg-[#0081FE] px-7 mt-4 font-satoshi"
+            >
               Browse
             </Button>
           </NavLink>

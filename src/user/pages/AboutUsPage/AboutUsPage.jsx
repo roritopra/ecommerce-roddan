@@ -1,13 +1,14 @@
 import "./AboutUsPage.css";
 import { NavLink } from "react-router-dom";
+
 import { Footer } from "../../components/Footer/Footer";
 import { LogoCarousel } from "../../components/LogoCarousel/LogoCarousel";
+import { Layout } from "../../../layout/Layout";
 
 
 export function AboutUsPage() {  
-  return (
-    <main>      
-      <section className="flex font-satoshi max-w-[1440px] mx-auto px-5">
+  return (     
+      <Layout>
         <section className="big-div w-full">
           <div className="welcome-roddan relative">
             <div className="ml-[29px] mt-[39px]">
@@ -84,11 +85,8 @@ export function AboutUsPage() {
             </p>
           </div>
         </section>
-      </section>
-      <LogoCarousel>
-        
-      </LogoCarousel>
+      <LogoCarousel></LogoCarousel>
       <Footer />
-    </main>
+    </Layout>
   );
 }

@@ -1,9 +1,11 @@
 import "./ContactUsPage.css";
 import { Footer } from "../../components/Footer/Footer";
+import { Layout } from "../../../layout/Layout";
 
 import { EmailLibrary } from "../../components/EmailLibrary/EmailLibrary";
-import { useMemo, useState} from "react";
+import { useMemo, useState } from "react";
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
+import { Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 
 export function ContactUsPage() {
@@ -13,17 +15,22 @@ export function ContactUsPage() {
       <MapContainer center={position} zoom={12} scrollWheelZoom={false}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/%7Bz%7D/%7Bx%7D/%7By%7D.png"
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <Marker position={position}></Marker>
+        <Marker position={position}>
+        <Popup>
+        A pretty CSS3 popup. <br /> Easily customizable.
+      </Popup>
+        </Marker>
       </MapContainer>
     ),
     [position]
   );
+
   return (
-    <main>
-      <section>{map}</section>
-      <section className="flex font-satoshi max-w-[1440px] mx-auto px-5">
+    <Layout>
+      <section className="mb-3">{map}</section>
+      <section className="flex">
         <section className="contenedor w-1/2">
           <div className="phone-hand flex flex-col justify-end">
             <img src="/imgs/phone-hand.png" alt="Image" />
@@ -48,9 +55,10 @@ export function ContactUsPage() {
             />
           </div>
         </section>
-        <EmailLibrary></EmailLibrary>
+
+        <EmailLibrary />
       </section>
       <Footer />
-    </main>
+    </Layout>
   );
 }
