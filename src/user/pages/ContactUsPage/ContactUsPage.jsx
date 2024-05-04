@@ -2,10 +2,27 @@ import "./ContactUsPage.css";
 import { Footer } from "../../components/Footer/Footer";
 
 import { EmailLibrary } from "../../components/EmailLibrary/EmailLibrary";
+import { useMemo, useState} from "react";
+import { MapContainer, TileLayer, Marker } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
 
 export function ContactUsPage() {
+  const [position, setPosition] = useState([51.505, -0.09]);
+  const map = useMemo(
+    () => (
+      <MapContainer center={position} zoom={12} scrollWheelZoom={false}>
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/%7Bz%7D/%7Bx%7D/%7By%7D.png"
+        />
+        <Marker position={position}></Marker>
+      </MapContainer>
+    ),
+    [position]
+  );
   return (
     <main>
+      <section>{map}</section>
       <section className="flex font-satoshi max-w-[1440px] mx-auto px-5">
         <section className="contenedor w-1/2">
           <div className="phone-hand flex flex-col justify-end">

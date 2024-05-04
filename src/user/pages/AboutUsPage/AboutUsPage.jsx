@@ -3,9 +3,10 @@ import { NavLink } from "react-router-dom";
 import { Footer } from "../../components/Footer/Footer";
 import { LogoCarousel } from "../../components/LogoCarousel/LogoCarousel";
 
-export function AboutUsPage() {
+
+export function AboutUsPage() {  
   return (
-    <main>
+    <main>      
       <section className="flex font-satoshi max-w-[1440px] mx-auto px-5">
         <section className="big-div w-full">
           <div className="welcome-roddan relative">
