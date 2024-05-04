@@ -1,10 +1,14 @@
 import "./ContactUsPage.css";
+import { Button } from "@nextui-org/react";
 import { Footer } from "../../components/Footer/Footer";
 
 import { EmailLibrary } from "../../components/EmailLibrary/EmailLibrary";
 import { useMemo, useState} from "react";
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
+
+import { Footer } from "../../components/Footer/Footer";
+import { Layout } from "../../../layout/Layout";
 
 export function ContactUsPage() {
   const [position, setPosition] = useState([51.505, -0.09]);
@@ -21,9 +25,8 @@ export function ContactUsPage() {
     [position]
   );
   return (
-    <main>
+      <Layout>
       <section>{map}</section>
-      <section className="flex font-satoshi max-w-[1440px] mx-auto px-5">
         <section className="contenedor w-1/2">
           <div className="phone-hand flex flex-col justify-end">
             <img src="/imgs/phone-hand.png" alt="Image" />
@@ -49,8 +52,7 @@ export function ContactUsPage() {
           </div>
         </section>
         <EmailLibrary></EmailLibrary>
-      </section>
       <Footer />
-    </main>
+    </Layout>
   );
 }
