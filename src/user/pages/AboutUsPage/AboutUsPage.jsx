@@ -5,10 +5,10 @@ import { Footer } from "../../components/Footer/Footer";
 import { LogoCarousel } from "../../components/LogoCarousel/LogoCarousel";
 import { Layout } from "../../../layout/Layout";
 
-export function AboutUsPage() {
-  return (
-    <Layout>
-      <section className="flex font-satoshi">
+
+export function AboutUsPage() {  
+  return (     
+      <Layout>
         <section className="big-div w-full">
           <div className="welcome-roddan relative">
             <div className="ml-[29px] mt-[39px]">
