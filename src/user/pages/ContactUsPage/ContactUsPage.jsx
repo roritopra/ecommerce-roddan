@@ -1,10 +1,28 @@
 import "./ContactUsPage.css";
 import { Footer } from "../../components/Footer/Footer";
-import { Button } from "@nextui-org/react";
+
+import { EmailLibrary } from "../../components/EmailLibrary/EmailLibrary";
+import { useMemo, useState} from "react";
+import { MapContainer, TileLayer, Marker } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
 
 export function ContactUsPage() {
+  const [position, setPosition] = useState([51.505, -0.09]);
+  const map = useMemo(
+    () => (
+      <MapContainer center={position} zoom={12} scrollWheelZoom={false}>
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/%7Bz%7D/%7Bx%7D/%7By%7D.png"
+        />
+        <Marker position={position}></Marker>
+      </MapContainer>
+    ),
+    [position]
+  );
   return (
     <main>
+      <section>{map}</section>
       <section className="flex font-satoshi max-w-[1440px] mx-auto px-5">
         <section className="contenedor w-1/2">
           <div className="phone-hand flex flex-col justify-end">
@@ -30,62 +48,7 @@ export function ContactUsPage() {
             />
           </div>
         </section>
-        <form
-          action=""
-          className="form-area flex flex-col justify-center items-center w-1/2 bg-gray-100 gap-[21px] px-28 ml-[18px]"
-        >
-          <p className="text-[16px] font-[500] font-satoshi text-customColor">
-            Contact us
-          </p>
-          <h2 className="getintouch text-[45px] font-[600] font-satoshi ">
-            Get in touch
-          </h2>
-          <p className="text-[16px] font-[500] font-satoshi w-[414px] text-[#19191B] text-center ">
-            When, while lovely valley teems with vapour around me and meridian
-            the upper impenetrable.
-          </p>
-          <label className=" flex flex-col font-satoshi text-[14px] text-[#262E36] font-[500] w-full">
-            {" "}
-            Email
-            <input
-              type="email"
-              placeholder="example@email.com"
-              className="inputs border-none rounded-[6px] text-[14px] mt-1 text-[#4C5C6B] font-[400]"
-            />
-            <label className="text-[14px] text-[#656565] font-[400]">
-              {" "}
-              Enter full email
-            </label>
-          </label>
-          <label className=" flex flex-col font-satoshi text-[14px] text-[#262E36] font-[500] w-full">
-            {" "}
-            Phone number
-            <input
-              type="email"
-              placeholder="+57 1234567890"
-              className="inputs border-none rounded-[6px] text-[13px] mt-1 text-[#4C5C6B] font-[400]"
-            />
-            <label className="text-[14px] text-[#656565] font-[400]">
-              {" "}
-              Enter full phone number
-            </label>
-          </label>
-          <label className=" flex flex-col font-satoshi text-[14px] text-[#262E36] font-[500] w-full">
-            {" "}
-            Message
-            <textarea
-              placeholder="Your Message Here"
-              className="inputs border-none rounded-[6px] text-[13px] mt-1 text-[#4C5C6B] font-[400] "
-              rows={7}
-            ></textarea>
-          </label>
-          <Button
-            className="font-satoshi font-[400] text-[14px] px-16"
-            color="primary"
-          >
-            Submit
-          </Button>
-        </form>
+        <EmailLibrary></EmailLibrary>
       </section>
       <Footer />
     </main>
