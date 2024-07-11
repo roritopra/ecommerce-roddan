@@ -23,6 +23,7 @@ module.exports = withMT({
     fontFamily: {
       satoshi: ["Satoshi", "sans-serif"],
       coolvetica: ["Coolvetica V2", "sans-serif"],
+      poppins: ["Poppins", "sans-serif"],
     },
     screens: {
       sm: "640px",
