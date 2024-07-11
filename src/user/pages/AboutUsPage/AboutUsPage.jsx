@@ -1,6 +1,8 @@
 import "./AboutUsPage.css";
 import { NavLink } from "react-router-dom";
 import { Carousel } from "@material-tailwind/react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import { Footer } from "../../components/Footer/Footer";
 import { LogoCarousel } from "../../components/LogoCarousel/LogoCarousel";
@@ -9,13 +11,47 @@ import { ChevronRightIcon } from "./ChevronRightIcon";
 import { ChevronLeftIcon } from "./ChevronLeftIcon";
 
 export function AboutUsPage() {
+  const [changeImage, setChangeImage] = useState("/imgs/dandi-image.webp");
+  const [changeImageProduct, setchangeImageProduct] = useState(
+    "/imgs/product-dandi.webp"
+  );
+  const [imageAnimation, setImageAnimation] = useState("");
+
+  const doChangeImage = () => {
+    const nextImageSrc = "/imgs/rodro-image.webp";
+    setChangeImage(nextImageSrc);
+    const nextImageProduct = "/imgs/product-rodro.webp";
+    setchangeImageProduct(nextImageProduct);
+    setImageAnimation("fade-in");
+    triggerAnimation();
+  };
+
+  const revertChangeImage = () => {
+    const prevImageSrc = "/imgs/dandi-image.webp";
+    setChangeImage(prevImageSrc);
+    const prevImageProduct = "/imgs/product-dandi.webp";
+    setchangeImageProduct(prevImageProduct);
+    setImageAnimation("fade-in");
+    triggerAnimation();
+  };
+
+  const triggerAnimation = () => {
+    setImageAnimation("fade-in");
+    setTimeout(() => {
+      setImageAnimation("");
+    }, 1000);
+  };
+
   const theme = {
     carousel: {
       defaultProps: {
         prevArrow: ({ loop, handlePrev, firstIndex }) => {
           return (
             <button
-              onClick={handlePrev}
+              onClick={() => {
+                handlePrev();
+                revertChangeImage();
+              }}
               disabled={!loop && firstIndex}
               className="!absolute top-2/4 left-4 -translate-y-2/4 rounded-full select-none transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-12 max-w-[48px] h-12 max-h-[48px] text-white hover:bg-white/10 active:bg-white/30 grid place-items-center"
             >
@@ -25,7 +61,10 @@ export function AboutUsPage() {
         },
         nextArrow: ({ loop, handleNext, lastIndex }) => (
           <button
-            onClick={handleNext}
+            onClick={() => {
+              handleNext();
+              doChangeImage(); // Call the function to change the image
+            }}
             disabled={!loop && lastIndex}
             className="!absolute top-2/4 right-4 -translate-y-2/4 rounded-full select-none transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-12 max-w-[48px] h-12 max-h-[48px] text-white hover:bg-white/10 active:bg-white/30 grid place-items-center"
           >
@@ -74,13 +113,13 @@ export function AboutUsPage() {
           <div>
             <div className="w-[250px] h-[250px] absolute top-[5px] left-[5px] rounded-full border border-[#4B4B4B]"></div>
             <img
-              className="absolute bottom-[-21px] right-[-29px] saturate-0"
-              src="/imgs/dandi-image.webp"
+              className={`absolute bottom-[-21px] right-[-29px] saturate-0 ${imageAnimation}`}
+              src={changeImage}
               alt="Dandi image"
             />
             <img
-              className="absolute top-[24px] left-[28px] saturate-0"
-              src="/imgs/product-dandi.webp"
+              className={`absolute top-[24px] left-[28px] saturate-0 ${imageAnimation}`}
+              src={changeImageProduct}
               alt="Dandi product"
             />
           </div>
@@ -200,7 +239,10 @@ export function AboutUsPage() {
           </p>
         </div>
 
-        <div className="our-blog flex flex-col justify-between p-4">
+        <Link
+          to={"/contact-us"}
+          className="our-blog flex flex-col justify-between p-4 hover:shadow-green hover:transition hover:duration-1000 duration-1000 transition"
+        >
           <div className="flex justify-between items-center">
             <p className="text-[#FFFFFF] font-satoshi font-regular text-base">
               Whats new?
@@ -210,7 +252,7 @@ export function AboutUsPage() {
           <p className="text-[#FFFFFF] font-satoshi font-bold text-[44px]">
             Our blog
           </p>
-        </div>
+        </Link>
       </div>
       <LogoCarousel />
       <Footer />

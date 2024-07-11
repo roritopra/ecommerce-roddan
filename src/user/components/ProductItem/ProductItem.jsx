@@ -16,7 +16,7 @@ export function ProductItem({ image, name, price }) {
         onMouseLeave={() => setHovered(false)}
       >
         <NavLink to={"/shop"}>
-          <figure className="card flex justify-center h-full items-center rounded-[35px] max-w-[350px] relative">
+          <figure className="card flex justify-center h-full items-center rounded-[20px] max-w-[350px] relative">
             <img className="" src={image} alt="Items home" />
           </figure>
           <div className="pt-5">
