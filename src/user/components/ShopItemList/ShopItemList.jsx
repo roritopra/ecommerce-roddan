@@ -7,7 +7,7 @@ export function ShopItemList({ name, price, img, category, link }) {
     <>
       <div className="flex justify-between items-center mt-10 mb-9">
         <div className="flex items-center gap-6">
-          <figure className="card flex justify-center items-center rounded-[35px] w-[175px] max-w-[180px] h-[155px] max-h-[160px] px-2">
+          <figure className="card flex justify-center items-center rounded-[20px] w-[175px] max-w-[180px] h-[155px] max-h-[160px] px-2">
             <img className="" src={img} alt="Items home" />
           </figure>
 

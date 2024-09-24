@@ -11,7 +11,7 @@ export function HomeHeader() {
   return (
     <>
       <section id="header" className="container-grid">
-        <div className="div1 rounded-[35px] p-12 bg-linear-black">
+        <div className="div1 rounded-[20px] p-12 bg-linear-black">
           <div className="time flex items-center gap-5">
             <img src="/icons/logo-icon.svg" alt="Logo icon" />
             <p className="text-white text-sm font-satoshi">
@@ -28,9 +28,9 @@ export function HomeHeader() {
           </NavLink>
         </div>
 
-        <div className="div2 rounded-[35px]">
+        <div className="div2 rounded-[20px]">
           <Carousel
-            className="rounded-[35px]"
+            className="rounded-[20px]"
             navigation={({ setActiveIndex, activeIndex, length }) => (
               <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
                 {new Array(length).fill("").map((_, i) => (
@@ -119,7 +119,7 @@ export function HomeHeader() {
             </div>
           </Carousel>
         </div>
-        <div className="div3 relative flex flex-col justify-end rounded-[35px] p-7">
+        <div className="div3 relative flex flex-col justify-end rounded-[20px] p-7">
           <p className="relative z-10 text-white font-satoshi text-base mb-1 tracking-[-0.64px]">
             Know
           </p>
@@ -141,7 +141,7 @@ export function HomeHeader() {
           />
         </div>
 
-        <div className="div4 relative flex flex-col justify-end rounded-[35px] p-7">
+        <div className="div4 relative flex flex-col justify-end rounded-[20px] p-7">
           <p className="relative z-10 text-white font-satoshi text-base mb-1 tracking-[-0.64px]">
             Virtual
           </p>
@@ -165,7 +165,7 @@ export function HomeHeader() {
             alt="Assistant image"
           />
         </div>
-        <div className="div5 relative flex flex-col justify-end rounded-[35px] p-7">
+        <div className="div5 relative flex flex-col justify-end rounded-[20px] p-7">
           <p className="relative z-10 text-white font-satoshi text-base mb-1 tracking-[-0.64px]">
             Wear
           </p>
@@ -189,7 +189,7 @@ export function HomeHeader() {
             alt="Assistant image"
           />
         </div>
-        <div className="div6 relative flex flex-col justify-end rounded-[35px] p-7">
+        <div className="div6 relative flex flex-col justify-end rounded-[20px] p-7">
           <p className="relative z-10 text-white font-satoshi text-base mb-1 tracking-[-0.64px]">
             New
           </p>
@@ -213,7 +213,7 @@ export function HomeHeader() {
             alt="Assistant image"
           />
         </div>
-        <div className="div7 relative flex flex-col justify-end rounded-[35px] p-7">
+        <div className="div7 relative flex flex-col justify-end rounded-[20px] p-7">
           <p className="relative z-10 text-[#19191B] font-satoshi text-base mb-1 tracking-[-0.64px]">
             Listen
           </p>

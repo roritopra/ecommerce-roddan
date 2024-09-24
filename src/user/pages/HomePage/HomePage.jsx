@@ -17,7 +17,7 @@ export function HomePage() {
       <LogoCarousel />
 
       <section className="mb-28 mt-48">
-        <div className="january relative flex justify-between pl-11 pr-20 rounded-[35px] py-20">
+        <div className="january relative flex justify-between pl-11 pr-20 rounded-[20px] py-20">
           <div className="relative h-full">
             <img
               className="play z-20 max-w-full bottom-[-80px] absolute left-52"

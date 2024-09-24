@@ -17,7 +17,7 @@ export function ShopItemGrid({ image, name, price, link, ...props }) {
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >
-          <figure className="card flex w-full justify-center h-full items-center rounded-[35px] max-w-[350px] relative">
+          <figure className="card flex w-full justify-center h-full items-center rounded-[20px] max-w-[350px] relative">
             <img className="w-[100px]" src={image} alt="Product" />
           </figure>
           <div className="pt-5">

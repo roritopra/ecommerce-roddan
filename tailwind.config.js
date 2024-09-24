@@ -13,6 +13,9 @@ module.exports = withMT({
 
   theme: {
     extend: {
+      boxShadow: {
+        'green': '0px 4px 27px 0px #4DC85D',
+      },
       colors: {
         customColor: "#007AFF", // Puedes asignar un nombre personalizado a tu color
 
@@ -23,6 +26,7 @@ module.exports = withMT({
     fontFamily: {
       satoshi: ["Satoshi", "sans-serif"],
       coolvetica: ["Coolvetica V2", "sans-serif"],
+      poppins: ["Poppins", "sans-serif"],
     },
     screens: {
       sm: "640px",
