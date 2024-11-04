@@ -115,7 +115,7 @@ export function AboutUsPage() {
             <img
               className={`absolute bottom-[-21px] right-[-29px] saturate-0 ${imageAnimation}`}
               src={changeImage}
-              alt="Dandi image"
+              alt="Dandi image."
             />
             <img
               className={`absolute top-[24px] left-[28px] saturate-0 ${imageAnimation}`}
